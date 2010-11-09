@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# This file adds the ability for notes to complete on notesfile names in Bash.
+
+SPOOLDIR=/var/spool/notes
+
+_newts()
+{
+    local cur prev
+
+    COMPREPLY=()
+    cur=${COMP_WORDS[COMP_CWORD]}
+    prev=${COMP_WORDS[COMP_CWORD-1]}
+
+   _expand || return 0
+
+    # Get the list of notesfiles, sending errors to /dev/null.
+    COMPREPLY=( $( eval command ls ${SPOOLDIR} 2> /dev/null ) )
+
+    # Weed out directory pathnames
+    COMPREPLY=( ${COMPREPLY[@]##*/?(:)} )
+    COMPREPLY=( $( compgen -W '${COMPREPLY[@]}' -- "${cur//\\\\/}" ) )
+}
+complete -F _newts notes
+complete -F _newts autoseq
+complete -F _newts rmnf

@@ -1,0 +1,89 @@
+.TH NFPRINT 1 "August 2004" "Newts" "Newts Reference Manual"
+
+.SH NAME
+nfprint \- print formatted notes
+
+.SH SYNOPSIS
+.B nfprint
+[\fIoptions\fR] \fINOTESFILE\fR [\fILIST\fR]
+
+.SH DESCRIPTION
+.B nfprint
+formats a notesfile and prints it to standard output in a format suitable for
+hardcopy printing or other forms of offline viewing.
+
+The parameter \fILIST\fR is a space-delimited list of note numbers; the
+specified notes will be the ones printed.  List elements can contain ranges of
+notes separated by hyphens.
+
+.SH OPTIONS
+
+.TP
+\fB\-c\fR, \fB\-\^\-cat\fR
+Use the \fBcat\fR(1) program instead of the default \fBpr\fR(1) to format the
+output.  If this option is specified, options \fB\-\^\-length\fR and
+\fB\-\^\-page\-breaks\fR, which only pertain to \fBpr\fR(1), will be ignored if
+provided.
+
+.TP
+\fB\-d\fR, \fB\-\^\-director\fR
+Include only notes with director messages.
+
+.TP
+\fB\-h\fR, \fB\-\^\-help\fR
+Print a summary of usage and command-line options for
+.B nfprint
+and exit.
+
+.TP
+\fB\-i\fR, \fB\-\^\-index\-only\fR
+Print only an index page for the specified notes; do not print the actual notes
+and responses.
+
+.TP
+\fB\-l\fR, \fB\-\^\-length\fR=\fILENGTH\fR
+Direct the \fBpr\fR(1) program to format output with \fILENGTH\fR lines per
+page.
+
+.TP
+\fB\-n\fR, \fB\-nd\fR, \fB\-\^\-no\-director\fR
+Include only notes without director messages.
+
+.TP
+\fB\-p\fR, \fB\-\^\-page\-breaks\fR
+Direct the \fBpr\fR(1) program to insert a page break after each note thread,
+consisting of a note and all its responses.
+
+.TP
+\fB\-\^\-debug\fR
+Print debugging messages to standard error.
+
+.TP
+\fB\-\^\-version\fR
+Print version information for
+.B nfprint
+and exit.
+
+.SH AUTHOR
+.B Newts
+was written and is maintained by Tyler Berry <tyler+newts@thoughtlocker.net>.
+
+.SH SEE ALSO
+\fBautoseq\fR(1), \fBchecknotes\fR(1), \fBgetnote\fR(1), \fBmknf\fR(1),
+\fBnfadmin\fR(1), \fBnfdump\fR(1), \fBnfload\fR(1), \fBnfmail\fR(1),
+\fBnfpipe\fR(1), \fBnfstats\fR(1), \fBnftimestamp\fR(1), \fBnotes\fR(1),
+\fBrmnf\fR(1)
+
+\fBcat\fR(1), \fBpr\fR(1)
+
+The full documentation for
+.B Newts
+is maintained as a Texinfo manual.  If the
+.B info
+and
+.B Newts
+programs are properly installed at your site, the command
+.IP
+.B info newts
+.PP
+should give you access to the complete manual.

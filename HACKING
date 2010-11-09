@@ -1,0 +1,27 @@
+Requests for People HACKING on Newts                               -*- Text -*-
+-------------------------------------------------------------------------------
+
+Interested in developing for Newts? Write access is over SSH only, so you'll
+need to arrange for an account on the development server. If you're interested,
+get in touch with me at <tyler+newts@thoughtlocker.net>.
+
+If you do work on Newts, I'd appreciate it if you kept the followings things in
+mind.
+
+1. Use the GNU code style, as described in the GNU Standards document.
+   Exceptions:
+
+   * Do not use U+0060 GRAVE ACCENT (`) for a 'left quote', as section 5.10
+     suggests. Instead, use U+0027 APOSTROPHE (') to represent both quote
+     marks in single-quoted text. For the rationale, see:
+     <http://www.cl.cam.ac.uk/~mgk25/ucs/quotes.html>
+
+2. Comment your changes where appropriate.
+3. Make your Subversion log entries informative and useful.
+4. If you're working on something significant, as opposed to bugfixes or small
+   changes, please let me know so that I can take your work into account while
+   coming up with a release schedule.
+
+Thanks!
+
+- Tyler

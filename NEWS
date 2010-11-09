@@ -1,0 +1,182 @@
+Newts NEWS                                                         -*- Text -*-
+-------------------------------------------------------------------------------
+
+* ______ - Newts 0.15
+
+- More unit tests.
+- More changes and additions to the client API.
+- More documentation of the client API.
+
+* Wednesday, December 14, 2005 - Newts 0.14.8
+
+- Include the SVN revision number in the output of --version.
+- Added unit tests for the client API.
+- Began adding documentation for the client API in a Doxygen-compatible way.
+- Substantial changes and additions to the client API.
+- Substantial refactoring in the main client, both to comply with the revised
+  client API and to clean the code up in general.
+- Modified the utility frontend programs to use the revised client API.
+- Refactored the pager to be modular, for purposes of future rewrites to add
+  things like Unicode support.
+- Use gnulib-tool to generate Gnulib support.
+- Automatically use the most recent version of Libtool.
+
+* Tuesday, July 26, 2005 - Newts 0.14.7
+
+- Fixed signal handling so that suspending a spawned process works correctly.
+- Added David Mellis's python bindings to the repository and distribution.
+
+* Friday, June 16, 2005 - Newts 0.14.6
+
+- Fixed a bug in nfdump where the last note in a dumped notesfile was omitted.
+- Added 'g' to perform one-touch seqing.
+
+* Monday, March 21, 2005 - Newts 0.14.5
+
+- Updated to Libtool 1.5.14.
+- Fixed a segfault when trying to use the alternate sequencer.
+- Made the alternate sequencer activate the sequencer automatically.
+- Made the alternate sequencer work correctly with the '--user' option.
+- Fixed the broken --time option, which was not actually setting the time at
+  all. Oops.
+- Fixed a few odd display bugs.
+- Display messages are now 'Unicode-friendly'.
+  See <http://www.cl.cam.ac.uk/~mgk25/ucs/quotes.html> for details.
+- Resynced with Gnulib.
+
+* Sunday, January 23, 2005 - Newts 0.14.4
+
+- Updated to Libtool 1.5.10.
+- Corrected some mistakes in the Texinfo manual.
+- Fixed a bug which would cause a segfault when replying to a note from a local
+  user who had been deleted from the system, or forwarding a mail from a note
+  written by such a user.
+- Fixed a bug in nfload where the dumpfile would fail to open if nfload was run
+  as root. (It was dropping root permissions and not picking them back up.)
+- Resynced with Gnulib, which involved some fairly major updates to xmalloc and
+  friends, as the interface Gnulib uses changed.
+
+* Tuesday, September 14, 2004 - Newts 0.14.3
+
+- Corrected a typo in nfadmin.1.
+- Synchronized with new files in Gnulib.
+
+* Tuesday, August 10, 2004 - Newts 0.14.2
+
+- Corrected a Whole Bunch of inconsistencies between the Texinfo manual, the
+  newly-developed manpages, and the actual operation of the programs.
+- Added manpages for all currently-built programs.
+- Renamed 'printnote' to 'getnote'.
+- Removed the '-d' short option from all programs, which used to correspond to
+  '--debug'.  It was blocking the use of '-d' for more important options which
+  are far more likely to see use.
+
+* Tuesday, June 29, 2004 - Newts 0.14.1
+
+- Completely redid all compatibility code using a recent CVS version of
+  Gnulib.
+
+* Thursday, June 10, 2004 - Newts 0.14
+
+- Adding the missing code to the nfload program which will load access entries
+  from the dumpfile into the notesfile.
+- Added debugging support to all of the various binaries built by the package,
+  via the --debug command-line option.
+- Added an option for debugging that allows the notes client to setuid to an
+  arbitrary user when being run by root. Useful for running notes inside gdb.
+- Changed the license for the Newts Reference Manual - it's no longer GFDL.
+- Fixed a bug which would cause a segfault when reading a note from a local
+  user who had been deleted from the system.
+- Reorganized the entire directory structure of the source tree.
+- Reorganized header files to install the relevant interfaces.
+- Began systematic documentation of the libnewtsclient interface.
+
+* Tuesday, March 9, 2004 - Newts 0.13.2
+
+- Fixed a display bug which caused informational messages and prompts to fail
+  to display when a person tried to enter a notesfile without rights.
+- Syncronized with new files in Gnulib.
+
+* Friday, January 16, 2003 - Newts 0.13.1
+
+- Synchronized with new releases of GNU Autotools and Gnulib.
+
+* Tuesday, December 9, 2003 - Newts 0.13
+
+- Added nfdump, completing the set of basic utilities.
+- Added some sanity checks to the 't' talk command.
+- Various small bits of code cleanup.
+- Made sure that root doesn't accidentally lose the ability to write files.
+
+* Monday, September 29, 2003 - Newts 0.12.7
+
+- Portability work for sparc-sun-solaris2.6.
+- utmp scanning to determine whether an author is online.
+- Synchronization and updates for portability code.
+
+* Thursday, September 18, 2003 - Newts 0.12.6
+
+- Added a couple missing m4 files.
+
+* Friday, September 5, 2003 - Newts 0.12.5
+
+- Code cleanup, fixes, and error-checking.
+
+* Saturday, August 30, 2003 - Newts 0.12.4
+
+- Added man pages for notes(1) and autoseq(1).
+- Fixed inconsistencies between documentation and actual behavior.
+- Made a couple command line options make more sense.
+- Fixed distribution of a couple missing files.
+
+* Tuesday, August 26, 2003 - Newts 0.12.3
+
+- Fixed a mistake with an earlier fix to the 'N' key.
+- Prepared for a CVS branch to add Readline support.
+
+* Tuesday, August 19, 2003 - Newts 0.12.2
+
+- Interim release for code maintenance.
+- Lots and lots of code cleanup.
+- Fixed lots of FIXMEs in the code; these were largely for incorrect usage of
+  one kind or another; static buffers instead of dynamic alloc, not checking
+  return values, etc. It's not there yet, but it's getting there.
+
+* Wednesday, August 13, 2003 - Newts 0.12.1
+
+- Staving off disaster, a bug in notesfile parsing was discovered and slain in
+  the embryonic version 0.12, which is supplanted by this release.
+- Finally fixed that nfload bug that's been driving me nuts for the past three
+  weeks. Thank you, thank you, Michael Urman.
+
+* Monday, August 11, 2003 - Newts 0.11.5
+
+- Substantially improved Texinfo manual.
+- Minor fix so quoting and signatures play well together.
+
+* Monday, August 4, 2003 - Newts 0.11.4
+
+- Newts available via CVS.
+- Modified quote insertion to not line-wrap.
+- Modified author-search to allow searching for real names.
+- Updated Texinfo documentation.
+
+* Thursday, July 31, 2003 - Newts 0.11.3
+
+- Fixes to nfload (though nfload is still not perfect).
+- Massive code cleanup and ANSIfication.
+- Updated history of notesfiles in the Info documentation.
+- Various other minor bugfixes.
+
+* Monday, July 28, 2003 - Newts 0.11.2
+
+- Fixes for bugs on the access screen which prevented editing the access list.
+
+* Friday, July 25, 2003 - Newts 0.11.1
+
+- Successful compile on Darwin 6.6 (Mac OS X 10.2.6).
+- Various and sundry bugfixes.
+
+* Wednesday, June 25, 2003 - Newts 0.11
+
+- Initial public release.

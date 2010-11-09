@@ -1,0 +1,138 @@
+@node Notes sequencer
+@chapter The Notes sequencer
+@cindex correcting mistakes
+
+Perhaps the most useful feature provided by Notes is the sequencer,
+which allows each user to view only notes which have been added since
+the last time they read through each notesfile.
+
+@menu
+* Sequencer initialization::   Setting up for your first `seq'.
+* Invoking the sequencer::     Starting Notes in sequencer mode.
+* Viewing updated notes::      Reading new notes and responses.
+* Sequencer options::          Affecting which notes are displayed.
+@end menu
+
+@node Sequencer initialization
+@section Initializing the sequencer
+@cindex sequencer, initializating
+@cindex initializing the sequencer
+
+The sequencer works by tracking the most recent time you looked
+through a particular notesfile.  In order to set up the sequencer to
+be used the first time, you'll need to record the time for each of the
+notesfiles you want to be able to use the sequencer with.
+
+The easiest way to do this is with the @command{nftimestamp}
+(@pxref{Invoking nftimestamp}) command, without any options:
+
+@example
+@samp{nftimestamp @var{notesfile}...}
+@end example
+
+There are other ways to initialize the sequencer (for example, by
+reading through the notesfile once using @command{notes -s} or
+@command{autoseq}, but using @command{nftimestamp} is the simplest.
+
+@node Invoking the sequencer
+@section Invoking the sequencer
+@cindex sequencer, invoking
+
+There are several similar but subtly different modes that the
+sequencer can run in.  Each mode is invoked using a command-line
+option when you start Notes.
+
+@table @samp
+@item -a @var{seq}
+@itemx --alternate=@var{seq}
+Use a named subsequencer.  Each subsequencer has its own independent
+set of timestamps, and each can be used independently to sequence
+through the same notesfiles.  If no other sequencer mode is specified,
+@samp{--sequencer} will be assumed.
+
+This option was originally used for shared accounts, so multiple users
+could track their sequencers individually.  Since most sites have
+moved away from allowing shared accounts, this option is rarely used.
+
+@item -i
+@itemx --index
+Use the index sequencer.  This mode will skip notesfiles with no new
+notes, and will open to the index page of each notesfile with new
+notes, instead of immediately opening to the first modified note.
+
+@item -n
+@itemx --no-sequencer
+Do not use the sequencer.  This is the default mode.
+
+@item -o @var{date}
+@itemx --date=@var{date}
+Specify a particular date/time for the sequencer to use.  In this
+mode, all notes written after the given time will be considered to be
+``new'', and the sequencer time will not be updated after you quit.
+If no other sequencer mode is specified, @samp{-s} will be assumed.
+
+@item -s
+@itemx --sequencer
+Use the sequencer.  The standard sequencer mode will skip notesfiles
+with no new notes, and will open immediately to the first basenote in
+each notesfile with modified or new material.
+
+@item -x
+@itemx --extended
+Use the extended sequencer.  This mode will enter each notesfile
+specifed, regardless of whether there are new notes.  If a given
+notesfile has no new notes, it will open to the index page.  If a
+notesfile does have new notes, the notesfile will open to the first
+basenote with modified or new material.
+@end table
+
+@node Viewing updated notes
+@section Viewing updated notes
+@cindex sequencer, commands
+@cindex sequencer, moving around
+@cindex viewing new notes and responses
+
+While you are viewing notesfiles using the sequencer, there are
+several additional commands which are useful for changing notes.
+
+The @kbd{j} key will move to the next updated basenote or response,
+and the @kbd{J} key will move to the next updated note, skipping any
+further responses to the current note.
+
+The @kbd{l} and @kbd{L} keys work identically to the @kbd{j} and
+@kbd{J} keys, respectively, but in addition will move to the next
+notesfile specified on the command line with new or updated notes, if
+any.  (@kbd{l} and @kbd{L} are like pressing @kbd{j} or @kbd{J}
+followed by @kbd{q} if there were no further notes.)
+
+The @kbd{g} key works like a combination of @key{SPC} and @kbd{l}.  If
+the current note has additional pages, @kbd{g} will go to the next
+page.  Otherwise, it behaves exactly like @kbd{l}.
+
+Finally, there are two ways to leave the Notes program without
+updating the sequencer.  The @kbd{Q} and @kbd{K} keys will leave the
+current notesfile without updating its sequencer timestamp; @kbd{C-d}
+will exit the entire Notes program without updating any further
+timestamps.
+
+@node Sequencer options
+@section Sequencer-related options
+@cindex sequencer, options
+
+A pair of options controls whether the sequencer will trigger if the
+only new notes in a particular notesfile since the last time you
+viewed it were written by you.
+
+@table @samp
+@item -e
+@itemx --seq-own-notes
+With this option set, the sequencer will ``trip'' on notes you write.
+If your note is the only new note in a notesfile, that notesfile will
+be entered and your note displayed.
+
+@item -k
+@itemx --skip-own-notes
+With this option set, the sequencer will ignore notes you write for
+the purpose of determining whether a notesfile has been updated.  This
+is the default behavior for the sequencer.
+@end table

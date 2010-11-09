@@ -1,0 +1,81 @@
+.TH MKNF 1 "August 2004" "Newts" "Newts Reference Manual"
+
+.SH NAME
+mknf \- create new notesfiles
+
+.SH SYNOPSIS
+.B mknf
+[\fIoptions\fR] \fINOTESFILE\fR...
+
+.SH DESCRIPTION
+.B mknf
+creates one or more new notesfiles.
+
+If you are a normal user,
+.B mknf
+will only allow you to create personal notesfiles; that is, notesfiles with
+names preceded by \fIusername:\fR.  The notes administrator can create general
+notesfiles as well as personal notesfiles with any prefix.
+
+In the future,
+.Bmknf
+will have options allowing creation of multiple different types of notesfile
+according available backends; for now, the only available type is the
+UIUC-format notesfile.
+
+.SH OPTIONS
+
+.TP
+\fB\-a\fR, \fB\-\^\-anonymous\fR
+Set the newly created notesfile to allow anonymous notes.
+
+.TP
+\fB\-h\fR, \fB\-\^\-help\fR
+Print a summary of usage and command-line options for
+.B notes
+and exit.
+
+.TP
+\fB\-l\fR, \fB\-\^\-locked\fR
+Create the new notesfile in a locked state.  Locked notesfiles can only be
+entered by directors.
+
+.TP
+\fB\-u\fR, \fB\-\^\-unlocked\fR
+Create the new notesfile in an unlocked state.
+
+.TP
+\fB\-v\fR, \fB\-\^\-verbose\fR
+Print a message for each notesfile created.
+
+.TP
+\fB\-\^\-debug\fR
+Print debugging messages to standard error.
+
+.TP
+\fB\-\^\-version\fR
+Print version information for
+.B mknf
+and exit.
+
+.SH AUTHOR
+.B Newts
+was written and is maintained by Tyler Berry <tyler+newts@thoughtlocker.net>.
+
+.SH SEE ALSO
+\fBautoseq\fR(1), \fBchecknotes\fR(1), \fBgetnote\fR(1), \fBnfadmin\fR(1),
+\fBnfdump\fR(1), \fBnfload\fR(1), \fBnfmail\fR(1), \fBnfpipe\fR(1),
+\fBnfprint\fR(1), \fBnfstats\fR(1), \fBnftimestamp\fR(1), \fBnotes\fR(1),
+\fBrmnf\fR(1)
+
+The full documentation for
+.B Newts
+is maintained as a Texinfo manual.  If the
+.B info
+and
+.B Newts
+programs are properly installed at your site, the command
+.IP
+.B info newts
+.PP
+should give you access to the complete manual.

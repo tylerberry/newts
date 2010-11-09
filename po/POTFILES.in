@@ -1,0 +1,34 @@
+# List of source files containing translatable strings
+# Copyright (C) 2003 Tyler Berry
+
+# The notes compatibility client
+
+clients/notes/access.c
+clients/notes/compose_note.c
+clients/notes/director.c
+clients/notes/display_index.c
+# clients/notes/get_number.c
+# clients/notes/get_text.c
+clients/notes/limited_index.c
+clients/notes/master.c
+clients/notes/notes.c
+# clients/notes/parse.c
+clients/notes/print_time.c
+clients/notes/read_note.c
+clients/notes/run_index.c
+# clients/notes/setup.c
+
+# Frontend utilities
+
+clients/frontends/checknotes.c
+clients/frontends/getnote.c
+clients/frontends/mknf.c
+clients/frontends/nfadmin.c
+clients/frontends/nfdump.c
+clients/frontends/nfload.c
+clients/frontends/nfmail.c
+clients/frontends/nfpipe.c
+clients/frontends/nfprint.c
+clients/frontends/nfstats.c
+clients/frontends/nftimestamp.c
+clients/frontends/rmnf.c

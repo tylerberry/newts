@@ -1,0 +1,150 @@
+\section{notesfile.h File Reference}
+\label{notesfile_8h}\index{notesfile.h@{notesfile.h}}
+{\tt \#include \char`\"{}newts/config.h\char`\"{}}\par
+{\tt \#include \char`\"{}newts/nfref.h\char`\"{}}\par
+\subsection*{Data Structures}
+\begin{CompactItemize}
+\item 
+struct {\bf notesfile}
+\item 
+struct \textbf{opts}
+\end{CompactItemize}
+\subsection*{Enumerations}
+\begin{CompactItemize}
+\item 
+enum {\bf nf\_\-statuses} \{ \par
+{\bf NF\_\-ANONYMOUS} =  01, 
+{\bf NF\_\-CONFIDENTIAL} =  02, 
+{\bf NF\_\-LOCKED} =  04, 
+{\bf NF\_\-ARCHIVE} =  010, 
+\par
+{\bf NF\_\-MODERATED} =  020, 
+{\bf NF\_\-POLICY} =  040
+ \}
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+int {\bf close\_\-nf} (struct {\bf notesfile} $\ast$nf, int updatestats)
+\item 
+int {\bf compress\_\-nf} (struct {\bf notesfile} $\ast$nf, unsigned $\ast$numnotes, unsigned $\ast$numresps)
+\item 
+int \textbf{get\_\-next\_\-bug} (const struct {\bf notesfile} $\ast$nf)\label{notesfile_8h_2e3ce73dc8062737778e10bcbbd42d38}
+
+\item 
+int \textbf{modify\_\-nf} (struct {\bf notesfile} $\ast$nf)\label{notesfile_8h_c197b1e47f633b90ea618f63b5c873f1}
+
+\item 
+struct {\bf notesfile} $\ast$ {\bf nf\_\-alloc} (void)
+\item 
+void {\bf nf\_\-free} (struct {\bf notesfile} $\ast$nf)
+\item 
+int \textbf{open\_\-nf} (const struct {\bf nfref} $\ast$ref, struct {\bf notesfile} $\ast$nf)\label{notesfile_8h_99c5e5df37510a0da91e8bc3f3f1b11b}
+
+\item 
+int {\bf update\_\-nf} (struct {\bf notesfile} $\ast$nf)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Notesfile datatype and related functions. 
+
+\subsection{Enumeration Type Documentation}
+\index{notesfile.h@{notesfile.h}!nf\_\-statuses@{nf\_\-statuses}}
+\index{nf\_\-statuses@{nf\_\-statuses}!notesfile.h@{notesfile.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}enum {\bf nf\_\-statuses}}\label{notesfile_8h_592b40327dd94a5be49dbabb7d666eca}
+
+
+Various flags a \doxyref{notesfile}{p.}{structnotesfile} can have set. \begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{NF\_\-ANONYMOUS@{NF\_\-ANONYMOUS}!notesfile.h@{notesfile.h}}\index{notesfile.h@{notesfile.h}!NF\_\-ANONYMOUS@{NF\_\-ANONYMOUS}}\item[{\em 
+NF\_\-ANONYMOUS\label{notesfile_8h_592b40327dd94a5be49dbabb7d666ecafda7c9db1eedb83ef505e104d9037f74}
+}]Notesfile allows truly anonymous notes. \index{NF\_\-CONFIDENTIAL@{NF\_\-CONFIDENTIAL}!notesfile.h@{notesfile.h}}\index{notesfile.h@{notesfile.h}!NF\_\-CONFIDENTIAL@{NF\_\-CONFIDENTIAL}}\item[{\em 
+NF\_\-CONFIDENTIAL\label{notesfile_8h_592b40327dd94a5be49dbabb7d666ecac83015e2cd25a99a8b1a808ca7955be5}
+}]Notesfile allows authors to remain confidential. (Directors will still be able to see the \doxyref{author}{p.}{structauthor} of a note. \index{NF\_\-LOCKED@{NF\_\-LOCKED}!notesfile.h@{notesfile.h}}\index{notesfile.h@{notesfile.h}!NF\_\-LOCKED@{NF\_\-LOCKED}}\item[{\em 
+NF\_\-LOCKED\label{notesfile_8h_592b40327dd94a5be49dbabb7d666ecac396b9118298dcf14250a5e1b3372a9d}
+}]Notesfile is locked for maintenance. \index{NF\_\-ARCHIVE@{NF\_\-ARCHIVE}!notesfile.h@{notesfile.h}}\index{notesfile.h@{notesfile.h}!NF\_\-ARCHIVE@{NF\_\-ARCHIVE}}\item[{\em 
+NF\_\-ARCHIVE\label{notesfile_8h_592b40327dd94a5be49dbabb7d666eca772e4d57e8e8c0956591e41abbab6b2d}
+}]Notesfile is an archive. \index{NF\_\-MODERATED@{NF\_\-MODERATED}!notesfile.h@{notesfile.h}}\index{notesfile.h@{notesfile.h}!NF\_\-MODERATED@{NF\_\-MODERATED}}\item[{\em 
+NF\_\-MODERATED\label{notesfile_8h_592b40327dd94a5be49dbabb7d666ecae6a0ebe6cd44268328bd973c2634e62a}
+}]New notes require a director's approval. \index{NF\_\-POLICY@{NF\_\-POLICY}!notesfile.h@{notesfile.h}}\index{notesfile.h@{notesfile.h}!NF\_\-POLICY@{NF\_\-POLICY}}\item[{\em 
+NF\_\-POLICY\label{notesfile_8h_592b40327dd94a5be49dbabb7d666eca033a01f265f63bc11ee5d8ff4302bbd8}
+}]Notesfile has a policy note. \end{description}
+\end{Desc}
+
+
+
+\subsection{Function Documentation}
+\index{notesfile.h@{notesfile.h}!close\_\-nf@{close\_\-nf}}
+\index{close\_\-nf@{close\_\-nf}!notesfile.h@{notesfile.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int close\_\-nf (struct {\bf notesfile} $\ast$ {\em nf}, int {\em updatestats})\hspace{0.3cm}{\tt  [inline]}}\label{notesfile_8h_ff88c2e91143dd3d9a5d6b79205870bc}
+
+
+Perform whatever actions are necessary to finish using a \doxyref{notesfile}{p.}{structnotesfile}.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em nf}]An open \doxyref{notesfile}{p.}{structnotesfile}. \item[{\em updatestats}]A flag controlling whether to update the notesfile's statistics; 0 means no, anything else means yes.\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]FIXME\end{Desc}
+\begin{Desc}
+\item[Side effects:]May invalidate further connections to this \doxyref{notesfile}{p.}{structnotesfile} until it is reopened with open\_\-nf. \end{Desc}
+\index{notesfile.h@{notesfile.h}!compress\_\-nf@{compress\_\-nf}}
+\index{compress\_\-nf@{compress\_\-nf}!notesfile.h@{notesfile.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int compress\_\-nf (struct {\bf notesfile} $\ast$ {\em nf}, unsigned $\ast$ {\em numnotes}, unsigned $\ast$ {\em numresps})\hspace{0.3cm}{\tt  [inline]}}\label{notesfile_8h_6f79a3f0bc371ddc682535a06cee87f1}
+
+
+Commit note deletions and otherwise clean up unused \doxyref{notesfile}{p.}{structnotesfile} data.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em nf}]An open \doxyref{notesfile}{p.}{structnotesfile}. \item[{\em numnotes}]A location to place the number of notes after compression. \item[{\em numresps}]A location to place the number of responses after compression.\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]FIXME\end{Desc}
+\begin{Desc}
+\item[Side effects:]{\em numnotes\/} and {\em numresps\/} will be updated to hold the number of notes and responses remaining in the \doxyref{notesfile}{p.}{structnotesfile} after compression. On error, the value of these variables is undefined.\end{Desc}
+\begin{Desc}
+\item[]\doxyref{update\_\-nf}{p.}{notesfile_8h_b61f7fe44a0ffa3bac7e3cbf5ae74e59} will automatically be called on {\em nf\/}. The \doxyref{notesfile}{p.}{structnotesfile} will potentially be seriously different in structure; if you memoize anything about the \doxyref{notesfile}{p.}{structnotesfile}, you should forget it after compression. \end{Desc}
+\index{notesfile.h@{notesfile.h}!nf\_\-alloc@{nf\_\-alloc}}
+\index{nf\_\-alloc@{nf\_\-alloc}!notesfile.h@{notesfile.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}struct {\bf notesfile}$\ast$ nf\_\-alloc (void)\hspace{0.3cm}{\tt  [read]}}\label{notesfile_8h_035810a80d1ccbb3270901873d47cc75}
+
+
+Create a new struct \doxyref{notesfile}{p.}{structnotesfile}.
+
+\begin{Desc}
+\item[Returns:]A newly allocated struct \doxyref{notesfile}{p.}{structnotesfile}. This should be freed with nf\_\-free when no longer needed.\end{Desc}
+\begin{Desc}
+\item[See also:]\doxyref{nf\_\-free}{p.}{notesfile_8h_3e7a85ca63164fa059e531ed265dd1ee} \end{Desc}
+\index{notesfile.h@{notesfile.h}!nf\_\-free@{nf\_\-free}}
+\index{nf\_\-free@{nf\_\-free}!notesfile.h@{notesfile.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void nf\_\-free (struct {\bf notesfile} $\ast$ {\em nf})}\label{notesfile_8h_3e7a85ca63164fa059e531ed265dd1ee}
+
+
+Deallocate {\em nf\/}.
+
+\begin{Desc}
+\item[Side effects:]{\em nf\/} will be invalidated, and should no longer be used.\end{Desc}
+\begin{Desc}
+\item[See also:]\doxyref{nf\_\-alloc}{p.}{notesfile_8h_035810a80d1ccbb3270901873d47cc75} \end{Desc}
+\index{notesfile.h@{notesfile.h}!update\_\-nf@{update\_\-nf}}
+\index{update\_\-nf@{update\_\-nf}!notesfile.h@{notesfile.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int update\_\-nf (struct {\bf notesfile} $\ast$ {\em nf})\hspace{0.3cm}{\tt  [inline]}}\label{notesfile_8h_b61f7fe44a0ffa3bac7e3cbf5ae74e59}
+
+
+Refresh the metadata for an already opened \doxyref{notesfile}{p.}{structnotesfile}.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em nf}]An open \doxyref{notesfile}{p.}{structnotesfile}.\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]FIXME\end{Desc}
+\begin{Desc}
+\item[Side effects:]The values stored in {\em nf\/} will be modified. \end{Desc}

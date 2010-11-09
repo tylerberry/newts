@@ -1,0 +1,62 @@
+.TH RMNF 1 "August 2004" "Newts" "Newts Reference Manual"
+
+.SH NAME
+rmnf \- delete existing notesfiles
+
+.SH SYNOPSIS
+.B rmnf
+[\fIoptions\fR] \fINOTESFILE\fR...
+
+.SH DESCRIPTION
+.B mknf
+deletes one or more existing notesfiles.
+
+.SH OPTIONS
+
+.TP
+\fB\-f\fR, \fB\-\^\-force\fR
+Normally, `rmnf' will prompt to confirm the deletion of each notesfile, since
+this command can destroy a lot of data.  This option will suppress the
+confirmation request.
+
+.TP
+\fB\-h\fR, \fB\-\^\-help\fR
+Print a summary of usage and command-line options for
+.B rmnf
+and exit.
+
+.TP
+\fB\-v\fR, \fB\-\^\-verbose\fR
+Print a message for each notesfile deleted.
+
+.TP
+\fB\-\^\-debug\fR
+Print debugging messages to standard error.
+
+.TP
+\fB\-\^\-version\fR
+Print version information for
+.B mknf
+and exit.
+
+.SH AUTHOR
+.B Newts
+was written and is maintained by Tyler Berry <tyler+newts@thoughtlocker.net>.
+
+.SH SEE ALSO
+\fBautoseq\fR(1), \fBchecknotes\fR(1), \fBgetnote\fR(1), \fBmknf\fR(1),
+\fBnfadmin\fR(1), \fBnfdump\fR(1), \fBnfload\fR(1), \fBnfmail\fR(1),
+\fBnfpipe\fR(1), \fBnfprint\fR(1), \fBnfstats\fR(1), \fBnftimestamp\fR(1),
+\fBnotes\fR(1)
+
+The full documentation for
+.B Newts
+is maintained as a Texinfo manual.  If the
+.B info
+and
+.B Newts
+programs are properly installed at your site, the command
+.IP
+.B info newts
+.PP
+should give you access to the complete manual.

@@ -1,0 +1,208 @@
+\section{connection.h File Reference}
+\label{connection_8h}\index{connection.h@{connection.h}}
+{\tt \#include \char`\"{}newts/config.h\char`\"{}}\par
+\subsection*{Data Structures}
+\begin{CompactItemize}
+\item 
+struct {\bf connection}
+\end{CompactItemize}
+\subsection*{Enumerations}
+\begin{CompactItemize}
+\item 
+enum {\bf notes\_\-protocols} \{ {\bf NEWTS\_\-PROTOCOL\_\-NCP}
+ \}
+\item 
+enum {\bf notes\_\-standard\_\-ports} \{ {\bf NEWTS\_\-NCP\_\-STANDARD\_\-PORT} =  12345
+ \}
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+struct {\bf connection} $\ast$ {\bf connection\_\-alloc} (void)
+\item 
+void {\bf connection\_\-copy} (struct {\bf connection} $\ast$dest, const struct {\bf connection} $\ast$source)
+\item 
+void {\bf connection\_\-free} (struct {\bf connection} $\ast$conn)
+\item 
+unsigned short {\bf connection\_\-port} (const struct {\bf connection} $\ast$conn)
+\item 
+enum {\bf notes\_\-protocols} {\bf connection\_\-protocol} (const struct {\bf connection} $\ast$conn)
+\item 
+void {\bf connection\_\-set\_\-port} (struct {\bf connection} $\ast$conn, const unsigned short new\_\-port)
+\item 
+void {\bf connection\_\-set\_\-protocol} (struct {\bf connection} $\ast$conn, const enum {\bf notes\_\-protocols} new\_\-protocol)
+\item 
+void {\bf connection\_\-set\_\-system} (struct {\bf connection} $\ast$conn, const char $\ast$new\_\-system)
+\item 
+void {\bf connection\_\-set\_\-user} (struct {\bf connection} $\ast$conn, const char $\ast$new\_\-user)
+\item 
+char $\ast$ {\bf connection\_\-system} (const struct {\bf connection} $\ast$conn)
+\item 
+int {\bf connection\_\-system\_\-is\_\-localhost} (const struct {\bf connection} $\ast$conn)
+\item 
+char $\ast$ {\bf connection\_\-user} (const struct {\bf connection} $\ast$conn)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{connection}{p.}{structconnection} datatype and related functions. 
+
+\subsection{Enumeration Type Documentation}
+\index{connection.h@{connection.h}!notes\_\-protocols@{notes\_\-protocols}}
+\index{notes\_\-protocols@{notes\_\-protocols}!connection.h@{connection.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}enum {\bf notes\_\-protocols}}\label{connection_8h_b4b40fa95abc0896d9bc922c39dc4b50}
+
+
+Symbolic names representing notes protocols. \begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{NEWTS\_\-PROTOCOL\_\-NCP@{NEWTS\_\-PROTOCOL\_\-NCP}!connection.h@{connection.h}}\index{connection.h@{connection.h}!NEWTS\_\-PROTOCOL\_\-NCP@{NEWTS\_\-PROTOCOL\_\-NCP}}\item[{\em 
+NEWTS\_\-PROTOCOL\_\-NCP\label{connection_8h_b4b40fa95abc0896d9bc922c39dc4b50f757caf15670ea02d2a564597d4d2231}
+}]The hypothetical Newts Client Protocol. \end{description}
+\end{Desc}
+
+\index{connection.h@{connection.h}!notes\_\-standard\_\-ports@{notes\_\-standard\_\-ports}}
+\index{notes\_\-standard\_\-ports@{notes\_\-standard\_\-ports}!connection.h@{connection.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}enum {\bf notes\_\-standard\_\-ports}}\label{connection_8h_112934e7c1248d01a0c736f0028fb8db}
+
+
+Symbolic names representing the default ports for the various notes protocols. \begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{NEWTS\_\-NCP\_\-STANDARD\_\-PORT@{NEWTS\_\-NCP\_\-STANDARD\_\-PORT}!connection.h@{connection.h}}\index{connection.h@{connection.h}!NEWTS\_\-NCP\_\-STANDARD\_\-PORT@{NEWTS\_\-NCP\_\-STANDARD\_\-PORT}}\item[{\em 
+NEWTS\_\-NCP\_\-STANDARD\_\-PORT\label{connection_8h_112934e7c1248d01a0c736f0028fb8db6b819494f35a6611d58597dbc6689963}
+}]The default port for NCP. \end{description}
+\end{Desc}
+
+
+
+\subsection{Function Documentation}
+\index{connection.h@{connection.h}!connection\_\-alloc@{connection\_\-alloc}}
+\index{connection\_\-alloc@{connection\_\-alloc}!connection.h@{connection.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}struct {\bf connection}$\ast$ connection\_\-alloc (void)\hspace{0.3cm}{\tt  [read]}}\label{connection_8h_aba5d6ec909057920288a4c0e9dbd7e2}
+
+
+Create a new struct \doxyref{connection}{p.}{structconnection}.
+
+\begin{Desc}
+\item[Returns:]A newly allocated struct \doxyref{connection}{p.}{structconnection}. This should be freed with connection\_\-free when no longer needed.\end{Desc}
+\begin{Desc}
+\item[See also:]\doxyref{connection\_\-free}{p.}{connection_8h_8c8506a17c1843cd1f5c45911e8157a5} \end{Desc}
+\index{connection.h@{connection.h}!connection\_\-copy@{connection\_\-copy}}
+\index{connection\_\-copy@{connection\_\-copy}!connection.h@{connection.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void connection\_\-copy (struct {\bf connection} $\ast$ {\em dest}, const struct {\bf connection} $\ast$ {\em source})}\label{connection_8h_cf9d23692f1743b34b71f85578d195a1}
+
+
+Duplicate an existing \doxyref{connection}{p.}{structconnection}. This is a deep copy; strings from {\em source\/} will be copied, and {\em dest\/} will point to those copied strings, not the originals from {\em source\/}. This function is safe to use if overwriting existing values in {\em dest\/}.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em dest}]The \doxyref{connection}{p.}{structconnection} to copy values to. \item[{\em source}]The \doxyref{connection}{p.}{structconnection} to copy values from.\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Side effects:]The values stored in {\em dest\/} will be modified. Additionally, if {\em dest\/} was previously populated, its existing string elements will be freed before being overwritten. \end{Desc}
+\index{connection.h@{connection.h}!connection\_\-free@{connection\_\-free}}
+\index{connection\_\-free@{connection\_\-free}!connection.h@{connection.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void connection\_\-free (struct {\bf connection} $\ast$ {\em conn})}\label{connection_8h_8c8506a17c1843cd1f5c45911e8157a5}
+
+
+Deallocate {\em \doxyref{connection}{p.}{structconnection}\/}.
+
+\begin{Desc}
+\item[Side effects:]{\em \doxyref{connection}{p.}{structconnection}\/} will be invalidated, and should no longer be used.\end{Desc}
+\begin{Desc}
+\item[See also:]\doxyref{connection\_\-alloc}{p.}{connection_8h_aba5d6ec909057920288a4c0e9dbd7e2} \end{Desc}
+\index{connection.h@{connection.h}!connection\_\-port@{connection\_\-port}}
+\index{connection\_\-port@{connection\_\-port}!connection.h@{connection.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned short connection\_\-port (const struct {\bf connection} $\ast$ {\em conn})}\label{connection_8h_61e1f3ab59264ef3f016eec9f539c1ca}
+
+
+Return the port with which to \doxyref{access}{p.}{structaccess} \doxyref{notesfile}{p.}{structnotesfile} specified by {\em conn\/}.
+
+\begin{Desc}
+\item[See also:]\doxyref{connection\_\-set\_\-port}{p.}{connection_8h_587b941748abb5c0fb962b6763f2f17a} \end{Desc}
+\index{connection.h@{connection.h}!connection\_\-protocol@{connection\_\-protocol}}
+\index{connection\_\-protocol@{connection\_\-protocol}!connection.h@{connection.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}enum {\bf notes\_\-protocols} connection\_\-protocol (const struct {\bf connection} $\ast$ {\em conn})}\label{connection_8h_d8e2df228f1ae12321740a07dd65f0a8}
+
+
+Return the protocol to use to \doxyref{access}{p.}{structaccess} the \doxyref{notesfile}{p.}{structnotesfile} specified by {\em conn\/}.
+
+\begin{Desc}
+\item[See also:]connection\_\-set\_\-protocolB \end{Desc}
+\index{connection.h@{connection.h}!connection\_\-set\_\-port@{connection\_\-set\_\-port}}
+\index{connection\_\-set\_\-port@{connection\_\-set\_\-port}!connection.h@{connection.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void connection\_\-set\_\-port (struct {\bf connection} $\ast$ {\em conn}, const unsigned short {\em new\_\-port})}\label{connection_8h_587b941748abb5c0fb962b6763f2f17a}
+
+
+Modify {\em conn\/} to refer to a \doxyref{notesfile}{p.}{structnotesfile} accessed with port {\em new\_\-port\/}.
+
+\begin{Desc}
+\item[Side effects:]{\em conn\/} will be modified.\end{Desc}
+\begin{Desc}
+\item[See also:]\doxyref{connection\_\-port}{p.}{connection_8h_61e1f3ab59264ef3f016eec9f539c1ca} \end{Desc}
+\index{connection.h@{connection.h}!connection\_\-set\_\-protocol@{connection\_\-set\_\-protocol}}
+\index{connection\_\-set\_\-protocol@{connection\_\-set\_\-protocol}!connection.h@{connection.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void connection\_\-set\_\-protocol (struct {\bf connection} $\ast$ {\em conn}, const enum {\bf notes\_\-protocols} {\em new\_\-protocol})}\label{connection_8h_32b0ac19ab0376144cbdf89901ef603e}
+
+
+Modify {\em conn\/} to refer to a \doxyref{notesfile}{p.}{structnotesfile} accessed with protocol {\em new\_\-protocol\/}.
+
+\begin{Desc}
+\item[Side effects:]{\em conn\/} will be modified.\end{Desc}
+\begin{Desc}
+\item[See also:]\doxyref{connection\_\-protocol}{p.}{connection_8h_d8e2df228f1ae12321740a07dd65f0a8} \end{Desc}
+\index{connection.h@{connection.h}!connection\_\-set\_\-system@{connection\_\-set\_\-system}}
+\index{connection\_\-set\_\-system@{connection\_\-set\_\-system}!connection.h@{connection.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void connection\_\-set\_\-system (struct {\bf connection} $\ast$ {\em conn}, const char $\ast$ {\em new\_\-system})}\label{connection_8h_c1200e8fffc1c536229f873e07c6b7d9}
+
+
+Modify {\em conn\/} to refer to a \doxyref{notesfile}{p.}{structnotesfile} on system {\em new\_\-system\/}.
+
+\begin{Desc}
+\item[Side effects:]{\em conn\/} will be modified.\end{Desc}
+\begin{Desc}
+\item[See also:]\doxyref{connection\_\-system}{p.}{connection_8h_6afbb69a9f49a133aa649fe60c9fb3a5} \end{Desc}
+\index{connection.h@{connection.h}!connection\_\-set\_\-user@{connection\_\-set\_\-user}}
+\index{connection\_\-set\_\-user@{connection\_\-set\_\-user}!connection.h@{connection.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void connection\_\-set\_\-user (struct {\bf connection} $\ast$ {\em conn}, const char $\ast$ {\em new\_\-user})}\label{connection_8h_fba8629b3e7b5e687f7fdec719a5b642}
+
+
+Modify {\em conn\/} to refer to a \doxyref{notesfile}{p.}{structnotesfile} to which we're going to connect as {\em new\_\-user\/}.
+
+\begin{Desc}
+\item[Side effects:]{\em conn\/} will be modified.\end{Desc}
+\begin{Desc}
+\item[See also:]\doxyref{connection\_\-user}{p.}{connection_8h_c424c95abe21ddd2e79a7a1a76968e73} \end{Desc}
+\index{connection.h@{connection.h}!connection\_\-system@{connection\_\-system}}
+\index{connection\_\-system@{connection\_\-system}!connection.h@{connection.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ connection\_\-system (const struct {\bf connection} $\ast$ {\em conn})}\label{connection_8h_6afbb69a9f49a133aa649fe60c9fb3a5}
+
+
+Return the system on which the \doxyref{notesfile}{p.}{structnotesfile} specified by {\em conn\/} is found.
+
+\begin{Desc}
+\item[See also:]\doxyref{connection\_\-set\_\-system}{p.}{connection_8h_c1200e8fffc1c536229f873e07c6b7d9} \end{Desc}
+\index{connection.h@{connection.h}!connection\_\-system\_\-is\_\-localhost@{connection\_\-system\_\-is\_\-localhost}}
+\index{connection\_\-system\_\-is\_\-localhost@{connection\_\-system\_\-is\_\-localhost}!connection.h@{connection.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int connection\_\-system\_\-is\_\-localhost (const struct {\bf connection} $\ast$ {\em conn})}\label{connection_8h_5ed9927aec46d21a99fee0f9e3599f09}
+
+
+Return TRUE if the \doxyref{notesfile}{p.}{structnotesfile} specified by {\em conn\/} refers to a \doxyref{notesfile}{p.}{structnotesfile} on localhost, or FALSE otherwise.
+
+This is defined to be true if \doxyref{connection\_\-system (conn)}{p.}{connection_8h_6afbb69a9f49a133aa649fe60c9fb3a5} would return NULL, \char`\"{}\char`\"{}, or \char`\"{}localhost\char`\"{}.
+
+FIXME: Obviously, this is a little braindead.
+
+\begin{Desc}
+\item[See also:]\doxyref{connection\_\-system}{p.}{connection_8h_6afbb69a9f49a133aa649fe60c9fb3a5} \end{Desc}
+\index{connection.h@{connection.h}!connection\_\-user@{connection\_\-user}}
+\index{connection\_\-user@{connection\_\-user}!connection.h@{connection.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ connection\_\-user (const struct {\bf connection} $\ast$ {\em conn})}\label{connection_8h_c424c95abe21ddd2e79a7a1a76968e73}
+
+
+Return the user with which we're going to connect to the server specified by {\em conn\/}.
+
+\begin{Desc}
+\item[See also:]\doxyref{connection\_\-set\_\-user}{p.}{connection_8h_fba8629b3e7b5e687f7fdec719a5b642}, \doxyref{connection\_\-system\_\-is\_\-localhost}{p.}{connection_8h_5ed9927aec46d21a99fee0f9e3599f09} \end{Desc}

@@ -1,0 +1,4 @@
+include Makefile
+
+EXTRA_DIST += GNUmakefile
+INCLUDES += -I$(top_srcdir)/include

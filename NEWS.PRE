@@ -1,0 +1,299 @@
+Old Prerelease Newts NEWS                                       -*- Outline -*-
+-------------------------------------------------------------------------------
+
+* Wednesday, June 25, 2003 - Newts 0.11
+
+- Disabled building noted - after all, it's completely unused, and serving as a
+  potential red herring at the moment
+- ':' key to approve a moderated note
+- Added '\' as a "search again" key corresponding to '/'
+- Added support for displaying error messages and notifications post-curses
+- Documentation:
+  . "Reading" section
+- Extension:
+  . Added real moderation, in the form of notes hidden before director approval
+    (this currently only really works for basenotes; I'm not quite sure what
+    I'm going to do with responses and this feature)
+- Portability
+  . More additions from gnulib, notably vasprintf and dirname
+- Code audit:
+  . Fixed more FIXMEs in the code
+  . General cleanup and editing of source text and comments
+  . Made sure Essick/Kolstad license notice was omnipresent
+- Bugfixes:
+  . Fixed client to print 'return to index' rather than 'next note' when
+    viewing a policy note
+  . Made '/' search properly case-insensitive
+  . Fixed bug in searching from the index page where the wrong note was
+    displayed if a response was located
+  . Fixed a stupid bug where rmnf didn't add the owner name correctly
+  . Fixed a segfault entering the access screen
+  . Fixed a time-bug; all times are internally stored in GMT
+  . Fixed a number of backend bugs revealed by the activation of moderation
+    feature
+
+* Tuesday, June 3, 2003 - Newts 0.10.1
+
+- Finally added a README file
+- Moved client/ to clients/notes/
+- Modified nfload to prompt for confirmation before changing existing things
+- Portability:
+  . Modified configure to use gnulib very heavily
+  . Checks for alloca, regex, rpmatch
+- Bugfixes:
+  . Fixed rmnf to not be stupid about nonexistent notesfiles
+
+* Thursday, May 29, 2003 - Newts 0.10
+
+- autoseq, nfadmin, nfload, nfmail, nfprint, nftimestamp
+- Updated printnote to handle responses
+- Added ':FILE' parsing option and -f command-line option to parse lists of
+  notesfile specifications stored in a file
+- Modified sequencer to not trip on blacklists or on one's own notes
+- (Hebble) Added naive word wrapping
+- (Hebble) Added use of GECOS for local users in appropriate places
+- Activated i18n with gettext in client and frontends
+- Added pattern-matching in the notesfile parsing routine (*, !, [], etc.)
+- Added automatic signature support, ~/.signature and friends
+- Added support for the NFSEQ environment variable
+- Blacklisting, compatible with Paul Hebble's 'notewrap' (with extensions)
+- (Schaefer) '/' text search now highlights and scrolls to the text you
+  searched for
+- Standardized appearance throughout non-traditional mode
+- Documentation:
+  . "Entering and Exiting" section
+  . nfadmin, nfload, nfmail, nfprint, nftimestamp
+- Portability:
+  . Added check to find a default pager
+  . Added check for fdatasync(2) to fall back on fsync(2)
+  . Synced much of lib/ with gnulib
+- Code audit:
+  . Corrected lots of FIXME issues in the code
+  . Completely rewrote client/parse.c to handle canonical notesfile names
+  . Updated nfstats to display only real stats
+  . Cleaned up backend API to make the call paradigm more sparse
+  . Added substantial comments to client code
+  . Added calls to fdatasync(2) in locking code; reorganized locks
+- Bugfixes:
+  . Moved get_next_bug to the server-side
+  . (Watts) Typo on the help pages
+  . Allow "today" and "now" (i.e. time (NULL)) as a valid time for sequencer
+  . Changed internal representation of anonymous to "Anonymous" to match UIUC
+  . Fixed minor text errors in director options and access in traditional mode
+  . Added message when entering locked notesfile as director in traditional
+    mode
+  . Fixed a bug in the sequencer that interfered with blacklists
+  . Fixed crash when trying to open a note number larger than the last note's
+  . Changed getfqdn() to be smart about localhost
+  . Print an error message if -o TIME option is given in the future
+  . Save the sequencer value while nesting to a non-sequenced notesfile
+  . (Hebble) Fixed segfault and 'phantom note' after editing a policy note
+  . Fixed a typo on the limited index screen
+  . (Urman) Fixed a typo in autoseq which failed to pass parameters
+  . Fixed buffering in note reading by eliminating it and replacing it with
+    dynamic memory allocation
+  . Fixed a problem with quoting really long lines
+  . Fixed seqing so that the screen won't clear if there are no notes to read
+  . Fixed problems in the pager code with storing page offsets
+  . Fixed word wrap to wrap to 0 characters from the right side of the screen
+  . Fixed long author name displays to look slightly better
+  . Fixed bug in .SEQ file (unique ID tracking file) which caused it to not be
+    properly read
+  . Fixed backend to not use buffered I/O in conjunction with POSIX file locks
+
+* Sunday, Apr 13, 2003 - Newts 0.9
+
+- Advisory file locking using fcntl(2) in the UIUC backend
+- Changed Notes to setuid - only until server is working
+- The 'limited index', used to select a note when copying a response
+- Initial try at bug reporting with 'V'
+- Edit a note's text with 'E'
+- Send mail with 'm', 'M', 'p', and 'P'
+- Vector a string of notes with v'
+- 'talk' (or ytalk, com, write) to a note's author with 't'
+- Spawn a subshell with '!'
+- Copying a single note or response with 'c' and 'C'
+- Forwarding a string of notes with 'f' and 'F'
+- Save text from a single note or a string to a file with 's' and 'S'
+- Quote text while replying to a note with 'W'
+- Help screens updated
+- Documentation:
+  . Added "history of notesfiles" essay
+  . Added usage information for Notes.
+- Extension:
+  . Added tilde expansion to notesfile names and saved files
+- Portability
+  . Added checks to find a default mailer and talk program
+  . Changed the tb_DEFINE_PROGS macro to use full paths instead of just
+    basenames
+- Code audit:
+  . Moved all of my own source from lib/ to libibby/ except source used by
+    LTLIBOBJS, which has to be in lib/ because automake says so
+  . Added TEMP_FAILURE_RETRY to all relevant syscalls (redundant with
+    _GNU_SOURCE, but a little redundancy never hurt nobody)
+  . Made configure print banners at midpoints, to relieve the monotony a bit
+  . Corrected copyright blocks for client/*
+- Bugfixes:
+  . DTRT when no text is entered for a response - stay in the same response
+  . (Hebble) Fixed gettext support in various instances of Makefile.am
+  . Fixed things to be Daylight Savings Time compatible (Today was the
+    crossover day)
+  . (Urman) Problem with the which routine wiping out old results
+  . (Urman) Fixed bug where 'd' on a response caused file corruption
+  . (Urman) Re-entered keypad mode after forking out to an editor/shell
+  . (Urman) Fixed a segfault when NFED (etc) was set to a nonexistent binary
+  . (Urman) Fixed WRITEONLY flag handling during compression
+  . (Urman) Fixed 'e' to actually change the title
+  . (Urman) Fixed create_nf to create spool directory if necessary
+  . Fixed sequencer to create .sequencer directory if necessary
+  . Fixed display error in traditional mode in director screen, where certain
+    error messages were not being displayed
+  . Fixed display error for dates written by UIUC notes on the index
+  . Fixed display errors in the access screen where certain lines were not
+    cleared
+  . Fixed pointer error preventing altering the director message
+  . Fixed pervasive display bug after displaying an error in view mode
+  . (Urman) Security bug when execing new processes; drop setgid privs
+
+* Sunday, Mar 23 2003 - Newts 0.8
+
+- Compression of notesfiles to remove holes caused by deletes
+- Writing anonymous notes and responses
+- Editing a note's title with 'e'
+- Deleting and undeleting notes with 'z' and 'u' in director options screen
+- Deleting notes with 'D' and 'Z' while reading
+- Sorting in access privilege screen (mergesort)
+- Help screens updated
+- Added handling for corrupted notes
+- Documentation
+  . getline documentation, which reminds me just how much I want Readline
+  . Updated utlities documentation to use much more Texinfo markup
+- Extension:
+  . Text search with '/'
+- Portability
+  . Added configure check for ncurses/curses
+- Bugfixes:
+  . Fixed a bug in all types of search where screen failed to update
+  . Fixed a memory leak in note retrieval (director message strings were
+    sometimes set to NULL without being freed)
+  . Fixed sequencer to only update seqtime when you're seqing
+  . Fixed a bunch of screen redisplay issues in the director options screen
+  . Added code to update the current newtsfile information - this fixes
+    multiple instances in the code where the correct info wasn't necessarily
+    being displayed
+  . Fixed a bug in the response chain code which caused a stall when we tried
+    to access more than RESPSZ responses.
+
+* Tuesday, Mar 18 2003 - Newts 0.7
+
+- checknotes
+- Access privileges implemented
+- Access privilege edit screen implemented
+- Working implementation of linked lists (doubly-linked lists and itrees are
+  still untested)
+- Added director message toggle
+- Added 'o' and 'O' sequencer time adjusters on index page
+- Alternate sequencers (subsequencers)
+- Added a pretty centered index for non-traditional mode (lots of voodoo)
+- Reduced memory usage slightly by using short instead of int in various places
+- Help screens updated
+- Documentation:
+  . checknotes
+- Code audit:
+  . Corrected copyright blocks for frontends/*
+- Bugfixes:
+  . Fixed SIGSEGV bug during creation of new sequencer files
+  . Corrected index appearance again; max of 9999 basenotes for a uniform look
+    (note that this does not limit number allowed; just the number that would
+    look good in the UIUC client layout)
+  . Fix to match UIUC behavior with --traditional: disabled 'i' key in
+    director options
+  . Added additional boundary checks and string validation in UIUC module
+  . Fixed a dormant bug in the server nf opening code where the access
+    permissions weren't being properly passed on to the Newts structures
+  . 'C-d' and 'z' were backwards, both in code and help
+
+* Sunday, Mar 16 2003 - Newts 0.6
+
+- Seqing (all modes except alternate sequencers)
+- Title search
+- Help screens updated
+- Added caching of author/title search values, used in non-traditional mode
+- Portability
+  . Added replacement function for strncasecmp
+- Code audit:
+  . Corrected copyright blocks/comment widths for noted/backends/uiuc/*
+- Bugfixes:
+  . Fixed screen display issues with searching while reading notes
+  . Fixed a parsing bug with trailing slashes after a notesfile name
+
+* Thursday, Mar 13 2003 - Newts 0.5a
+
+- Author search
+- Reorganized note reading to combine paging into main command loop
+- Began writing Texinfo manual
+- Documentation:
+  . mknf, nfpipe, nfstats, printnote, and rmnf
+- Bugfixes:
+  . Weird bug for responses fixed? (See note below)
+  . Author search delayed action bug fixed
+
+  (Okay, there was this really weird bug. Specifically, the -second- response
+   that another user made to a basenote would cause a SIGSEGV. I added a memset
+   to 0 for a buffer that I suspect may have been the culprit, and problem went
+   away. Draw your own conclusions. ADDENDUM: it's never come back.)
+
+* Wednesday, Mar 12 2003 - Newts 0.5
+
+- Read responses
+- Write responses
+- Help screens updated
+- Portability:
+  . Added a configure option to use an included copy of GNU malloc
+  . Added replacement functions for strcasecmp and strtol
+- Code audit:
+  . Corrected copyright blocks for lib/*
+- Bugfixes:
+  . Enter a newly written note after composing it
+  . Director options screen [KQ] options fixed to behave correctly
+  . Help screens behave correctly when windows resize
+  . Fixes to better match UIUC notes with --traditional
+  . Made nfstats smarter when only one nf requested
+  . (Schaefer) Made things look normal on the index screen for up to 99999
+    basenotes and up to 99999 responses per basenote (this is to guard against
+    things like the hexadecimal counting game in =duckdom)
+
+* Tuesday, Mar 4 2003 - Newts 0.4h
+
+- Help screens for index, director options, reading note
+- Bugfix:
+  . Scrolling with arrow keys while reading note
+
+* Sunday, Mar 2 2003 - Newts 0.4
+
+- Policy notes
+- Director messages
+- Director options
+- Extension:
+  . Directors see '-' in the status column for deleted notes (and the deleted
+    notes are visible to directors).
+- Code audit:
+  . Eliminated strcpy, strcat, sprintf in UIUC module
+- Bugfixes:
+  . (Urman) Improved parsing nfs from command line
+  . (Urman) Fixed SIGSEGV after forking to an invalid program
+
+* Thursday, Jan 16 2003 - Newts 0.3
+
+- nfpipe, printnote
+- Reading and writing notes
+- Expanded UIUC backend
+
+* Dec 2002 - Newts 0.2 (unreleased)
+
+- mknf, rmnf, nfstats
+- Index screen
+
+* Sep 2002 - Newts 0.1 (unreleased)
+
+- Basics of UIUC backend

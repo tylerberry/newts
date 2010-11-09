@@ -1,0 +1,59 @@
+.TH GETNOTE 1 "August 2004" "Newts" "Newts Reference Manual"
+
+.SH NAME
+getnote \- print a single note or response to standard output
+
+.SH SYNOPSIS
+.B getnote
+[\fIoptions\fR] \fINOTESFILE\fR \fINOTE\fR [\fIRESPONSE\fR]
+
+.SH DESCRIPTION
+.B getnote
+prints either a single note or a single response from a particular notesfile to
+standard output.
+
+.SH OPTIONS
+
+.TP
+\fB\-h\fR, \fB\-\^\-help\fR
+Print a summary of usage and command-line options for
+.B getnote
+and exit.
+
+.TP
+\fB\-p\fR, \fB\-\^\-print\-header\fR
+Preface the text of the note with a header containing information about the
+note, including notesfile, note and response number, title, director message,
+and author.
+
+.TP
+\fB\-\^\-debug\fR
+Print debugging messages to standard error.
+
+.TP
+\fB\-\^\-version\fR
+Print version information for
+.B getnote
+and exit.
+
+.SH AUTHOR
+.B Newts
+was written and is maintained by Tyler Berry <tyler+newts@thoughtlocker.net>.
+
+.SH SEE ALSO
+\fBautoseq\fR(1), \fBchecknotes\fR(1), \fBmknf\fR(1), \fBnfadmin\fR(1),
+\fBnfdump\fR(1), \fBnfload\fR(1), \fBnfmail\fR(1), \fBnfpipe\fR(1),
+\fBnfprint\fR(1), \fBnfstats\fR(1), \fBnftimestamp\fR(1), \fBnotes\fR(1),
+\fBrmnf\fR(1)
+
+The full documentation for
+.B Newts
+is maintained as a Texinfo manual.  If the
+.B info
+and
+.B Newts
+programs are properly installed at your site, the command
+.IP
+.B info newts
+.PP
+should give you access to the complete manual.

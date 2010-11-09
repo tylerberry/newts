@@ -1,0 +1,78 @@
+.TH NFPIPE 1 "August 2004" "Newts" "Newts Reference Manual"
+
+.SH NAME
+nfpipe \- insert data into a notesfile
+
+.SH SYNOPSIS
+.B nfpipe
+[\fIoptions\fR] [\fIFILE\fR] \fINOTESFILE\fR
+
+.SH DESCRIPTION
+.B nfpipe
+takes text from standard input (or from FILE if specified) and
+use it as the text for a newly created note in NOTESFILE.
+
+Generally speaking, \fBnfpipe\fR is intended to be used in one of two ways.
+First, it can be used to insert text from a file into a notesfile; second, it
+can be used along with a pipe to save output from another program into a
+notesfile - hence the name "nfpipe".
+
+.SH OPTIONS
+
+.TP
+\fB\-a\fR, \fB\-\^\-anonymous\fR
+If the notesfile allows anonymous notes, make the new note anonymous.
+
+.TP
+\fB\-d\fR, \fB\-\^\-director\-msg\fR[=\fIMESSAGE\fR]
+Set the new note's director message.  If the notesfile uses a backend which
+allows per-note director messages as opposed to per-notesfile director
+messages, you may provide the message you would like to be displayed for this
+note.  (If the notesfile does not support this feature, the director message
+flag will still be set, but the notesfile's director message will be used.)
+
+.TP
+\fB\-h\fR, \fB\-\^\-help\fR
+Print a summary of usage and command-line options for
+.B nfpipe
+and exit.
+
+.TP
+\fB\-t\fR, \fB\-\^\-title\fR=\fITITLE\fR
+Set the new note's title.
+
+.TP
+\fB\-v\fR, \fB\-\^\-verbose\fR
+Print a confirmation message after creating the new note.
+
+.TP
+\fB\-\^\-debug\fR
+Print debugging messages to standard error.
+
+.TP
+\fB\-\^\-version\fR
+Print version information for
+.B nfpipe
+and exit.
+
+.SH AUTHOR
+.B Newts
+was written and is maintained by Tyler Berry <tyler+newts@thoughtlocker.net>.
+
+.SH SEE ALSO
+\fBautoseq\fR(1), \fBchecknotes\fR(1), \fBgetnote\fR(1), \fBmknf\fR(1),
+\fBnfadmin\fR(1), \fBnfdump\fR(1), \fBnfload\fR(1), \fBnfmail\fR(1),
+\fBnfprint\fR(1), \fBnfstats\fR(1), \fBnftimestamp\fR(1), \fBnotes\fR(1),
+\fBrmnf\fR(1)
+
+The full documentation for
+.B Newts
+is maintained as a Texinfo manual.  If the
+.B info
+and
+.B Newts
+programs are properly installed at your site, the command
+.IP
+.B info newts
+.PP
+should give you access to the complete manual.

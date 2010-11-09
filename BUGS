@@ -1,0 +1,16 @@
+BUGS in Newts.                                                     -*- Text -*-
+-------------------------------------------------------------------------------
+Time-stamp: <2007-11-18 12:24:08 tyler>
+
+* If the permissions of /var/spool/notes are wrong...
+
+Things will crash pretty bad. An example is checknotes.
+
+* If your clock's unset...
+
+Newts will probably break, and break hard. I don't know why, and frankly I
+don't really care that much. If your hardware clock thinks that the epoch
+started twenty seconds ago you've got bigger problems than whether or not Newts
+is working. Set your clock! (Footnote: my hardware clock does not persist over
+restarts, and the not-workingness of notes tends to help remind me. So if this
+gets fixed, somebody else is gonna hafta do it.)

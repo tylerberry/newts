@@ -1,0 +1,87 @@
+.TH NFLOAD 1 "August 2004" "Newts" "Newts Reference Manual"
+
+.SH NAME
+nfload \- load a saved image of a notesfile
+
+.SH SYNOPSIS
+.B nfload
+[\fIoptions\fR] \fIFILE\fR \fINOTESFILE\fR
+
+.SH DESCRIPTION
+.B nfload
+reads in a saved image from \fBnfdump\fR(1) and restores that image, into either an
+existing or a new notesfile.
+
+.B nfload
+will also correctly load dumpfiles created by the version of \fBnfdump\fR(1)
+included in UIUC Notesfiles.
+
+.SH OPTIONS
+
+.TP
+\fB\-a\fR, \fB\-\^\-force\-access\fR
+Do not prompt for confirmation before adding or updating access entries.
+
+.TP
+\fB\-f\fR, \fB\-\^\-force\fR
+Do not prompt for confirmation before making changes to the notesfile.  This
+option implies \fB\-\^\-force\-access\fR.
+
+.TP
+\fB\-h\fR, \fB\-\^\-help\fR
+Print a summary of usage and command-line options for
+.B nfload
+and exit.
+
+.TP
+\fB\-r\fR, \fB\-\^\-replace\-access\fR
+Delete all existing access entries from the notesfile prior to adding the
+access entries specified in the saved image.  This option implies
+\fB\-\^\-force\-access\fR.
+
+.TP
+\fB\-s\fR, \fB\-\^\-skip\-access\fR
+Do not make any changes to the notesfile's access entries; if the notesfile is
+created by running \fBnfload\fR, it will be left with the default set of access
+entries.  Neither \fB\-\^\-force\-access\fR nor \fB\-\^\-replace\-access\fR
+will have any effect if this option is specified.
+
+.TP
+\fB\-v\fR, \fB\-\^\-verbose\fR
+Print confirmation messages for each successfully processed portion of a
+notesfile image.
+
+.TP
+\fB\-\^\-debug\fR
+Print debugging messages to standard error, including state information from
+the parser and other details.  This is most likely more information that you
+need, but it might be interesting and it will certainly help if you need to
+debug a broken file.
+
+.TP
+\fB\-\^\-version\fR
+Print version information for
+.B nfload
+and exit.
+
+.SH AUTHOR
+.B Newts
+was written and is maintained by Tyler Berry <tyler+newts@thoughtlocker.net>.
+
+.SH SEE ALSO
+\fBautoseq\fR(1), \fBchecknotes\fR(1), \fBgetnote\fR(1), \fBmknf\fR(1),
+\fBnfadmin\fR(1), \fBnfdump\fR(1), \fBnfmail\fR(1), \fBnfpipe\fR(1),
+\fBnfprint\fR(1), \fBnfstats\fR(1), \fBnftimestamp\fR(1), \fBnotes\fR(1),
+\fBrmnf\fR(1)
+
+The full documentation for
+.B Newts
+is maintained as a Texinfo manual.  If the
+.B info
+and
+.B Newts
+programs are properly installed at your site, the command
+.IP
+.B info newts
+.PP
+should give you access to the complete manual.

@@ -1,0 +1,151 @@
+\section{stats Struct Reference}
+\label{structstats}\index{stats@{stats}}
+{\tt \#include $<$stats.h$>$}
+
+\subsection*{Data Fields}
+\begin{CompactItemize}
+\item 
+unsigned {\bf notes\_\-read}
+\item 
+unsigned {\bf resps\_\-read}
+\item 
+unsigned {\bf notes\_\-written}
+\item 
+unsigned {\bf resps\_\-written}
+\item 
+unsigned {\bf notes\_\-received}
+\item 
+unsigned {\bf resps\_\-received}
+\item 
+unsigned {\bf notes\_\-sent}
+\item 
+unsigned {\bf resps\_\-sent}
+\item 
+unsigned {\bf notes\_\-dropped}
+\item 
+unsigned {\bf resps\_\-dropped}
+\item 
+unsigned {\bf network\_\-sends}
+\item 
+unsigned {\bf network\_\-receipts}
+\item 
+unsigned {\bf orphans\_\-received}
+\item 
+unsigned {\bf orphans\_\-adopted}
+\item 
+unsigned {\bf entries}
+\item 
+unsigned {\bf total\_\-time}
+\item 
+time\_\-t {\bf created}
+\item 
+time\_\-t {\bf last\_\-used}
+\item 
+unsigned {\bf days\_\-used}
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Various statistics about a given \doxyref{notesfile}{p.}{structnotesfile}. 
+
+\subsection{Field Documentation}
+\index{stats@{stats}!notes\_\-read@{notes\_\-read}}
+\index{notes\_\-read@{notes\_\-read}!stats@{stats}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf stats::notes\_\-read}}\label{structstats_6fe30671ac4ad23f8b664270326fce3b}
+
+
+Number of times any note in this \doxyref{notesfile}{p.}{structnotesfile} has been read. \index{stats@{stats}!resps\_\-read@{resps\_\-read}}
+\index{resps\_\-read@{resps\_\-read}!stats@{stats}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf stats::resps\_\-read}}\label{structstats_2d9ff082db40df4a79c1f271e23fcf17}
+
+
+Number of times any response in this \doxyref{notesfile}{p.}{structnotesfile} has been read. \index{stats@{stats}!notes\_\-written@{notes\_\-written}}
+\index{notes\_\-written@{notes\_\-written}!stats@{stats}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf stats::notes\_\-written}}\label{structstats_08ff59275fdc9e20a18728ea0b0046db}
+
+
+Number of times a note has been written in this \doxyref{notesfile}{p.}{structnotesfile}. \index{stats@{stats}!resps\_\-written@{resps\_\-written}}
+\index{resps\_\-written@{resps\_\-written}!stats@{stats}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf stats::resps\_\-written}}\label{structstats_d4056b030debe8789b0bf79c54dfa636}
+
+
+Number of times a response has been written in this \doxyref{notesfile}{p.}{structnotesfile}. \index{stats@{stats}!notes\_\-received@{notes\_\-received}}
+\index{notes\_\-received@{notes\_\-received}!stats@{stats}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf stats::notes\_\-received}}\label{structstats_d35ba9e6488dd565d525391d319fdd8b}
+
+
+Number of times a note has been received via the network and inserted into this \doxyref{notesfile}{p.}{structnotesfile}. Currently unused. \index{stats@{stats}!resps\_\-received@{resps\_\-received}}
+\index{resps\_\-received@{resps\_\-received}!stats@{stats}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf stats::resps\_\-received}}\label{structstats_19d2dc631f27e819a4a5a9d6d2cf8b11}
+
+
+Number of times a response has been received via the network and inserted into this \doxyref{notesfile}{p.}{structnotesfile}. Currently unused. \index{stats@{stats}!notes\_\-sent@{notes\_\-sent}}
+\index{notes\_\-sent@{notes\_\-sent}!stats@{stats}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf stats::notes\_\-sent}}\label{structstats_bf1ecdf9e8469b7c63691c3fdc0f7958}
+
+
+Number of times a note from this \doxyref{notesfile}{p.}{structnotesfile} has been transmitted via the network. Currently unused. \index{stats@{stats}!resps\_\-sent@{resps\_\-sent}}
+\index{resps\_\-sent@{resps\_\-sent}!stats@{stats}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf stats::resps\_\-sent}}\label{structstats_99d4ba36d82a28d1bff042356ee3a6a2}
+
+
+Number of times a response from this \doxyref{notesfile}{p.}{structnotesfile} has been transmitted via the network. Currently unused. \index{stats@{stats}!notes\_\-dropped@{notes\_\-dropped}}
+\index{notes\_\-dropped@{notes\_\-dropped}!stats@{stats}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf stats::notes\_\-dropped}}\label{structstats_86dea82243d353de0f1d3a86b48cd8da}
+
+
+Number of duplicate notes received and discarded. Currently unused. \index{stats@{stats}!resps\_\-dropped@{resps\_\-dropped}}
+\index{resps\_\-dropped@{resps\_\-dropped}!stats@{stats}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf stats::resps\_\-dropped}}\label{structstats_5554beb1cc3f51abef6a7c4026cadb78}
+
+
+Number of duplicate responses received and discarded. Currently unused. \index{stats@{stats}!network\_\-sends@{network\_\-sends}}
+\index{network\_\-sends@{network\_\-sends}!stats@{stats}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf stats::network\_\-sends}}\label{structstats_e37abed9a495e0ebed0716f0aa0b8c84}
+
+
+Number of times an outgoing network \doxyref{connection}{p.}{structconnection} has been established for this \doxyref{notesfile}{p.}{structnotesfile}. Currently unused. \index{stats@{stats}!network\_\-receipts@{network\_\-receipts}}
+\index{network\_\-receipts@{network\_\-receipts}!stats@{stats}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf stats::network\_\-receipts}}\label{structstats_c6f0c21931b2748d90848da1763f648b}
+
+
+Number of times an incoming network \doxyref{connection}{p.}{structconnection} has been established for this \doxyref{notesfile}{p.}{structnotesfile}. Currently unused. \index{stats@{stats}!orphans\_\-received@{orphans\_\-received}}
+\index{orphans\_\-received@{orphans\_\-received}!stats@{stats}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf stats::orphans\_\-received}}\label{structstats_b16ad519e32fe4a6ebea321b545f4f0e}
+
+
+Number of 'orphaned responses', or responses for which the basenote could not be determined, received via the network for this \doxyref{notesfile}{p.}{structnotesfile}. Currently unused. \index{stats@{stats}!orphans\_\-adopted@{orphans\_\-adopted}}
+\index{orphans\_\-adopted@{orphans\_\-adopted}!stats@{stats}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf stats::orphans\_\-adopted}}\label{structstats_cc3445736694c343cf7cf87c490bc0d3}
+
+
+Number of 'orphaned responses', or responses for which the basenote could not be determined, received via the network and adopted into a basenote in this notesfiles. Currently unused. \index{stats@{stats}!entries@{entries}}
+\index{entries@{entries}!stats@{stats}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf stats::entries}}\label{structstats_b6c15ab42bfff39104af7cfe6951b514}
+
+
+Number of times a user has entered this \doxyref{notesfile}{p.}{structnotesfile}. \index{stats@{stats}!total\_\-time@{total\_\-time}}
+\index{total\_\-time@{total\_\-time}!stats@{stats}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf stats::total\_\-time}}\label{structstats_b8b78535c60a53e505f0e36f56323959}
+
+
+Total time in seconds spent in this \doxyref{notesfile}{p.}{structnotesfile} by users. \index{stats@{stats}!created@{created}}
+\index{created@{created}!stats@{stats}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}time\_\-t {\bf stats::created}}\label{structstats_245c299e908a593f519c271269418f72}
+
+
+The date this \doxyref{notesfile}{p.}{structnotesfile} was created. \index{stats@{stats}!last\_\-used@{last\_\-used}}
+\index{last\_\-used@{last\_\-used}!stats@{stats}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}time\_\-t {\bf stats::last\_\-used}}\label{structstats_cf5d2d234eea0d8b5fb2c0b29eb7dcba}
+
+
+The last time this \doxyref{notesfile}{p.}{structnotesfile} was entered by a user. \index{stats@{stats}!days\_\-used@{days\_\-used}}
+\index{days\_\-used@{days\_\-used}!stats@{stats}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf stats::days\_\-used}}\label{structstats_11dbd9da16f2082afa104dd9880c0550}
+
+
+The number of distinct calendars days on which at least one user entered this \doxyref{notesfile}{p.}{structnotesfile}. 
+
+The documentation for this struct was generated from the following file:\begin{CompactItemize}
+\item 
+{\bf stats.h}\end{CompactItemize}

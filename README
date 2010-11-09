@@ -1,0 +1,100 @@
+README for the Newts notesfile system                              -*- Text -*-
+-------------------------------------------------------------------------------
+
+[Please take the time to fill out the Newts SURVEY, included in this directory;
+your feedback will help me continue to improve the Newts software.]
+
+This is Newts 0.15, a notesfile message board system in the tradition of PLATO
+Notes and Notesfiles by Ray Essick and Rob Kolstad.
+
+Newts 0.15 is a production-quality beta release; the UIUC client and UIUC
+backend are complete and in the ongoing process of being polished.  The 0.15
+release includes a complete and final client API, suitable for utility and
+bindings development.
+
+The 1.0 release of Newts will split the unified trusted client model into an
+untrusted client and trusted server. The 1.0 release may involve API
+modifications, but the interface should remain substantially the same.
+
+It bears repeating that Newts is still in beta, although based on fairly heavy
+testing I think I've eliminated most of the egregious bugs.  You're definitely
+encouraged to back up any existing notesfile data files before testing Newts.
+If you find a bug in Newts, please let me know so I can get it fixed and
+incorporated into the next release.
+
+Despite that disclaimer, Newts has proven to be consistently more stable than
+Notesfiles.  My testing has shown that it is able to detect corrupted notes
+before loading them (and thereby causing a segfault) -- this means that
+individual notesfiles shouldn't ever acquire 'embedded segfaults'.
+Furthermore, compression and similar actions handle corrupted notes gracefully.
+
+The pervasive use of POSIX file locking in the UIUC backend should eliminate
+the phenomenon sometimes referred to as "nortz", where multiple instances write
+into a single notesfile at the same time, producing a corrupted note.  Each
+released version should be at least mostly free of segfaults; exceptions are
+documented in BUGS.  Finally, I'm not aware of any situations where Newts will
+simply hang.
+
+On the other hand, if this is an interim release or if you got the source from
+Subversion, all bets are off.
+
+Newts is designed to support a modular interface for database backends.
+Currently, Newts includes only one backend; namely, a flatfile database
+compatible with the database used by Essick and Kolstad's Notesfiles 1.7.  In
+the future, I'd like to offer various other backends, such as MySQL, dbm, and
+Berkeley DB.
+
+Newts currently includes a single client, which is designed to be reminiscent
+of the client used in Notesfiles 1.7.  There have been some fairly significant
+changes, such as the addition of the ability to handle backspaces correctly,
+and some modifications to error messages and the like.  If you prefer a client
+as close in appearance to Notesfiles as possible, the Newts version of notes
+provides the --traditional switch to act even more like Notesfiles.  (Behaviors
+which I considered to be bugs, such as the inability to handle backspaces, are
+still different in traditional mode.)
+
+I have to date only tested Newts on Linux -- specifically, Debian, Gentoo, and
+Linux From Scratch, on x86 and PPC -- and on Darwin, better known as Mac OS X.
+If you have a different configuration, you might run into trouble.  Please let
+me know if you do.  For that matter, please let me know if you don't, as well.
+
+There are a couple gotchas in the configuration process you should definitely
+know about before trying to compile Newts.
+
+First, if you are using Newts to replace an existing UIUC notesfiles
+installation, and you have modified either the parms.h or structs.h files in
+the UIUC distribution, you will have to modify the Newts header
+include/newts/uiuc-compatibility.h to reflect those changes, if you want Newts
+to work with the data files created by UIUC notesfiles.  There is unfortunately
+no real convenient way to automate this process.
+
+Second, there are some important configuration options you ought to be aware
+of.
+
+Before you install Newts, you'll need to create or select a user to be the
+administrator of the notesfile system.  This defaults to the user 'notes' in
+the group 'notes'.  If you don't create this user (or an equivalent), in this
+version of Newts, file permissions won't be set up correctly and things will
+magically fail to work.  This is probably a bad thing.  In order for anonymous
+notes to work correctly, you also need a 'nobody' user; you probably already
+have one of these.
+
+You can specify the user and group of the notes administrator with the
+configure options --with-notes-user and --with-notes-group.  You can specify
+the 'nobody' user using --with-anon-user.
+
+The --with-notes-spool configure option can be used to choose the location on
+your filesystem where the notesfile spool directory should be kept; this
+defaults to /var/spool/notes, which complies with the FHS.
+
+Newts uses a lot of external programs for various tasks.  You might want to
+adjust these to select your favorites; I imagine that the most popular
+customization will be --with-default-editor, which by default uses Emacs if it
+can find it.  I recommend -not- setting the default pager to less; although
+less is my personal pager of choice, more works better in the specific
+circumstances in which it's invoked by Newts. Trust me on this. :)
+
+Thank you for trying out Newts.  Please send me any praise, complaints, feature
+requests, or bug reports you come up with.
+
+- Tyler <tyler+newts@thoughtlocker.net>

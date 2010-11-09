@@ -1,0 +1,211 @@
+.TH NOTES 1 "August 2004" "Newts" "Newts Reference Manual"
+
+.SH NAME
+notes \- legacy client for the Newts notesfile system
+
+.SH SYNOPSIS
+.B notes
+[\fIoptions\fR] [\fINOTESFILE\fR]...
+
+.SH DESCRIPTION
+.B notes
+is a client for \fBNewts\fR, a notesfile, or community message board, system.
+.B notes
+is designed to look like and function like the program of the same name
+distributed in the Notesfiles package from the University of Illinois at
+Urbana-Champaign.
+
+The
+.B notes
+program can be used to read and write notes, update options for those
+notesfiles in which you are a director, save copies of notes as text files, and
+various other functions.
+
+If no notesfiles are specified, the
+.B NFSEQ
+environment variable will be checked to determine which notesfiles to view.
+
+.SH OPTIONS
+
+.TP
+\fB\-a\fR, \fB\-\^\-alternate\fR=\fINAME\fR
+Use a named subsequencer.  Each subsequencer has its own independent set of
+timestamps, and each can be used independently to sequence through the same
+notesfiles.  If no other sequencer mode is specified, \fB\-\^\-sequencer\fR
+will be assumed.
+
+This option was originally used for shared accounts, so multiple users could
+track their sequencers individually.  Since most sites have moved away from
+using shared accounts, this option is rarely used.
+
+.TP
+\fB\-b\fR, \fB\-\^\-black\-threads\fR
+When sequencing, for threads with basenotes that are blacklisted, skip all
+responses in the thread as well as the basenote.  If the
+\fB\-\^\-white\-basenotes\fR option is specified, this option does nothing.
+
+.TP
+\fB\-e\fR, \fB\-\^\-seq\-own\-notes\fR
+With this option set, the sequencer will "trip" on notes you write.  If your
+note is the only new note in a notesfile, that notesfile will be entered and
+your note displayed.
+
+.TP
+\fB\-f\fR, \fB\-\^\-file\fR=\fIFILE\fR
+Read a list of notesfiles to view from the specified file, instead of expecting
+such a list to be provided on the command line.  This option does not imply use
+of the sequencer, but can be used with the sequencer.
+
+.TP
+\fB\-g\fR, \fB\-\^\-no\-signature\fR
+Do not include a signature in any notes or responses you compose, even if
+a ~/.signature or similar file is located.
+
+.TP
+\fB\-h\fR, \fB\-\^\-help\fR
+Print a summary of usage and command-line options for
+.B notes
+and exit.
+
+.TP
+\fB\-i\fR, \fB\-\^\-index\fR
+Use the index sequencer.  This mode will skip notesfiles with no new notes, and
+will open to the index screen of each notesfile with new notes, instead of
+immediately opening to the first modified note.
+
+.TP
+\fB\-k\fR, \fB\-\^\-skip\-own\-notes\fR
+With this option set, the sequencer will ignore notes you write for the purpose
+of determining whether a notesfile has been updated.  This is the default
+behavior for the sequencer.
+
+.TP
+\fB\-m\fR, \fB\-\^\-modern\fR
+Use the "modern" display interface, featuring a more consistent user interface,
+error messages, and prompts.  This is the default display mode.
+
+.TP
+\fB\-n\fR, \fB\-\^\-no\-sequencer\fR
+Do not use the sequencer.  This is the default mode.
+
+.TP
+\fB\-o\fR, \fB\-\^\-time\fR=\fITIME\fR
+Specify a particular date/time for the sequencer to use.  In this mode, all
+notes written after the given time will be considered to be "new", and the
+sequencer time will not be updated after you quit.  If no other sequencer mode
+is specified, \fB\-\^\-sequencer\fR will be assumed.  Most common formats for
+specifying dates and times are accepted by this option.
+
+.TP
+\fB\-s\fR, \fB\-\^\-sequencer\fR
+Use the sequencer.  The standard sequencer mode will skip notesfiles with no
+new notes, and will open immediately to the first basenote in each notesfile
+with modified or new material.
+
+.TP
+\fB\-t\fR, \fB\-\^\-traditional\fR, \fB\-\^\-imsa\fR
+Use the "traditional" display mode; this is the appearance that the Notesfile
+system from the University of Illinois at Urbana-Champaign used, replicated as
+closely as possible while still fixing obvious display bugs.  This option
+implies \fB\-\^\-seq\-own\-notes\fR.
+
+.TP
+\fB\-u\fR, \fB\-\^\-user\fR=\fIUSERNAME\fR
+As root, run the client as the specified user.  This means you'll use the
+user's sequencer file, post as the user, etc; for all intents and purposes,
+this option is identical to using \fBsu\fR(1) to become the user, then running
+\fBnotes\fR(1), but is much easier to use when debugging.
+
+.TP
+\fB\-w\fR, \fB\-\^\-white\-basenotes\fR
+Cause basenotes to be exempt from blacklisting.  With this option specified,
+all basenotes will be displayed.  If both \fB\-\^\-white\-basenotes\fR and
+\fB\-\^\-black\-threads\fR are specified, only this option will apply.
+
+.TP
+\fB\-x\fR, \fB\-\^\-extended\fR
+Use the extended sequencer.  This mode will enter each notesfile specified,
+regardless of whether there are new notes.  If a given notesfile has no new
+notes, it will open to the index screen.  If a notesfile does have new notes,
+the notesfile will open to the first basenote with modified or new material.
+
+.TP
+\fB\-z\fR, \fB\-\^\-no\-blacklist\fR
+Do not use the blacklist; display all notes.
+
+.TP
+\fB\-\^\-debug\fR
+Print debugging messages to standard error as the client runs; you will
+probably want to save these messages to a file using redirection of standard
+error.
+
+.TP
+\fB\-\^\-version\fR
+Print version information for
+.B notes
+and exit.
+
+.SH ENVIRONMENT VARIABLES
+.B notes
+is affected by the following environment variables.
+
+.TP
+\fBNFEDITOR\fR, \fBNFED\fR, \fBVISUAL\fR, \fBEDITOR\fR
+These variables specify the user's preferred text editor; examples include
+\fBemacs\fR(1), \fBvim\fR(1), and \fBnano\fR(1).
+
+.TP
+\fBNFMAILER\fR, \fBMAILER\fR
+These variables specify the user's preferred mail user agent; examples include
+\fBmutt\fR(1) and \fBpine(\fR1).  If you're a die-hard Emacs user, try setting
+.B NFMAILER
+to \fBemacs\fR.
+
+.TP
+\fBNFPAGER\fR, \fBPAGER\fR
+These variables specify the user's preferred text pager; examples include
+\fBless\fR(1) and \fBmore(\fR1).
+
+.TP
+\fBNFSEQ\fR
+If no notesfiles are specified on the command line and this variable is set, it
+will be used as the list of notesfiles to read.
+
+.TP
+\fBNFTALK\fR, \fBTALK\fR
+These variables specify the user's preferred console-based user-to-user
+communications program; examples include \fBytalk\fR(1) and \fBwrite\fR(1).
+
+.TP
+.B SHELL
+This environment variable controls which shell
+.B notes
+will execute when asked to spawn a subshell.
+
+.TP
+.B TMPDIR
+If this environment variable is set,
+.B notes
+will create all its temporary files in the specified directory.
+
+.SH AUTHOR
+.B Newts
+was written and is maintained by Tyler Berry <tyler+newts@thoughtlocker.net>.
+
+.SH SEE ALSO
+\fBautoseq\fR(1), \fBchecknotes\fR(1), \fBgetnote\fR(1), \fBmknf\fR(1),
+\fBnfadmin\fR(1), \fBnfdump\fR(1), \fBnfload\fR(1), \fBnfmail\fR(1),
+\fBnfpipe\fR(1), \fBnfprint\fR(1), \fBnfstats\fR(1), \fBnftimestamp\fR(1),
+\fBrmnf\fR(1)
+
+The full documentation for
+.B Newts
+is maintained as a Texinfo manual.  If the
+.B info
+and
+.B Newts
+programs are properly installed at your site, the command
+.IP
+.B info newts
+.PP
+should give you access to the complete manual.

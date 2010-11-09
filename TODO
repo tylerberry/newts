@@ -1,0 +1,59 @@
+Newts TODO                                                         -*- Text -*-
+-------------------------------------------------------------------------------
+Time-stamp: <2007-11-30 08:58:03 tyler>
+
+For 0.15:
+
+* Refactor nfref into nfref and connection.
+* Refactor stats into a generic list.
+* Rewrite list to be much simpler, like a cons list.
+* "Opaquify" all data types.
+* Create constants for all API return values.
+* Actually check those return values.
+* Finish converting all data type usage into the heap-allocated style,
+  instead of the stack-allocated style still used in a lot of the
+  client.
+* Finish documenting all of include/newts.
+* Write test suites for all of libnewts.
+* Finalize the 0.x API.
+* Fix the existing Python bindings to compile at least given the above
+  changes.
+* Update all copyrights.
+* Change licenses. Either =GPL2 or =GPL3.
+
+For 0.16:
+
+* Refactor the gigantic switch statements in each mode of the notes
+  client to instead be a key dispatch map into functions with a standard
+  signature.
+* Get rid of which.[ch] in favor of execp.
+
+For 1.0 or earlier:
+
+* User-modifyable keybindings.
+* .newtsrc support.
+* Highlight-scrolling nf index. (New client?)
+* NF menu. (New client?)
+* Code cleanup, things like "return (...);"
+* Audit system calls.
+
+For 1.0:
+
+* Client-server protocol.
+* Server implementation.
+* Kill all FIXMEs.
+
+Sometime/maybe:
+
+* Switch to git for SCM.
+* Write a better pager. This should be easier now.
+* Support glib for data types like lists.
+* Rewrite the little tools like mknf in a scripting language.
+* More bindings!
+* Implement GNU readline support.
+* A gdbm backend.
+* I've got a backlog of feature requests from =newts.devel on the development
+  server that I should really handle at some point.
+* Do the modern client. This would actually be pretty easy if I decided how I
+  wanted it to look and all.
+* Rewrite in Lisp. :)

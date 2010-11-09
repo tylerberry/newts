@@ -1,0 +1,14 @@
+AUTHORS of the Newts notesfile system.                             -*- Text -*-
+-------------------------------------------------------------------------------
+
+Tyler Berry <tyler@thoughtlocker.net>
+
+  * The UIUC backend
+  * The libnewts data type library
+  * The libnewtsclient client library
+  * The 'notes' UIUC-lookalike client
+  * Various utility programs (autoseq, mknf, nfstats, etc.)
+
+David A. Mellis <dam@mellis.org>
+
+  * Python bindings for libnewtsclient. (bindings/python/)

@@ -1,0 +1,268 @@
+\section{nfref.h File Reference}
+\label{nfref_8h}\index{nfref.h@{nfref.h}}
+{\tt \#include \char`\"{}newts/config.h\char`\"{}}\par
+{\tt \#include \char`\"{}newts/connection.h\char`\"{}}\par
+\subsection*{Data Structures}
+\begin{CompactItemize}
+\item 
+struct {\bf nfref}
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+int {\bf create\_\-nf} (const struct {\bf nfref} $\ast$ref, int flags)
+\item 
+int {\bf delete\_\-nf} (const struct {\bf nfref} $\ast$ref)
+\item 
+struct {\bf nfref} $\ast$ {\bf nfref\_\-alloc} (void)
+\item 
+int {\bf nfref\_\-compare} (const struct {\bf nfref} $\ast$one, const struct {\bf nfref} $\ast$two)
+\item 
+void {\bf nfref\_\-copy} (struct {\bf nfref} $\ast$dest, const struct {\bf nfref} $\ast$source)
+\item 
+void {\bf nfref\_\-free} (struct {\bf nfref} $\ast$ref)
+\item 
+char $\ast$ {\bf nfref\_\-name} (const struct {\bf nfref} $\ast$ref)
+\item 
+char $\ast$ {\bf nfref\_\-owner} (const struct {\bf nfref} $\ast$ref)
+\item 
+unsigned short {\bf nfref\_\-port} (const struct {\bf nfref} $\ast$ref)
+\item 
+char $\ast$ {\bf nfref\_\-pretty\_\-name} (struct {\bf nfref} $\ast$ref)
+\item 
+enum {\bf notes\_\-protocols} {\bf nfref\_\-protocol} (const struct {\bf nfref} $\ast$ref)
+\item 
+void {\bf nfref\_\-set\_\-name} (struct {\bf nfref} $\ast$ref, const char $\ast$new\_\-name)
+\item 
+void {\bf nfref\_\-set\_\-owner} (struct {\bf nfref} $\ast$ref, const char $\ast$new\_\-owner)
+\item 
+void {\bf nfref\_\-set\_\-port} (struct {\bf nfref} $\ast$ref, const unsigned short new\_\-port)
+\item 
+void {\bf nfref\_\-set\_\-protocol} (struct {\bf nfref} $\ast$ref, const enum {\bf notes\_\-protocols} new\_\-protocol)
+\item 
+void {\bf nfref\_\-set\_\-system} (struct {\bf nfref} $\ast$ref, const char $\ast$new\_\-system)
+\item 
+void {\bf nfref\_\-set\_\-user} (struct {\bf nfref} $\ast$ref, const char $\ast$new\_\-user)
+\item 
+char $\ast$ {\bf nfref\_\-system} (const struct {\bf nfref} $\ast$ref)
+\item 
+int {\bf nfref\_\-system\_\-is\_\-localhost} (const struct {\bf nfref} $\ast$ref)
+\item 
+char $\ast$ {\bf nfref\_\-user} (const struct {\bf nfref} $\ast$ref)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{nfref}{p.}{structnfref} datatype and related functions. 
+
+\subsection{Function Documentation}
+\index{nfref.h@{nfref.h}!create\_\-nf@{create\_\-nf}}
+\index{create\_\-nf@{create\_\-nf}!nfref.h@{nfref.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int create\_\-nf (const struct {\bf nfref} $\ast$ {\em ref}, int {\em flags})\hspace{0.3cm}{\tt  [inline]}}\label{nfref_8h_32eefdc239c963df427d510f64df4d29}
+
+
+Create a new \doxyref{notesfile}{p.}{structnotesfile}.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em ref}]A reference that will describe the new \doxyref{notesfile}{p.}{structnotesfile} after it has been created. \item[{\em flags}]A bitmap of flags to set in the newly-created \doxyref{notesfile}{p.}{structnotesfile}; can include NF\_\-ANONYMOUS, NF\_\-LOCKED, and NF\_\-MODERATED.\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]FIXME \end{Desc}
+\index{nfref.h@{nfref.h}!delete\_\-nf@{delete\_\-nf}}
+\index{delete\_\-nf@{delete\_\-nf}!nfref.h@{nfref.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int delete\_\-nf (const struct {\bf nfref} $\ast$ {\em ref})\hspace{0.3cm}{\tt  [inline]}}\label{nfref_8h_f6ddac3e4b78fe9dc305c964abdabab0}
+
+
+Delete the existing \doxyref{notesfile}{p.}{structnotesfile} specified by {\em ref\/}..
+
+\begin{Desc}
+\item[Returns:]FIXME \end{Desc}
+\index{nfref.h@{nfref.h}!nfref\_\-alloc@{nfref\_\-alloc}}
+\index{nfref\_\-alloc@{nfref\_\-alloc}!nfref.h@{nfref.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}struct {\bf nfref}$\ast$ nfref\_\-alloc (void)\hspace{0.3cm}{\tt  [read]}}\label{nfref_8h_f764f4c3702120ca8746b7c72c5a5b07}
+
+
+Create a new struct \doxyref{nfref}{p.}{structnfref}.
+
+\begin{Desc}
+\item[Returns:]A newly allocated struct \doxyref{nfref}{p.}{structnfref}. This should be freed with nfref\_\-free when no longer needed.\end{Desc}
+\begin{Desc}
+\item[See also:]\doxyref{nfref\_\-free}{p.}{nfref_8h_3d71a83583b9938b92959d8252ca2fd1} \end{Desc}
+\index{nfref.h@{nfref.h}!nfref\_\-compare@{nfref\_\-compare}}
+\index{nfref\_\-compare@{nfref\_\-compare}!nfref.h@{nfref.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int nfref\_\-compare (const struct {\bf nfref} $\ast$ {\em one}, const struct {\bf nfref} $\ast$ {\em two})}\label{nfref_8h_dbf665e275ec0d06b59658e4cc247f11}
+
+
+Compare two nfrefs, {\em one\/} and {\em two\/}, first alphabetically by owner then alphabetically by name. Both comparisons are case-sensitive, and NULL owner is considered \char`\"{}less-than\char`\"{} any non-NULL owner. Suitable as an argument to qsort(3) or other functions using the qsort interface.
+
+\begin{Desc}
+\item[Returns:]\begin{itemize}
+\item -1 if {\em one\/} is \char`\"{}less than\char`\"{} than {\em two\/}. \item 0 if {\em one\/} and {\em two\/} are \char`\"{}equal\char`\"{}. \item 1 if {\em one\/} is \char`\"{}greater\char`\"{} than {\em two\/}. \end{itemize}
+\end{Desc}
+\index{nfref.h@{nfref.h}!nfref\_\-copy@{nfref\_\-copy}}
+\index{nfref\_\-copy@{nfref\_\-copy}!nfref.h@{nfref.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void nfref\_\-copy (struct {\bf nfref} $\ast$ {\em dest}, const struct {\bf nfref} $\ast$ {\em source})}\label{nfref_8h_dc85a0aa2d59fa0a614b4a94d4e9eecd}
+
+
+Duplicate an existing \doxyref{nfref}{p.}{structnfref}. This is a deep copy; strings from {\em source\/} will be copied, and {\em dest\/} will point to those copied strings, not the originals from {\em source\/}. This function is safe to use if overwriting existing values in {\em dest\/}.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em dest}]The \doxyref{nfref}{p.}{structnfref} to copy values to. \item[{\em source}]The \doxyref{nfref}{p.}{structnfref} to copy values from.\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Side effects:]The values stored in {\em dest\/} will be modified. Additionally, if {\em dest\/} was previously populated, its existing string elements will be freed before being overwritten. \end{Desc}
+\index{nfref.h@{nfref.h}!nfref\_\-free@{nfref\_\-free}}
+\index{nfref\_\-free@{nfref\_\-free}!nfref.h@{nfref.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void nfref\_\-free (struct {\bf nfref} $\ast$ {\em ref})}\label{nfref_8h_3d71a83583b9938b92959d8252ca2fd1}
+
+
+Deallocate {\em ref\/}.
+
+\begin{Desc}
+\item[Side effects:]{\em ref\/} will be invalidated, and should no longer be used.\end{Desc}
+\begin{Desc}
+\item[See also:]\doxyref{nfref\_\-alloc}{p.}{nfref_8h_f764f4c3702120ca8746b7c72c5a5b07} \end{Desc}
+\index{nfref.h@{nfref.h}!nfref\_\-name@{nfref\_\-name}}
+\index{nfref\_\-name@{nfref\_\-name}!nfref.h@{nfref.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ nfref\_\-name (const struct {\bf nfref} $\ast$ {\em ref})}\label{nfref_8h_4a5a2ef1299e45b997e6757634f4bb3e}
+
+
+Return the name of the \doxyref{notesfile}{p.}{structnotesfile} specified by {\em ref\/}.
+
+\begin{Desc}
+\item[See also:]\doxyref{nfref\_\-set\_\-name}{p.}{nfref_8h_03c66404337615ccaacd62a52428a7b1} \end{Desc}
+\index{nfref.h@{nfref.h}!nfref\_\-owner@{nfref\_\-owner}}
+\index{nfref\_\-owner@{nfref\_\-owner}!nfref.h@{nfref.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ nfref\_\-owner (const struct {\bf nfref} $\ast$ {\em ref})}\label{nfref_8h_4dde4cd07ed6846a710c583d7b9a5bda}
+
+
+Return the owner of the \doxyref{notesfile}{p.}{structnotesfile} specified by {\em ref\/}. NULL means that the \doxyref{notesfile}{p.}{structnotesfile} is a global \doxyref{notesfile}{p.}{structnotesfile}, not a private \doxyref{notesfile}{p.}{structnotesfile}.
+
+\begin{Desc}
+\item[See also:]\doxyref{nfref\_\-set\_\-owner}{p.}{nfref_8h_14ca3e31bb0e778a2dc1beba910a165f} \end{Desc}
+\index{nfref.h@{nfref.h}!nfref\_\-port@{nfref\_\-port}}
+\index{nfref\_\-port@{nfref\_\-port}!nfref.h@{nfref.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned short nfref\_\-port (const struct {\bf nfref} $\ast$ {\em ref})}\label{nfref_8h_03163569a21c0214d4ed6582a57a1f7b}
+
+
+Return the port with which to \doxyref{access}{p.}{structaccess} \doxyref{notesfile}{p.}{structnotesfile} specified by {\em ref\/}.
+
+\begin{Desc}
+\item[See also:]\doxyref{nfref\_\-set\_\-port}{p.}{nfref_8h_d541ad6abde24cf54c5d8505a8e74c52} \end{Desc}
+\index{nfref.h@{nfref.h}!nfref\_\-pretty\_\-name@{nfref\_\-pretty\_\-name}}
+\index{nfref\_\-pretty\_\-name@{nfref\_\-pretty\_\-name}!nfref.h@{nfref.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ nfref\_\-pretty\_\-name (struct {\bf nfref} $\ast$ {\em ref})}\label{nfref_8h_c7b2e1201b11e216721d77c69c810cf1}
+
+
+Return a user-readable pretty representation of the \doxyref{notesfile}{p.}{structnotesfile} specified by {\em ref\/}. The output of this function should be able to be parsed with parse\_\-single\_\-nf or the other parsing functions to return an equivalent (although not necessarily identical) \doxyref{nfref}{p.}{structnfref}. \index{nfref.h@{nfref.h}!nfref\_\-protocol@{nfref\_\-protocol}}
+\index{nfref\_\-protocol@{nfref\_\-protocol}!nfref.h@{nfref.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}enum {\bf notes\_\-protocols} nfref\_\-protocol (const struct {\bf nfref} $\ast$ {\em ref})}\label{nfref_8h_6ecd9b4e3022d3968c485d2f5498ba02}
+
+
+Return the protocol to use to \doxyref{access}{p.}{structaccess} the \doxyref{notesfile}{p.}{structnotesfile} specified by {\em ref\/}.
+
+\begin{Desc}
+\item[See also:]\doxyref{nfref\_\-set\_\-protocol}{p.}{nfref_8h_d59df0463410ca825c9a8e3030f23898} \end{Desc}
+\index{nfref.h@{nfref.h}!nfref\_\-set\_\-name@{nfref\_\-set\_\-name}}
+\index{nfref\_\-set\_\-name@{nfref\_\-set\_\-name}!nfref.h@{nfref.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void nfref\_\-set\_\-name (struct {\bf nfref} $\ast$ {\em ref}, const char $\ast$ {\em new\_\-name})}\label{nfref_8h_03c66404337615ccaacd62a52428a7b1}
+
+
+Modify {\em ref\/} to refer to a \doxyref{notesfile}{p.}{structnotesfile} with name {\em new\_\-name\/}.
+
+\begin{Desc}
+\item[Side effects:]{\em ref\/} will be modified.\end{Desc}
+\begin{Desc}
+\item[See also:]\doxyref{nfref\_\-name}{p.}{nfref_8h_4a5a2ef1299e45b997e6757634f4bb3e} \end{Desc}
+\index{nfref.h@{nfref.h}!nfref\_\-set\_\-owner@{nfref\_\-set\_\-owner}}
+\index{nfref\_\-set\_\-owner@{nfref\_\-set\_\-owner}!nfref.h@{nfref.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void nfref\_\-set\_\-owner (struct {\bf nfref} $\ast$ {\em ref}, const char $\ast$ {\em new\_\-owner})}\label{nfref_8h_14ca3e31bb0e778a2dc1beba910a165f}
+
+
+Modify {\em ref\/} to refer to a \doxyref{notesfile}{p.}{structnotesfile} owned by {\em new\_\-owner\/}.
+
+\begin{Desc}
+\item[Side effects:]{\em ref\/} will be modified.\end{Desc}
+\begin{Desc}
+\item[See also:]\doxyref{nfref\_\-owner}{p.}{nfref_8h_4dde4cd07ed6846a710c583d7b9a5bda} \end{Desc}
+\index{nfref.h@{nfref.h}!nfref\_\-set\_\-port@{nfref\_\-set\_\-port}}
+\index{nfref\_\-set\_\-port@{nfref\_\-set\_\-port}!nfref.h@{nfref.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void nfref\_\-set\_\-port (struct {\bf nfref} $\ast$ {\em ref}, const unsigned short {\em new\_\-port})}\label{nfref_8h_d541ad6abde24cf54c5d8505a8e74c52}
+
+
+Modify {\em ref\/} to refer to a \doxyref{notesfile}{p.}{structnotesfile} accessed with port {\em new\_\-port\/}.
+
+\begin{Desc}
+\item[Side effects:]{\em ref\/} will be modified.\end{Desc}
+\begin{Desc}
+\item[See also:]\doxyref{nfref\_\-port}{p.}{nfref_8h_03163569a21c0214d4ed6582a57a1f7b} \end{Desc}
+\index{nfref.h@{nfref.h}!nfref\_\-set\_\-protocol@{nfref\_\-set\_\-protocol}}
+\index{nfref\_\-set\_\-protocol@{nfref\_\-set\_\-protocol}!nfref.h@{nfref.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void nfref\_\-set\_\-protocol (struct {\bf nfref} $\ast$ {\em ref}, const enum {\bf notes\_\-protocols} {\em new\_\-protocol})}\label{nfref_8h_d59df0463410ca825c9a8e3030f23898}
+
+
+Modify {\em ref\/} to refer to a \doxyref{notesfile}{p.}{structnotesfile} accessed with protocol {\em new\_\-protocol\/}.
+
+\begin{Desc}
+\item[Side effects:]{\em ref\/} will be modified.\end{Desc}
+\begin{Desc}
+\item[See also:]\doxyref{nfref\_\-protocol}{p.}{nfref_8h_6ecd9b4e3022d3968c485d2f5498ba02} \end{Desc}
+\index{nfref.h@{nfref.h}!nfref\_\-set\_\-system@{nfref\_\-set\_\-system}}
+\index{nfref\_\-set\_\-system@{nfref\_\-set\_\-system}!nfref.h@{nfref.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void nfref\_\-set\_\-system (struct {\bf nfref} $\ast$ {\em ref}, const char $\ast$ {\em new\_\-system})}\label{nfref_8h_594058b19dba876352dddbb02a298cbe}
+
+
+Modify {\em ref\/} to refer to a \doxyref{notesfile}{p.}{structnotesfile} on system {\em new\_\-system\/}.
+
+\begin{Desc}
+\item[Side effects:]{\em ref\/} will be modified.\end{Desc}
+\begin{Desc}
+\item[See also:]\doxyref{nfref\_\-system}{p.}{nfref_8h_9a9ed2859fa58d0e352e9e997db3a076} \end{Desc}
+\index{nfref.h@{nfref.h}!nfref\_\-set\_\-user@{nfref\_\-set\_\-user}}
+\index{nfref\_\-set\_\-user@{nfref\_\-set\_\-user}!nfref.h@{nfref.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void nfref\_\-set\_\-user (struct {\bf nfref} $\ast$ {\em ref}, const char $\ast$ {\em new\_\-user})}\label{nfref_8h_90b37f9a2d0da0603a3631119d4c910c}
+
+
+Modify {\em ref\/} to refer to a \doxyref{notesfile}{p.}{structnotesfile} to which we're going to connect as {\em new\_\-user\/}.
+
+\begin{Desc}
+\item[Side effects:]{\em ref\/} will be modified.\end{Desc}
+\begin{Desc}
+\item[See also:]\doxyref{nfref\_\-user}{p.}{nfref_8h_832bfe2401b070d7441732e6f3bdb72d} \end{Desc}
+\index{nfref.h@{nfref.h}!nfref\_\-system@{nfref\_\-system}}
+\index{nfref\_\-system@{nfref\_\-system}!nfref.h@{nfref.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ nfref\_\-system (const struct {\bf nfref} $\ast$ {\em ref})}\label{nfref_8h_9a9ed2859fa58d0e352e9e997db3a076}
+
+
+Return the system on which the \doxyref{notesfile}{p.}{structnotesfile} specified by {\em ref\/} is found.
+
+\begin{Desc}
+\item[See also:]\doxyref{nfref\_\-set\_\-system}{p.}{nfref_8h_594058b19dba876352dddbb02a298cbe} \end{Desc}
+\index{nfref.h@{nfref.h}!nfref\_\-system\_\-is\_\-localhost@{nfref\_\-system\_\-is\_\-localhost}}
+\index{nfref\_\-system\_\-is\_\-localhost@{nfref\_\-system\_\-is\_\-localhost}!nfref.h@{nfref.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int nfref\_\-system\_\-is\_\-localhost (const struct {\bf nfref} $\ast$ {\em ref})}\label{nfref_8h_2ee64b2654277350022493a190e1765e}
+
+
+Return TRUE if the \doxyref{notesfile}{p.}{structnotesfile} specified by {\em ref\/} refers to a \doxyref{notesfile}{p.}{structnotesfile} on localhost, or FALSE otherwise.
+
+This is defined to be true if \doxyref{nfref\_\-system (ref)}{p.}{nfref_8h_9a9ed2859fa58d0e352e9e997db3a076} would return NULL, \char`\"{}\char`\"{}, or \char`\"{}localhost\char`\"{}.
+
+FIXME: Obviously, this is a little braindead.
+
+\begin{Desc}
+\item[See also:]\doxyref{nfref\_\-system}{p.}{nfref_8h_9a9ed2859fa58d0e352e9e997db3a076} \end{Desc}
+\index{nfref.h@{nfref.h}!nfref\_\-user@{nfref\_\-user}}
+\index{nfref\_\-user@{nfref\_\-user}!nfref.h@{nfref.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ nfref\_\-user (const struct {\bf nfref} $\ast$ {\em ref})}\label{nfref_8h_832bfe2401b070d7441732e6f3bdb72d}
+
+
+Return the user with which we're going to connect to the \doxyref{notesfile}{p.}{structnotesfile} specified by {\em ref\/}.
+
+FIXME: Is this really the right place for this? It's here because this is sort of a \char`\"{}how to get to this notesfile\char`\"{} spec, and if we're connecting to a foreign server the user we're connecting as is just as necessary a piece as the hostname, for example. But it still feels kludgy as heck.
+
+\begin{Desc}
+\item[See also:]\doxyref{nfref\_\-set\_\-user}{p.}{nfref_8h_90b37f9a2d0da0603a3631119d4c910c}, \doxyref{nfref\_\-system\_\-is\_\-localhost}{p.}{nfref_8h_2ee64b2654277350022493a190e1765e} \end{Desc}

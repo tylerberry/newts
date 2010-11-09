@@ -1,0 +1,62 @@
+The Newts WANTED list                                           -*- Outline -*-
+-------------------------------------------------------------------------------
+Time-stamp: <2007-11-18 12:44:10 tyler>
+
+These are things that I'd love to have done at some point, but they aren't
+really high on my priority list. If you feel like writing and contributing one,
+that would be wonderful.
+
+* Feedback
+
+These are things I just want information on.
+
+** Feedback on the help screens.
+
+How do the help screens work? Do they sit well with you? How can they be
+improved?
+
+** Feature requests and wish lists.
+
+Are there any features you'd really like to see? General "wish-lists" are
+welcome.
+
+* Small Projects
+
+These are small "afternoon" projects.
+
+** An m4 macro to check whether particular users/groups exist on the system.
+
+This should be smarter than just looking through /etc/passwd or /etc/group,
+since (for example) systems with LDAP authentication might not have correct
+info in those files. Checking for GNU id and using that might be a good start.
+
+* Big Projects
+
+These are major extensions to Newts. If you want to take on one of these, let
+me know - I'll add you to AUTHORS and mark the project as assigned.
+
+For all of these, you'll probably need to know about the backend/network API.
+Talk to me if you want to know about this, because they don't technically exist
+yet.
+
+** Backends:
+
+*** A MySQL backend.
+*** A PostgreSQL backend.
+*** An Oracle backend.
+*** A Berkeley DB backend.
+*** A gdbm backend, ndbm/dbm compatible if possible.
+*** etc.
+
+** Bindings:
+
+*** Perl bindings.
+*** PHP bindings.
+*** Ruby bindings.
+
+** Clients:
+
+*** A Windows client.
+*** A Web client.
+
+Doing this in the Python bindings currently available is probably the best bet.

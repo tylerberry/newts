@@ -1,0 +1,152 @@
+\section{access.h File Reference}
+\label{access_8h}\index{access.h@{access.h}}
+{\tt \#include \char`\"{}newts/config.h\char`\"{}}\par
+{\tt \#include \char`\"{}newts/list.h\char`\"{}}\par
+{\tt \#include \char`\"{}newts/notesfile.h\char`\"{}}\par
+\subsection*{Data Structures}
+\begin{CompactItemize}
+\item 
+struct {\bf access}
+\end{CompactItemize}
+\subsection*{Enumerations}
+\begin{CompactItemize}
+\item 
+enum {\bf access\_\-scopes} \{ {\bf SCOPE\_\-USER}, 
+{\bf SCOPE\_\-GROUP}, 
+{\bf SCOPE\_\-SYSTEM}
+ \}
+\item 
+enum {\bf access\_\-permissions} \{ \par
+{\bf READ} =  01, 
+{\bf WRITE} =  02, 
+{\bf DIRECTOR} =  04, 
+{\bf REPLY} =  010, 
+\par
+{\bf OWNER} =  020
+ \}
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+struct {\bf access} $\ast$ {\bf access\_\-alloc} (void)
+\item 
+int {\bf access\_\-compare} (const struct {\bf access} $\ast$one, const struct {\bf access} $\ast$two)
+\item 
+void {\bf access\_\-free} (struct {\bf access} $\ast${\bf access})
+\item 
+int \textbf{access\_\-has\_\-permissions} (const struct {\bf access} $\ast${\bf access}, unsigned permissions)\label{access_8h_b439ee8f6ceb01311bd276c44bf31d89}
+
+\item 
+void \textbf{access\_\-clear\_\-permissions} (struct {\bf access} $\ast${\bf access})\label{access_8h_24eed56ca02ee922896a47aa1dfa9c6a}
+
+\item 
+void \textbf{access\_\-add\_\-permissions} (struct {\bf access} $\ast${\bf access}, unsigned permissions)\label{access_8h_b0c6ab072c0503be4093b8bf8e54da6b}
+
+\item 
+void \textbf{access\_\-remove\_\-permissions} (struct {\bf access} $\ast${\bf access}, unsigned permissions)\label{access_8h_1bfc8f6bd0198f0ca5073b12cb7233af}
+
+\item 
+char $\ast$ \textbf{access\_\-name} (const struct {\bf access} $\ast${\bf access})\label{access_8h_8657e40f599ae9f12c61899f65aab1d1}
+
+\item 
+unsigned \textbf{access\_\-permissions} (const struct {\bf access} $\ast${\bf access})\label{access_8h_b1217e8f78cb5e770938271dd52015c0}
+
+\item 
+enum {\bf access\_\-scopes} \textbf{access\_\-scope} (const struct {\bf access} $\ast${\bf access})\label{access_8h_6ef4e9fd9c16ea6c9e7138c0a393e7f1}
+
+\item 
+void \textbf{access\_\-set\_\-name} (struct {\bf access} $\ast${\bf access}, const char $\ast$new\_\-name)\label{access_8h_4291c228201f5a2b010f861b52b60393}
+
+\item 
+void \textbf{access\_\-set\_\-permissions} (struct {\bf access} $\ast$acess, unsigned new\_\-permissions)\label{access_8h_20480d2632569f2fd54f39074742799f}
+
+\item 
+void \textbf{access\_\-set\_\-scope} (struct {\bf access} $\ast${\bf access}, enum {\bf access\_\-scopes} new\_\-scope)\label{access_8h_74c416fa716e69dd4739083300cfaf72}
+
+\item 
+int \textbf{get\_\-access\_\-list} (struct {\bf nfref} $\ast$ref, List $\ast$list)\label{access_8h_6728b3aeb00ddeb02e925364c2cf712a}
+
+\item 
+int \textbf{write\_\-access\_\-list} (struct {\bf nfref} $\ast$ref, List $\ast$list)\label{access_8h_c79aecc29929574a74d7080744c8eca1}
+
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{access}{p.}{structaccess} rule datatype and related functions. 
+
+\subsection{Enumeration Type Documentation}
+\index{access.h@{access.h}!access\_\-permissions@{access\_\-permissions}}
+\index{access\_\-permissions@{access\_\-permissions}!access.h@{access.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}enum {\bf access\_\-permissions}}\label{access_8h_e37f7244d7ad9c8379e57615705dbd8e}
+
+
+Actions and \doxyref{access}{p.}{structaccess} levels that can be specified for a given \doxyref{access}{p.}{structaccess} rule. \begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{READ@{READ}!access.h@{access.h}}\index{access.h@{access.h}!READ@{READ}}\item[{\em 
+READ\label{access_8h_e37f7244d7ad9c8379e57615705dbd8ecb9be765f361bb7efb9073730aac92c6}
+}]Allowed to read notes. \index{WRITE@{WRITE}!access.h@{access.h}}\index{access.h@{access.h}!WRITE@{WRITE}}\item[{\em 
+WRITE\label{access_8h_e37f7244d7ad9c8379e57615705dbd8e61aa7ff70b76bff0fda378cf61d6afbc}
+}]Allowed to write new basenotes. \index{DIRECTOR@{DIRECTOR}!access.h@{access.h}}\index{access.h@{access.h}!DIRECTOR@{DIRECTOR}}\item[{\em 
+DIRECTOR\label{access_8h_e37f7244d7ad9c8379e57615705dbd8ebf03d6821a344facbab75f69404b95b5}
+}]Allowed to moderate the \doxyref{notesfile}{p.}{structnotesfile} and perform other director actions. \index{REPLY@{REPLY}!access.h@{access.h}}\index{access.h@{access.h}!REPLY@{REPLY}}\item[{\em 
+REPLY\label{access_8h_e37f7244d7ad9c8379e57615705dbd8e6bd05ac0fc10609a9dae953dc42a7a76}
+}]Allowed to reply to existing basenotes. \index{OWNER@{OWNER}!access.h@{access.h}}\index{access.h@{access.h}!OWNER@{OWNER}}\item[{\em 
+OWNER\label{access_8h_e37f7244d7ad9c8379e57615705dbd8edce3f6fabb3ba828076711c23b81d1d7}
+}]Owner of the \doxyref{notesfile}{p.}{structnotesfile}. \end{description}
+\end{Desc}
+
+\index{access.h@{access.h}!access\_\-scopes@{access\_\-scopes}}
+\index{access\_\-scopes@{access\_\-scopes}!access.h@{access.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}enum {\bf access\_\-scopes}}\label{access_8h_0531ad307a791b72b10c716f71fda3af}
+
+
+The different scopes available for defining \doxyref{access}{p.}{structaccess} rules. \begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{SCOPE\_\-USER@{SCOPE\_\-USER}!access.h@{access.h}}\index{access.h@{access.h}!SCOPE\_\-USER@{SCOPE\_\-USER}}\item[{\em 
+SCOPE\_\-USER\label{access_8h_0531ad307a791b72b10c716f71fda3af348f5fa507420e771c75a89b6ab94d99}
+}]Permissions for an individual user. \index{SCOPE\_\-GROUP@{SCOPE\_\-GROUP}!access.h@{access.h}}\index{access.h@{access.h}!SCOPE\_\-GROUP@{SCOPE\_\-GROUP}}\item[{\em 
+SCOPE\_\-GROUP\label{access_8h_0531ad307a791b72b10c716f71fda3af4b664dc2c5ca25cc028f233d0e0877ed}
+}]Permissions for a Unix group. \index{SCOPE\_\-SYSTEM@{SCOPE\_\-SYSTEM}!access.h@{access.h}}\index{access.h@{access.h}!SCOPE\_\-SYSTEM@{SCOPE\_\-SYSTEM}}\item[{\em 
+SCOPE\_\-SYSTEM\label{access_8h_0531ad307a791b72b10c716f71fda3af145816d1b1495142d884f88edfbb258c}
+}]Permissions for all users from a given host. \end{description}
+\end{Desc}
+
+
+
+\subsection{Function Documentation}
+\index{access.h@{access.h}!access\_\-alloc@{access\_\-alloc}}
+\index{access\_\-alloc@{access\_\-alloc}!access.h@{access.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}struct {\bf access}$\ast$ access\_\-alloc (void)\hspace{0.3cm}{\tt  [read]}}\label{access_8h_60c35e3f2b1e0b69b4563a685dd9e0f9}
+
+
+Create a new struct \doxyref{access}{p.}{structaccess}.
+
+\begin{Desc}
+\item[Returns:]A newly allocated struct \doxyref{access}{p.}{structaccess}. This should be freed with access\_\-free when no longer needed.\end{Desc}
+\begin{Desc}
+\item[See also:]\doxyref{access\_\-free}{p.}{access_8h_bab42a1dea3d368b088b8ae6506ef27c} \end{Desc}
+\index{access.h@{access.h}!access\_\-compare@{access\_\-compare}}
+\index{access\_\-compare@{access\_\-compare}!access.h@{access.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int access\_\-compare (const struct {\bf access} $\ast$ {\em one}, const struct {\bf access} $\ast$ {\em two})}\label{access_8h_cf3f0424886747ca4679dae6fbc45e8d}
+
+
+Compare two \doxyref{access}{p.}{structaccess} rules, {\em one\/} and {\em two\/}, by the standard sorting rules used by the original notesfiles: first sorting by scope, where the ordering is user $<$ group $<$ system, then alphabetically by name. The name \char`\"{}other\char`\"{} is treated specially, and always sorts to the bottom. The name comparison is case-sensitive. Suitable as an argument to qsort(3) or other functions using the qsort interface.
+
+\begin{Desc}
+\item[Returns:]\begin{itemize}
+\item -1 if {\em one\/} is \char`\"{}less than\char`\"{} than {\em two\/}. \item 0 if {\em one\/} and {\em two\/} are \char`\"{}equal\char`\"{}. \item 1 if {\em one\/} is \char`\"{}greater\char`\"{} than {\em two\/}. \end{itemize}
+\end{Desc}
+\index{access.h@{access.h}!access\_\-free@{access\_\-free}}
+\index{access\_\-free@{access\_\-free}!access.h@{access.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void access\_\-free (struct {\bf access} $\ast$ {\em access})}\label{access_8h_bab42a1dea3d368b088b8ae6506ef27c}
+
+
+Deallocate {\em ref\/}.
+
+\begin{Desc}
+\item[Side effects:]{\em ref\/} will be invalidated, and should no longer be used.\end{Desc}
+\begin{Desc}
+\item[See also:]\doxyref{access\_\-alloc}{p.}{access_8h_60c35e3f2b1e0b69b4563a685dd9e0f9} \end{Desc}

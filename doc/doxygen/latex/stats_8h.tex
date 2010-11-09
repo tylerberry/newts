@@ -1,0 +1,83 @@
+\section{stats.h File Reference}
+\label{stats_8h}\index{stats.h@{stats.h}}
+{\tt \#include \char`\"{}newts/config.h\char`\"{}}\par
+{\tt \#include \char`\"{}newts/notesfile.h\char`\"{}}\par
+\subsection*{Data Structures}
+\begin{CompactItemize}
+\item 
+struct {\bf stats}
+\end{CompactItemize}
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void {\bf stats\_\-accumulate} (const struct {\bf stats} $\ast${\bf stats}, struct {\bf stats} $\ast$total)
+\item 
+struct {\bf stats} $\ast$ {\bf stats\_\-alloc} (void)
+\item 
+void {\bf stats\_\-free} (struct {\bf stats} $\ast${\bf stats})
+\item 
+int {\bf get\_\-stats} (const struct {\bf nfref} $\ast$ref, struct {\bf stats} $\ast${\bf stats})
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Notesfile statistics datatype and related functions. 
+
+\subsection{Function Documentation}
+\index{stats.h@{stats.h}!get\_\-stats@{get\_\-stats}}
+\index{get\_\-stats@{get\_\-stats}!stats.h@{stats.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int get\_\-stats (const struct {\bf nfref} $\ast$ {\em ref}, struct {\bf stats} $\ast$ {\em stats})\hspace{0.3cm}{\tt  [inline]}}\label{stats_8h_adbe72a94a305b615af25117f0cb7ab0}
+
+
+Retrieve usage statistics for the \doxyref{notesfile}{p.}{structnotesfile} specified in {\em ref\/}. Guaranteed to modify every value in {\em \doxyref{stats}{p.}{structstats}\/}; therefore, there is no need to call zero\_\-stats before this function.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em ref}]A reference to a \doxyref{notesfile}{p.}{structnotesfile}. \item[{\em \doxyref{stats}{p.}{structstats}}]The structure to populate with statistics for {\em ref\/}.\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Returns:]FIXME\end{Desc}
+\begin{Desc}
+\item[Side effects:]The statistics stored in {\em \doxyref{stats}{p.}{structstats}\/} will be modified. \end{Desc}
+\index{stats.h@{stats.h}!stats\_\-accumulate@{stats\_\-accumulate}}
+\index{stats\_\-accumulate@{stats\_\-accumulate}!stats.h@{stats.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void stats\_\-accumulate (const struct {\bf stats} $\ast$ {\em stats}, struct {\bf stats} $\ast$ {\em total})}\label{stats_8h_167312946ce937de2655912825f6d4b6}
+
+
+Add the statistics from one notesfiles to a running total.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em \doxyref{stats}{p.}{structstats}}]The statistics to add to the running total. \item[{\em total}]The running total of statistics.\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Side effects:]The statistics stored in {\em total\/} will be modified. \end{Desc}
+\index{stats.h@{stats.h}!stats\_\-alloc@{stats\_\-alloc}}
+\index{stats\_\-alloc@{stats\_\-alloc}!stats.h@{stats.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}struct {\bf stats}$\ast$ stats\_\-alloc (void)\hspace{0.3cm}{\tt  [read]}}\label{stats_8h_c309ac0d2f425b0d7b4facecc37bc0aa}
+
+
+Create a new struct \doxyref{stats}{p.}{structstats}.
+
+\begin{Desc}
+\item[Returns:]A newly allocated struct \doxyref{stats}{p.}{structstats}. This should be freed with free\_\-stats when no longer needed.\end{Desc}
+\begin{Desc}
+\item[See also:]free\_\-stats \end{Desc}
+\index{stats.h@{stats.h}!stats\_\-free@{stats\_\-free}}
+\index{stats\_\-free@{stats\_\-free}!stats.h@{stats.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void stats\_\-free (struct {\bf stats} $\ast$ {\em stats})}\label{stats_8h_78c824ac4383f28afa1aaeac9ce1d5db}
+
+
+Deallocate {\em \doxyref{stats}{p.}{structstats}\/}.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em \doxyref{stats}{p.}{structstats}}]The structure to deallocate.\end{description}
+\end{Desc}
+\begin{Desc}
+\item[Side effects:]{\em \doxyref{stats}{p.}{structstats}\/} will be invalidated, and should no longer be used.\end{Desc}
+\begin{Desc}
+\item[See also:]alloc\_\-stats \end{Desc}

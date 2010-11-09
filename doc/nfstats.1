@@ -1,0 +1,57 @@
+.TH NFSTATS 1 "August 2004" "Newts" "Newts Reference Manual"
+
+.SH NAME
+nfstats \- display statistics for notesfiles
+
+.SH SYNOPSIS
+.B nfstats
+[\fIoptions\fR] \fINOTESFILE\fR...
+
+.SH DESCRIPTION
+.B nfstats
+displays usage statistics for one or more notesfiles.
+
+.SH OPTIONS
+
+.TP
+\fB\-h\fR, \fB\-\^\-help\fR
+Print a summary of usage and command-line options for
+.B nfstats
+and exit.
+
+.TP
+\fB\-s\fR, \fB\-\^\-summary\fR
+Instead of printing statistics for each notesfile, compile a single summary of
+the statistics for all specified notesfiles.
+
+.TP
+\fB\-\^\-debug\fR
+Print debugging messages to standard error.
+
+.TP
+\fB\-\^\-version\fR
+Print version information for
+.B nfstats
+and exit.
+
+.SH AUTHOR
+.B Newts
+was written and is maintained by Tyler Berry <tyler+newts@thoughtlocker.net>.
+
+.SH SEE ALSO
+\fBautoseq\fR(1), \fBchecknotes\fR(1), \fBgetnote\fR(1), \fBmknf\fR(1),
+\fBnfadmin\fR(1), \fBnfdump\fR(1), \fBnfload\fR(1), \fBnfmail\fR(1),
+\fBnfpipe\fR(1), \fBnfprint\fR(1), \fBnftimestamp\fR(1), \fBnotes\fR(1),
+\fBrmnf\fR(1)
+
+The full documentation for
+.B Newts
+is maintained as a Texinfo manual.  If the
+.B info
+and
+.B Newts
+programs are properly installed at your site, the command
+.IP
+.B info newts
+.PP
+should give you access to the complete manual.

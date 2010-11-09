@@ -1,0 +1,83 @@
+.TH NFTIMESTAMP 1 "August 2004" "Newts" "Newts Reference Manual"
+
+.SH NAME
+nftimestamp \- check for new and updated notes
+
+.SH SYNOPSIS
+.B nftimestamp
+[\fIoptions\fR] \fINOTESFILE\fR...
+
+.SH DESCRIPTION
+.B nftimestamp
+updates your sequencer time in each of the specified notesfiles to the time
+provided, or, by default, to right now.
+
+.SH OPTIONS
+
+.TP
+\fB\-a\fR, \fB\-\^\-alternate\fR=\fINAME\fR
+Use a named subsequencer.  Each subsequencer has its own independent set of
+timestamps, and each can be used independently to sequence through the same
+notesfiles.
+
+This option was originally used for shared accounts, so multiple users could
+track their sequencers individually.  Since most sites have moved away from
+using shared accounts, this option is rarely used.
+
+.TP
+\fB\-f\fR, \fB\-\^\-file\fR=\fIFILE\fR
+Read a list of notesfiles to update from the specified file, instead of
+expecting such a list to be provided on the command line.
+
+.TP
+\fB\-h\fR, \fB\-\^\-help\fR
+Print a summary of usage and command-line options for
+.B nftimestamp
+and exit.
+
+.TP
+\fB\-o\fR, \fB\-\^\-time\fR=\fITIME\fR
+Specify a particular date/time to set the sequencer time to.  Most common
+formats for specifying dates and times are accepted by this option.
+
+.TP
+\fB\-u\fR, \fB\-\^\-user\fR=\fIUSERNAME\fR
+As root or the notes administrator, specify which user's sequencer times to
+update.  For all intents and purposes, this option is identical to using
+\fBsu\fR(1) to become the user, then running \fBnftimestamp\fR.
+
+.TP
+\fB\-v\fR, \fB\-\^\-verbose\fR
+Print a message for each updated notesfile.
+
+.TP
+\fB\-\^\-debug\fR
+Print debugging messages to standard error.
+
+.TP
+\fB\-\^\-version\fR
+Print version information for
+.B nftimestamp
+and exit.
+
+.SH AUTHOR
+.B Newts
+was written and is maintained by Tyler Berry <tyler+newts@thoughtlocker.net>.
+
+.SH SEE ALSO
+\fBautoseq\fR(1), \fBchecknotes\fR(1), \fBgetnote\fR(1), \fBmknf\fR(1),
+\fBnfadmin\fR(1), \fBnfdump\fR(1), \fBnfload\fR(1), \fBnfmail\fR(1),
+\fBnfpipe\fR(1), \fBnfprint\fR(1), \fBnfstats\fR(1), \fBnotes\fR(1),
+\fBrmnf\fR(1)
+
+The full documentation for
+.B Newts
+is maintained as a Texinfo manual.  If the
+.B info
+and
+.B Newts
+programs are properly installed at your site, the command
+.IP
+.B info newts
+.PP
+should give you access to the complete manual.

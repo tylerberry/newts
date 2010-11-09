@@ -1,0 +1,338 @@
+@node Entering and exiting
+@chapter Entering and exiting Notes
+
+This chapter explains the basics of using Notes: how to start up Notes
+and various methods of quitting out of the program.  The chapter also
+includes a quick reference sheet for the invocation of Notes,
+including a table of all available command-line options.
+
+@menu
+* Entering::         Starting up the Notes program.
+* Exiting::          Various ways to quit from the Notes program.
+* Invoking Notes::   A reference for Notes' various command-line
+                       options.
+@end menu
+
+@node Entering
+@section Entering Notes
+@cindex entering Notes
+@cindex starting Notes
+@cindex Notes, starting
+
+In general, entering the Notes program is as simple as this:
+
+@example
+notes NOTESFILES...
+@end example
+
+The Notes program will begin with the first notesfile specified, and
+sequentially proceed through each one.  After you've finished with the
+last notesfile specified, Notes will automatically exit.
+
+Later sections in this chapter will explain the syntax for notesfile
+names and also how to select multiple notesfiles at once using
+pattern-matching.
+
+If you want to avoid typing in the same list of notesfiles over and
+over again, you can set the environment variable NFSEQ to a space or
+comma-delimited list of notesfiles.  If that variable is set, and you
+start the notes program using the sequencer without listing any
+notesfiles, Notes will visit all the notesfiles listed in NFSEQ.
+
+@menu
+* Notesfile syntax::          How to specify the name of a notesfile.
+* Pattern matching::          Specifying more than one notesfile at a
+                                time.
+* Inaccessible notesfiles::   When you can't enter a notesfile.
+@end menu
+
+@node Notesfile syntax
+@subsection The syntax of notesfile names
+@cindex notesfiles, name syntax of
+@cindex syntax of notesfile names
+
+There are multiple different syntaxes available for specifying
+notesfile names; all are available both on the command line and inside
+the Notes program.
+
+The first, and simplest, is the same syntax available in the old
+Notesfiles program:
+
+@example
+[=]@var{notesfile}
+@end example
+
+This specifies the local, global notesfile with the given name.  To
+specify a @dfn{personal notesfile} (a notesfile owned and managed by a
+normal user on the system, rather than by the notes administrators),
+use this syntax:
+
+@example
+[=]@var{owner}:@var{notesfile}
+@end example
+
+It is also possible to specify notesfiles on other systems.  There are
+two syntaxes available to do this; first, an expanded version of the
+Notesfiles syntax, and second, the longer, ``URI-style'' syntax.
+
+@example
+[=][@var{user}@@]@var{system}[:@var{port}]/[@var{owner}:]@var{notesfile}
+@end example
+
+@example
+@r{URI-style:}
+@var{protocol}://[@var{user}@@]@var{system}[:@var{port}]/[@var{owner}:]@var{notesfile}
+@end example
+
+As you can see, most of the components are optional.  The default value
+for @var{protocol} is ``newts''; in fact, that is currently the only
+valid value.  If omitted, @var{user} defaults to your local username.
+@var{port} defaults to the regular port for the Notes Client Protocol.
+
+The form @code{=@var{system}/@var{notesfile}} can be considered to be an
+abbreviated form of @code{newts://@var{system}/@var{notesfile}}.
+
+It is also possible to store a list of notesfiles to read in a file,
+and afterwards tell Notes to read that file and use that list of
+notesfiles.  The syntax used to specify such a file is
+@code{:@var{file}}.
+
+@strong{Warning}: the remote access methods are presented for
+reference; they are not yet implemented.
+
+@node Pattern matching
+@subsection Using patterns to specify notesfiles
+@cindex notesfiles, pattern syntax
+@cindex syntax of notesfile name patterns
+
+Notes accepts shell-like pattern specification syntax for notesfile
+names.
+
+Specifically, you can use the shell wild-card characters @samp{?} and
+@samp{*} to match a single character or any number of characters
+respectively, and you can use @samp{[]} with any number of characters
+between the brackets to match any one of those characters.  You can
+also precede a pattern or notesfile name with @samp{!} to indicate
+notesfiles which you do @emph{not} want to read.
+
+It is important to note that whenever you want to use pattern-matching
+to specify notesfiles, you @emph{must} place the pattern expression
+inside quotes.  Since Notes uses shell-like syntax for pattern
+matching, the shell itself will interpret your pattern characters
+rather than passing them through to the Notes program.  For example,
+@samp{notes *} would expand into the list of all files in the current
+directory, not the list of all local global notesfiles, which is
+probably what you wanted.
+
+Some examples of what you can do with pattern matching:
+
+@table @samp
+@item notes '*'
+View all local global notesfiles.
+
+@item notes 'foo[1234]'
+View @samp{=foo1}, @samp{=foo2}, @samp{=foo3}, and @samp{=foo4}.
+
+@item notes 'test?' '!testa'
+View all notesfiles with names consisting of @samp{test} plus one more
+character, except for @samp{=testa}.
+
+@item notes '*:*' '!bob:*'
+View all local private notesfiles except for those owned by the user `bob'.
+@end table
+
+@node Inaccessible notesfiles
+@subsection Inaccessible notesfiles
+@cindex notesfiles, inaccessible
+@cindex locked notesfiles
+
+There are two things which can result in a notesfile being
+inaccessible to you.  In each of these cases, a message will appear on
+the screen explaining the situation to you.
+
+The first case is that you might not have been granted access to the
+notesfile.  In this case, you will be given the opportunity to read
+the notesfile's policy note, if such a note exists.  Furthermore, if
+you have permission to write in the notesfile, but not to read, you
+will be given the opportunity to leave a note in the notesfile.  This
+note will be marked as ``Write Only'' so that persons reading the note
+in the notesfile will know that you are unable to read any replies.
+
+The second case occurs when a director has locked the notesfile.  When
+this occurs, only directors are allowed to enter, read, or otherwise
+interact with the notesfile.  Locking is commonly used for notesfile
+maintenance and will typically only be active for a short period of
+time.
+
+@node Exiting
+@section Exiting Notes
+@cindex quitting Notes
+@cindex Notes, exiting
+
+There are several different keys which will close the current
+notesfile and move on to the next one specified.  These keys are
+@kbd{q}, @kbd{k}, @kbd{Q}, and @kbd{K}.  There are some differences
+between these keys if you are using the sequencer, but otherwise they
+all do the same thing.
+
+You can use @kbd{C-d} or @kbd{z} to quit out of the Notes system
+entirely, skipping all other notesfiles.  Again, these keys differ if
+the sequencer is in use.
+
+@node Invoking Notes
+@section Invoking Notes
+@cindex invoking notes
+@cindex notes invocation
+
+This page lists invocation information and a table of all command-line
+options supported by Notes, the UIUC-interface compatible client for
+the Newts notesfile system.  Summary:
+
+@example
+@samp{notes [@var{option}]... @var{notesfile}...}
+@end example
+
+Display options:
+
+@table @samp
+@item -m
+@itemx --modern
+Use the ``modern'' display mode, featuring a more consistent user
+interface, error messages, and prompts.  This is the default display
+mode.
+
+@item -t
+@itemx --traditional
+@itemx --imsa
+Use the ``traditional'' display mode; this is the appearance that the
+Notesfiles system, developed by Ray Essick and Rob Kolstad at the
+University of Illinois, used.  If you're nostalgic for the
+idiosyncratic interface and messages of the old Notes, try this
+display mode.  This option also activates @samp{--seq-own-notes} to
+duplicate the behavior of the old Notes sequencer.
+@end table
+
+General options:
+
+@table @samp
+@item -f @var{file}
+@itemx --file=@var{file}
+Read a list of notesfiles to view from the specified file, instead of
+expecting such a list to be provided on the command line.  This option
+does not imply use of the sequencer, but can be used with the
+sequencer.
+
+@item -g
+@itemx --no-signature
+Do not include a signature in any notes or responses you compose, even
+if a ~/.signature or similar file is located.
+
+@item -u @var{username}
+@itemx --user=@var{username}
+As root, run the client as the specified user.  This means you'll use
+the user's sequencer file, post as the user, etc; for all intents and
+purposes, this option is identical to using @command{su} to become the
+user, then running @command{notes}, but is much easier to use when
+debugging.
+@end table
+
+Sequencer options:
+
+@table @samp
+@item -a @var{name}
+@itemx --alternate=@var{name}
+Use a named subsequencer.  Each subsequencer has its own independent
+set of timestamps, and each can be used independently to sequence
+through the same notesfiles.  If no other sequencer mode is specified,
+@samp{--sequencer} will be assumed.
+
+This option was originally used for shared accounts, so multiple users
+could track their sequencers individually.  Since most sites have
+moved away from using shared accounts, this option is rarely used.
+
+@item -e
+@itemx --seq-own-notes
+With this option set, the sequencer will ``trip'' on notes you write.
+If your note is the only new note in a notesfile, that notesfile will
+be entered and your note displayed.
+
+@item -i
+@itemx --index
+Use the index sequencer.  This mode will skip notesfiles with no new
+notes, and will open to the index page of each notesfile with new
+notes, instead of immediately opening to the first modified note.
+
+@item -k
+@itemx --skip-own-notes
+With this option set, the sequencer will ignore notes you write for
+the purpose of determining whether a notesfile has been updated.  This
+is the default behavior for the sequencer.
+
+@item -n
+@itemx --no-sequencer
+Do not use the sequencer.  This is the default mode.
+
+@item -o @var{time}
+@itemx --time=@var{time}
+Specify a particular date/time for the sequencer to use.  In this
+mode, all notes written after the given time will be considered to be
+``new'', and the sequencer time will not be updated after you quit.
+If no other sequencer mode is specified, @samp{--sequencer} will be
+assumed.  Most common formats for specifying dates and times are
+accepted by this option.
+
+@item -s
+@itemx --sequencer
+Use the sequencer.  The standard sequencer mode will skip notesfiles
+with no new notes, and will open immediately to the first basenote in
+each notesfile with modified or new material.
+
+@item -x
+@itemx --extended
+Use the extended sequencer.  This mode will enter each notesfile
+specified, regardless of whether there are new notes.  If a given
+notesfile has no new notes, it will open to the index screen.  If a
+notesfile does have new notes, the notesfile will open to the first
+basenote with modified or new material.
+@end table
+
+Blacklist options:
+
+@table @samp
+@item -b
+@itemx --black-threads
+When sequencing, for threads with basenotes that are blacklisted, skip
+all responses in the thread as well as the basenote.  If the
+@samp{--white-basenotes} option is specified, this option does
+nothing.
+
+@item -w
+@itemx --white-basenotes
+Cause basenotes to be exempt from blacklisting.  With this option set,
+all basenotes will be displayed.  If both @samp{--white-basenotes} and
+@samp{--black-threads} are specified, only this option will apply.
+
+@item -z
+@itemx --no-blacklist
+Do not use the blacklist; display all notes.
+@end table
+
+Getting information about the Notes program:
+
+@table @samp
+@item -h
+@itemx --help
+Print a summary of usage and command-line options for Notes and exit.
+
+@item --debug
+Print debugging messages to standard error as the client runs; you
+will probably want to save these messages to a file using redirection
+of standard error.  For example, using Bourne shell syntax:
+
+@example
+@samp{notes =example 2>errors}
+@end example
+
+@item --version
+Print version information for Notes and exit.
+@end table

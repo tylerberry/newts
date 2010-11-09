@@ -1,0 +1,122 @@
+.TH NFADMIN 1 "August 2004" "Newts" "Newts Reference Manual"
+
+.SH NAME
+nfadmin - change notesfiles' director options
+
+.SH SYNOPSIS
+.B nfadmin
+[\fIoptions\fR] \fINOTESFILE\fR...
+
+.SH DESCRIPTION
+.B nfadmin
+displays and alters director settings for notesfiles in which you have director
+permissions.
+
+The command-line options for `nfadmin' are non-standard; they do not strictly
+follow normal GNU usage.
+
+.SH FLAG OPTIONS
+
+Flag options set or clear boolean flags, such as "moderated", for notesfiles.
+The short option version of flag options uses either a \fB+\fR or a \fB-\fR
+appended to the end of the option (for example, \fB-a+\fR or \fB-M-\fR) to
+activate or deactive the flag.  Alternately, flag options can be set using
+standard long options; in this case, supply an argument of "yes", "no", "on",
+or "off".
+
+.TP
+\fB\-a\fR, \fB\-\^\-anonymous\fR=\fIFLAG\fR
+Turn on or off anonymous posting in the specified notesfiles.
+
+.TP
+\fB\-A\fR, \fB\-\^\-archive\fR=\fIFLAG\fR
+Turn on or off archive status for the specified notesfiles.
+
+.TP
+\fB\-l\fR, \fB\-\^\-locked\fR=\fIFLAG\fR
+Lock or unlock the specified notesfiles; only directors are permitted to enter a
+locked notesfile.
+
+.TP
+\fB\-M\fR, \fB\-\^\-moderated\fR=\fIFLAG\fR
+Turn on or off moderation for the specifed notesfiles.
+
+.TP
+\fB\-o\fR, \fB\-\^\-open\fR=\fIFLAG\fR
+"Open" or "close" the specified notesfiles; this is the same as unlocking and
+locking, respectively.
+
+.SH VALUE OPTIONS
+
+Value options allow you to specify particular values for various
+notesfile settings.
+
+.TP
+\fB\-d\fR, \fB\-\^\-expire-dirmsg\fR=\fIVALUE\fR
+Change the "expire by director message" value for the specified notesfiles.
+This options controls how notes in the notesfile should be affected by their
+director messages during archiving.  Valid values are "on", "off", "any",
+"ignore", and "default".
+
+.TP
+\fB\-e\fR, \fB\-\^\-expire-time\fR=\fIVALUE\fR
+Set the number of days before notes are archived in the specified notesfiles.
+Valid values are "never", "default", and positive integers; 0 is considered the
+same as "default".
+
+.TP
+\fB\-E\fR, \fB\-\^\-expire-action\fR=\fIVALUE\fR
+Change the action to be performed on expired notes in the specified notesfiles.
+Valid values are "archive", "delete", and "default".
+
+.TP
+\fB\-L\fR, \fB\-\^\-max-note-size\fR=\fIVALUE\fR
+Change the maximum size for individual notes in the specified notesfiles.  A
+value can be entered as a simple number, which will be interpreted as a number
+of bytes, or in the form "23k", which will be interpreted as a number of
+kilobytes.  The absolute maximum is 2929k.
+
+.TP
+\fB\-W\fR, \fB\-\^\-minimum-notes\fR=\fIVALUE\fR
+Change the number of notes which will be left in the notesfile at minimum after
+archiving.  Valid values are "default" and positive integers.
+
+.SH OTHER OPTIONS
+
+.TP
+\fB\-h\fR, \fB\-\^\-help\fR
+Print a summary of usage and command-line options for
+.B nfadmin
+and exit.
+
+.TP
+\fB\-\^\-debug\fR
+Print debugging messages to standard error.
+
+.TP
+\fB\-\^\-version\fR
+Print version information for
+.B nfadmin
+and exit.
+
+.SH AUTHOR
+.B Newts
+was written and is maintained by Tyler Berry <tyler+newts@thoughtlocker.net>.
+
+.SH SEE ALSO
+\fBautoseq\fR(1), \fBchecknotes\fR(1), \fBgetnote\fR(1), \fBmknf\fR(1),
+\fBnfdump\fR(1), \fBnfload\fR(1), \fBnfmail\fR(1), \fBnfpipe\fR(1),
+\fBnfprint\fR(1), \fBnfstats\fR(1), \fBnftimestamp\fR(1), \fBnotes\fR(1),
+\fBrmnf\fR(1)
+
+The full documentation for
+.B Newts
+is maintained as a Texinfo manual.  If the
+.B info
+and
+.B Newts
+programs are properly installed at your site, the command
+.IP
+.B info newts
+.PP
+should give you access to the complete manual.

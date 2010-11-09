@@ -1,0 +1,87 @@
+@node Writing
+@chapter Writing notes and responses
+@cindex writing notes and responses
+@cindex composing notes and responses
+@cindex notes, writing
+
+Having mastered navigation to and around notes in the notesfile
+system, the next activity to master is contributing to the discussion
+by posting new topics for discussion and responding to posts that
+others have made.
+
+@menu
+* Writing basenotes::         Adding a new basenote to a notesfile.
+* Writing responses::         Responding to an existing note.
+* Choosing an editor::        Specifying an editor for Notes to use.
+* Restrictions on writing::   Access permissions for writing.
+@end menu
+
+@node Writing basenotes
+@section Writing basenotes
+@cindex writing basenotes
+@cindex composing basenotes
+@cindex basenotes, writing
+
+Adding a new basenote to a notesfile is easy: while viewing the
+notesfile index screen, the @kbd{w} key will open an editor for you to
+edit the text of your new note.  After you are finished editing the
+note, save and quit in the normal manner for your editor.
+
+If the notesfile you are adding a new note to allows anonymous notes,
+you will be asked if you want your new note to be anonymous.  If you
+are a director in the notesfile, you will then be given the option to
+add a director message to the note.  Finally, you will be prompted for
+a title for the new basenote.
+
+After the note is completed, it will automatically be displayed on the
+screen.
+
+@node Writing responses
+@section Writing responses
+@cindex writing responses
+@cindex composing responses
+@cindex responses, writing
+
+Creating a new response to an existing note is very similar to
+creating a new basenote.  While viewing the note you'd like to respond
+to, press @kbd{w} to create a new response, or @kbd{W} to include the
+text of the current note or response as a quote in your new note.
+
+An editor will be launched for you to type in the text of your
+response.  After you've finished editing the response, save and quit
+your editor.
+
+If the notesfile you are adding the response to allows anonymous
+notes, you will be asked if you want your response to be anonymous.
+If you are a director in the notesfile, you will be given the option
+to add a director message to the response.
+
+As with a new basenote, your finished response will be automatically
+opened after it is completed.
+
+@node Choosing an editor
+@section Choosing an editor
+@cindex choosing an editor
+
+Notes will honor the various common environment variables used to
+specify a preferred editor --- namely, @env{VISUAL} and @env{EDITOR}.
+If you would prefer to specify a different editor to use only in
+Notes, you can instead use the environment variable @env{NFEDITOR}.
+In the interest of backwards compatibility, @env{NFED}, used by UIUC
+Notesfiles, is also recognized.
+
+@node Restrictions on writing
+@section Access restrictions for writing notes
+@cindex access restrictions on writing and responding
+
+In some cases, you may be allowed to read the notes in a notesfile,
+but not to write new notes; in other cases, you may be able to read
+and respond, but not post new basenotes.
+
+These options can be used to create notesfiles for announcements,
+where only approved personnel can post new notes and other users are
+restricted either to reading or reading and commenting on existing
+items.
+
+Access restrictions can also be imposed on individuals at the
+discretion of notesfile directors.

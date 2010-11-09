@@ -1,0 +1,686 @@
+@node Utilities
+@chapter Command-line utilities
+@cindex utilities, command-line
+@cindex command-line utilities
+
+In addition to the main Notes client, Newts includes a variety of
+supplementary command-line utilities, some of which are mentioned
+earlier in the manual.  This appendix contains a summary of each of
+these utilities.
+
+@menu
+* Invoking checknotes::   Checking for new and updated notes.
+* Invoking getnote::      Printing notes to standard output.
+* Invoking mknf::         Creating new notesfiles.
+* Invoking nfadmin::      Changing notesfiles' director options.
+* Invoking nfdump::       Creating a saved image of a notesfile.
+* Invoking nfload::       Loading a saved image of a notesfile.
+* Invoking nfmail::       Inserting an e-mail into a notesfile.
+* Invoking nfpipe::       Inserting text into a notesfile.
+* Invoking nfprint::      Printing formatted notesfiles.
+* Invoking nfstats::      Getting statistics about notesfiles.
+* Invoking nftimestamp::  Updating your sequencer times.
+* Invoking rmnf::         Deleting existing notesfiles.
+@end menu
+
+@node Invoking checknotes
+@section @command{checknotes}: Checking for new and updated notes
+@pindex checknotes
+
+@command{checknotes} checks various notesfiles to see if they've been
+updated since the last time you read through them.  Synopsis:
+
+@example
+@samp{checknotes [@var{option}]... [@var{notesfile}]...}
+@end example
+
+More specifically, @command{checknotes} compares a notesfile's
+modification time to the time stored in the sequencer for that
+notesfile.  If the notesfile's modification time is more recent, the
+notesfile is marked as having new material to read.
+
+@command{checknotes} accepts the following options:
+
+@table @samp
+@item -a @var{name}
+@itemx --alternate=@var{name}
+Use a named subsequencer.  Each subsequencer has its own independent
+set of timestamps, and each can be used independently to sequence
+through the same notesfiles.
+
+This option was originally used for shared accounts, so multiple users
+could track their sequencers individually.  Since most sites have
+moved away from using shared accounts, this option is rarely used.
+
+@item -f @var{file}
+@itemx --file=@var{file}
+Read a list of notesfiles to check from the specified file, instead of
+expecting such a list to be provided on the command line.
+
+@item -q
+@itemx -s
+@itemx --quiet
+@itemx --silent
+Do not output any messages, regardless of whether there are notesfiles
+with new or updated material.  This is primarily useful in a shell
+script, where the error code (0 if there are new notes, nonzero if
+there are no new notes or an error occured) can be used effectively.
+
+@item -v
+@itemx --verbose
+Print a message for each notesfile with new or updated notes.
+
+@item -h
+@itemx --help
+Print a summary of usage and command-line options for
+@command{checknotes} and exit.
+
+@item --debug
+Print debugging messages to standard error.
+
+@item --version
+Print version information for @command{checknotes} and exit.
+@end table
+
+@node Invoking getnote
+@section @command{getnote}: Printing notes to standard output
+@pindex getnote
+
+@command{getnote} prints either a single note or a single response
+from a particular notesfile to standard output.  Synopsis:
+
+@example
+@samp{getnote [@var{option}]... @var{notesfile} @var{note} [@var{response}]}
+@end example
+
+@command{getnote} accepts the following options:
+
+@table @samp
+@item -p
+@itemx --print-header
+Preface the text of the note with a header containing information
+about the note, including notesfile, note and response number, title,
+director message, and author.
+
+@item -h
+@itemx --help
+Print a summary of usage and command-line options for
+@command{getnote} and exit.
+
+@item --debug
+Print debugging messages to standard error.
+
+@item --version
+Print version information for @command{getnote} and exit.
+@end table
+@option{--version} as command-line options.
+
+@node Invoking mknf
+@section @command{mknf}: Creating new notesfiles
+@pindex mknf
+
+@command{mknf} creates one or more new notesfiles.  Synopsis:
+
+@example
+@samp{mknf [@var{option}]... @var{notesfile}...}
+@end example
+
+If you are a normal user, @command{mknf} will only allow you to create
+personal notesfiles; that is, notesfiles with names preceded by
+@samp{username:}.  The notes administrator can create general
+notesfiles as well as personal notesfiles with any prefix.
+
+In the future, @command{mknf} will have options allowing creation of
+multiple different types of notesfile according available backends;
+for now, the only available type is the UIUC-format notesfile.
+
+@command{mknf} accepts the following options:
+
+@table @samp
+@item -a
+@itemx --anonymous
+Set the newly created notesfile to allow anonymous notes.
+
+@item -l
+@itemx --locked
+Create the new notesfile in a locked state.  Locked notesfiles can only
+be entered by directors.
+
+@item -u
+@itemx --unlocked
+Create the new notesfile in an unlocked state.
+
+@item -v
+@itemx --verbose
+Print a message for each notesfile created.
+
+@item -h
+@itemx --help
+Print a summary of usage and command-line options for @command{mknf}
+and exit.
+
+@item --debug
+Print debugging messages to standard error.
+
+@item --version
+Print version information for @command{mknf} and exit.
+@end table
+
+For compatibility with the UIUC distribution of notes, @command{mknf}
+also accepts the @option{-o} or @option{--open} option, which is
+equivalent to @option{-u}, and the @option{-n} or @option{--networked}
+option, which does nothing at all.
+
+@node Invoking nfadmin
+@section @command{nfadmin}: Changing notesfiles' director options
+@pindex nfadmin
+
+@command{nfadmin} displays and alters director settings for notesfiles
+in which you have director permissions.  Synopsis:
+
+@example
+@samp{nfadmin [@var{option}]... @var{notesfile}...}
+@end example
+
+The command-line options for @command{nfadmin} are non-standard; they
+do not strictly follow normal GNU usage.
+
+Flag options set or clear boolean flags, such as ``moderated'', for
+notesfiles.  The short option version of flag options uses either a
+@kbd{+} or a @kbd{-} appended to the end of the option (for example,
+@samp{-a+} or @samp{-M-}) to activate or deactive the flag.
+Alternately, flag options can be set using standard long options; in
+this case, supply an argument of ``yes'', ``no'', ``on'', or ``off''.
+
+The available flag options are:
+
+@table @samp
+@item -a
+@itemx --anonymous=@var{flag}
+Turn on or off anonymous posting in the specified notesfiles.
+
+@item -A
+@itemx --archive=@var{flag}
+Turn on or off archive status for the specified notesfiles.
+
+@item -l
+@itemx --locked=@var{flag}
+Lock or unlock the specified notesfiles; only directors are permitted to
+enter a locked notesfile.
+
+@item -M
+@itemx --moderated=@var{flag}
+Turn on or off moderation for the specifed notesfiles.
+
+@item -o
+@itemx --open=@var{flag}
+``Open'' or ``close'' the specified notesfiles; this is the same as
+unlocking and locking, respectively.
+@end table
+
+Value options allow you to specify particular values for various
+notesfile settings.  The value options are:
+
+@table @samp
+@item -d @var{value}
+@itemx --expire-dirmsg=@var{value}
+Change the ``expire by director message'' value for the specified
+notesfiles.  This options controls how notes in the notesfile should be
+affected by their director messages during archiving.  Valid values are
+``on'', ``off'', ``any'', ``ignore'', and ``default''.
+
+@item -e @var{value}
+@itemx --expire-time=@var{value}
+Set the number of days before notes are archived in the specified
+notesfiles.  Valid values are ``never'', ``default'', and positive
+integers; 0 is considered the same as ``default''.
+
+@item -E @var{value}
+@itemx --expire-action=@var{value}
+Change the action to be performed on expired notes in the specified
+notesfiles.  Valid values are ``archive'', ``delete'', and ``default''.
+
+@item -L @var{value}
+@itemx --max-note-size=@var{value}
+Change the maximum size for individual notes in the specified
+notesfiles.  A value can be entered as a simple number, which will be
+interpreted as a number of bytes, or in the form ``23k'', which will
+be interpreted as a number of kilobytes.  The absolute maximum is
+2929k.
+
+@item -W @var{value}
+@itemx --minimum-notes=@var{value}
+Change the number of notes which will be left in the notesfile at
+minimum after archiving.  Valid values are ``default'' and positive
+integers.
+@end table
+
+Finally, there are several options for getting information about the
+@command{nfadmin} program:
+
+@table @samp
+@item -h
+@itemx --help
+Print a summary of usage and command-line options for
+@command{nfadmin} and exit.
+
+@item --debug
+Print debugging messages to standard error.
+
+@item --version
+Print version information for @command{nfadmin} and exit.
+@end table
+
+@node Invoking nfdump
+@section @command{nfdump}: Creating a saved image of a notesfile
+@pindex nfdump
+
+@command{nfdump} creates a plaintext dump of a notesfile which can be
+loaded back into Newts with @command{nfload} (@pxref{Invoking
+nfload}).  Synopsis:
+
+@example
+@samp{nfdump [@var{option}]... @var{notesfile}...}
+@end example
+
+@table @samp
+@item -e @var{ext}
+@itemx --extension=@var{ext}
+Specify the extension to be appended to the dump file or files
+created.  The notesfile name will have a period and then this
+extension appended to create the dump file name.  The default is
+`dump'.
+
+@item -v
+@itemx --verbose
+Print a confirmation message for each successfully processed
+notesfile.
+
+@item -h
+@itemx --help
+Print a summary of usage and command-line options for @command{nfload}
+and exit.
+
+@item --debug
+Print debugging messages to standard error.
+
+@item --version
+Print version information for @command{nfload} and exit.
+@end table
+
+@node Invoking nfload
+@section @command{nfload}: Loading a saved image of a notesfile
+@pindex nfload
+
+@command{nfload} reads in a saved image from @command{nfdump}
+(@pxref{Invoking nfdump}) and restores that image, into either an
+existing or a new notesfile.  Synopsis:
+
+@example
+@samp{nfload [@var{option}]... @var{file} @var{notesfile}}
+@end example
+
+@command{nfload} will also correctly load dumpfiles created by the
+version of @command{nfdump} included in UIUC Notesfiles.
+
+@table @samp
+@item -a
+@itemx --force-access
+Do not prompt for confirmation before adding or updating access
+entries.
+
+@item -f
+@itemx --force
+Do not prompt for confirmation before making changes to the
+notesfile.  This option implies @samp{--force-access}.
+
+@item -r
+@itemx --replace-access
+Delete all existing access entries from the notesfile prior to adding
+the access entries specified in the saved image.  This option implies
+@samp{--force-access}.
+
+@item -s
+@itemx --skip-access
+Do not make any changes to the notesfile's access entries; if the
+notesfile is created by running @command{nfload}, it will be left with
+the default set of access entries.  Neither @samp{--force-access} nor
+@samp{--replace-access} will have any effect if this option is
+specified.
+
+@item -v
+@itemx --verbose
+Print confirmation messages for each successfully processed portion of
+a notesfile image.
+
+@item -h
+@itemx --help
+Print a summary of usage and command-line options for @command{nfload}
+and exit.
+
+@item --debug
+Print debugging messages to standard error, including state
+information from the parser and other details.  This is most likely
+more information that you need, but it might be interesting and it
+will certainly help if you need to debug a broken file.
+
+@item --version
+Print version information for @command{nfload} and exit.
+@end table
+
+@node Invoking nfmail
+@section @command{nfmail}: Inserting an e-mail into a notesfile.
+@pindex nfmail
+
+@command{nfmail} takes a saved e-mail message from standard input (or
+from a specified file) and use it as the text for a newly created note
+in the specified notesfile.  The headers of the note are parsed to try
+to determine a subject for the newly created note.  Synopsis:
+
+@example
+@samp{nfmail [@var{option}]... [@var{file}] @var{notesfile}}
+@end example
+
+@command{nfmail} behaves differently than the version distributed with
+Essick and Kolstad's Notesfiles.  That implementation of
+@command{nfmail} would attempt to parse the e-mail message for
+``From '' or ``From: '' headers, and try to use that header to
+determine an author for the newly created note.
+
+Newts considers this a potential problem; it would be possible to
+forge a file which would be indistinguishable from an e-mail message,
+and use that forged file to create a note which would appear to have
+been written by another user.  To avoid this problem entirely, a note
+created by this implementation of @command{nfmail} will always be
+created with the user executing @command{nfmail} as its author.
+
+@command{nfmail} accepts the following options:
+
+@table @samp
+@item -a
+@itemx --anonymous
+If the notesfile allows anonymous notes, make the new note anonymous.
+
+@item -d[@var{message}]
+@itemx --director-msg[=@var{message}]
+Set the new note's director message.  If the notesfile uses a backend
+which allows per-note director messages as opposed to per-notesfile
+director messages, you may provide the message you would like to be
+displayed for this note.  (If the notesfile does not support this
+feature, the director message flag will still be set, but the
+notesfile's director message will be used.)
+
+@item -s
+@itemx --strip-headers
+Remove the mail headers from the text of the e-mail before adding the
+newly created note to the notesfile.
+
+@item -t @var{title}
+@itemx --title=@var{title}
+Set the new note's title.  If provided, this title will override any
+``Subject:'' header found in the e-mail.
+
+@item -v
+@itemx --verbose
+Print a confirmation message after creating the new note.
+
+@item -h
+@itemx --help
+Print a summary of usage and command-line options for @command{nfmail}
+and exit.
+
+@item --debug
+Print debugging messages to standard error.
+
+@item --version
+Print version information for @command{nfmail} and exit.
+@end table
+
+@node Invoking nfpipe
+@section @command{nfpipe}: Inserting text into a notesfile.
+@pindex nfpipe
+
+@command{nfpipe} takes text from standard input (or from a specified
+file) and use it as the text for a newly created note in the specified
+notesfile.  Synopsis:
+
+@example
+@samp{nfpipe [@var{option}]... [@var{file}] @var{notesfile}}
+@end example
+
+Generally speaking, @command{nfpipe} is intended to be used in one of
+two ways.  First, it can be used to insert text from a file into a
+notesfile; second, it can be used along with a pipe to save output
+from another program into a notesfile --- hence the name ``nfpipe''.
+For example:
+
+@example
+@samp{cat foo | nfpipe =bar}
+@end example
+
+@command{nfpipe} accepts the following options:
+
+@table @samp
+@item -a
+@itemx --anonymous
+If the notesfile allows anonymous notes, make the new note anonymous.
+
+@item -d[@var{message}]
+@itemx --director-msg[=@var{message}]
+Set the new note's director message.  If the notesfile uses a backend
+which allows per-note director messages as opposed to per-notesfile
+director messages, you may provide the message you would like to be
+displayed for this note.  (If the notesfile does not support this
+feature, the director message flag will still be set, but the
+notesfile's director message will be used.)
+
+@item -t @var{title}
+@itemx --title=@var{title}
+Set the new note's title.
+
+@item -v
+@itemx --verbose
+Print a confirmation message after creating the new note.
+
+@item -h
+@itemx --help
+Print a summary of usage and command-line options for @command{nfpipe}
+and exit.
+
+@item --debug
+Print debugging messages to standard error.
+
+@item --version
+Print version information for @command{nfpipe} and exit.
+@end table
+
+@node Invoking nfprint
+@section @command{nfprint}: Printing formatted notes
+@pindex nfprint
+
+@command{nfprint} formats a notesfile and prints it to standard output
+in a format suitable for hardcopy printing or other forms of offline
+viewing.  Synopsis:
+
+@example
+@samp{nfprint [@var{option}]... @var{notesfile} [@var{list}]}
+@end example
+
+The parameter @var{list} is a space-delimited list of note numbers;
+the specified notes will be the ones printed.  List elements can
+contain ranges of notes separated by hyphens.  For example:
+
+@example
+@samp{nfprint =example 1-4 6 8 12-17}
+@end example
+
+@command{nfprint} accepts the following options:
+
+@table @samp
+@item -c
+@itemx --cat
+Use the @command{cat} program instead of the default @command{pr} to
+format the output.  If this option is specified, options
+@option{--length} and @option{--page-breaks}, which only pertain to
+@command{pr}, will be ignored if provided.
+
+@item -d
+@itemx --director
+Include only notes with director messages.
+
+@item -i
+@itemx --index-only
+Print only an index page for the specified notes; do not print the
+actual notes and responses.
+
+@item -l @var{length}
+@itemx --length=@var{length}
+Direct the @command{pr} program to format output with @var{length}
+lines per page.
+
+@item -n
+@itemx -nd
+@itemx --no-director
+Include only notes without director messages.
+
+@item -p
+@itemx --page-breaks
+Direct the @command{pr} program to insert a page break after each note
+thread, consisting of a note and all its responses.
+
+@item -h
+@itemx --help
+Print a summary of usage and command-line options for
+@command{nfprint} and exit.
+
+@item --debug
+Print debugging messages to standard error.
+
+@item --version
+Print version information for @command{nfprint} and exit.
+@end table
+
+@node Invoking nfstats
+@section @command{nfstats}: Getting statistics about notesfiles.
+@pindex nfstats
+
+@command{nfstats} displays usage statistics for one or more
+notesfiles.  Synopsis:
+
+@example
+@samp{nfstats [@var{option}]... @var{notesfile}...}
+@end example
+
+@command{nfstats} accepts the following options:
+
+@table @samp
+@item -s
+@itemx --summary
+Instead of printing statistics for each notesfile, compile a single
+summary of the statistics for all specified notesfiles.
+
+@item -h
+@itemx --help
+Print a summary of usage and command-line options for
+@command{nfstats} and exit.
+
+@item --debug
+Print debugging messages to standard error.
+
+@item --version
+Print version information for @command{nfstats} and exit.
+@end table
+
+@node Invoking nftimestamp
+@section @command{nftimestamp}: Updating your sequencer times
+@pindex nftimestamp
+
+@command{nftimestamp} updates your sequencer time in each of the
+specified notesfiles to the time provided, or, by default, to right
+now.  Synopsis:
+
+@example
+@samp{nftimestamp [@var{option}]... @var{notesfile}...}
+@end example
+
+@command{nftimestamp} accepts the following options:
+
+@table @samp
+@item -a @var{name}
+@itemx --alternate=@var{name}
+Use a named subsequencer.  Each subsequencer has its own independent
+set of timestamps, and each can be used independently to sequence
+through the same notesfiles.
+
+This option was originally used for shared accounts, so multiple users
+could track their sequencers individually.  Since most sites have
+moved away from using shared accounts, this option is rarely used.
+
+@item -f @var{file}
+@itemx --file=@var{file}
+Read a list of notesfiles to update from the specified file, instead
+of expecting such a list to be provided on the command line.
+
+@item -o @var{time}
+@itemx --time=@var{time}
+Specify a particular date/time to set the sequencer time to.  Most
+common formats for specifying dates and times are accepted by this
+option.
+
+@item -u @var{username}
+@itemx --user=@var{username}
+As root or the notes administrator, specify which user's sequencer
+times to update.  For all intents and purposes, this option is
+identical to using @command{su} to become the user, then running
+@command{nftimestamp}.
+
+@item -v
+@itemx --verbose
+Print a message for each updated notesfile.
+
+@item -h
+@itemx --help
+Print a summary of usage and command-line options for
+@command{nftimestamp} and exit.
+
+@item --debug
+Print debugging messages to standard error.
+
+@item --version
+Print version information for @command{nftimestamp} and exit.
+@end table
+
+@node Invoking rmnf
+@section @command{rmnf}: Deleting existing notesfiles.
+@pindex rmnf
+
+@command{rmnf} deletes one or more existing notesfiles.  Synopsis:
+
+@example
+@samp{mknf [@var{option}]... @var{notesfile}...}
+@end example
+
+@command{rmnf} accepts the following options:
+
+@table @samp
+@item -f
+@itemx --force
+Normally, @command{rmnf} will prompt to confirm the deletion of each
+notesfile, since this command can destroy a lot of data.  This option
+will suppress the confirmation request.
+
+@item -v
+@itemx --verbose
+Print a message for each notesfile deleted.
+
+@item -h
+@itemx --help
+Print a summary of usage and command-line options for @command{rmnf}
+and exit.
+
+@item --debug
+Print debugging messages to standard error.
+
+@item --version
+Print version information for @command{rmnf} and exit.
+@end table

@@ -1,0 +1,69 @@
+@node Correcting mistakes
+@chapter Correcting mistakes
+@cindex correcting mistakes
+
+Sometimes after composing a note you might realize that you made a
+mistake; there may have been a typo in the text of your note, you may
+have thought of a better title for your basenote, or you may
+reconsider posting the note entirely.  This chapter explains the
+various commands you can use to correct these mistakes by editing or
+deleting your note, and the restrictions on these commands.
+
+@menu
+* Editing note titles::   Changing the title of a basenote.
+* Editing note text::     Correcting mistakes in the text of a note.
+* Deleting notes::        Removing a note entirely.
+@end menu
+
+@node Editing note titles
+@section Editing note titles
+@cindex editing note titles
+
+A basenote's title may be edited at any time by its author.  To do so,
+open the basenote and press the @kbd{e} key; you will be prompted for
+a new title for the note.  If you change your mind and decide you
+simply want to keep the existing title, press @key{RET} without
+entering a new title, and no change will be made.
+
+If you are on one of a note's responses, you will be unable to edit
+the title of the basenote; this is because future modules may include
+the ability for responses to have titles different from that of the
+basenote.
+
+Also, be careful with the title you enter for an anonymous note; since
+the note will not be able to be identified as yours, you will not be
+allowed to change it after it is entered.
+
+@node Editing note text
+@section Editing note text
+@cindex editing note text
+
+The text of a note or response can also be edited, but there are
+certain restrictions.  First, of course, you can only edit the text of
+your own note or response.
+
+Second, you can only edit a particular note or response if there are
+no more recent responses in the current thread.  This restriction is
+intended to prevent an author from altering the context of a thread
+after new responses have been posted.  Editing is intended to be used
+to correct typos immediately, not to remove existing comments.
+
+To edit a post, use the @kbd{E} key.  This will bring up an editor
+containing the existing text of your note.  After editing the note to
+your satisfaction, save and exit the editor.  If you are a director in
+the notesfile, you will be asked whether to add a director message to
+the note, and the text will be modified.
+
+@node Deleting notes
+@section Deleting notes
+@cindex deleting notes
+
+Instead of editing the text of a note, you may sometimes change your
+mind and decide you'd rather delete the note entirely.  This follows
+the same requirements as editing the text of a note; namely, it must
+be your note and there must be no responses more recent than the note
+in question.
+
+To delete a note, use the @kbd{D} key.  If the note does not fulfill
+the above criteria, you will be told why the note cannot be deleted;
+otherwise, you will be prompted to confirm the note's deletion.

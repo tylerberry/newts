@@ -1,0 +1,2878 @@
+# English translations for newts package.
+# Copyright (C) 2008 Tyler Berry
+# This file is distributed under the same license as the newts package.
+# Automatically generated, 2008.
+#
+# All this catalog "translates" are quotation characters.
+# The msgids must be ASCII and therefore cannot contain real quotation
+# characters, only substitutes like grave accent (0x60), apostrophe (0x27)
+# and double quote (0x22). These substitutes look strange; see
+# http://www.cl.cam.ac.uk/~mgk25/ucs/quotes.html
+#
+# This catalog translates grave accent (0x60) and apostrophe (0x27) to
+# left single quotation mark (U+2018) and right single quotation mark (U+2019).
+# It also translates pairs of apostrophe (0x27) to
+# left single quotation mark (U+2018) and right single quotation mark (U+2019)
+# and pairs of quotation mark (0x22) to
+# left double quotation mark (U+201C) and right double quotation mark (U+201D).
+#
+# When output to an UTF-8 terminal, the quotation characters appear perfectly.
+# When output to an ISO-8859-1 terminal, the single quotation marks are
+# transliterated to apostrophes (by iconv in glibc 2.2 or newer) or to
+# grave/acute accent (by libiconv), and the double quotation marks are
+# transliterated to 0x22.
+# When output to an ASCII terminal, the single quotation marks are
+# transliterated to apostrophes, and the double quotation marks are
+# transliterated to 0x22.
+#
+# This catalog furthermore displays the text between the quotation marks in
+# bold face, assuming the VT100/XTerm escape sequences.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: newts 0.15\n"
+"Report-Msgid-Bugs-To: bug-newts@thoughtlocker.net\n"
+"POT-Creation-Date: 2007-11-26 09:10-0700\n"
+"PO-Revision-Date: 2007-11-26 09:10-0700\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: clients/notes/access.c:108 clients/notes/director.c:121
+#: clients/notes/director.c:1175
+msgid "Option: "
+msgstr "Option: "
+
+#: clients/notes/access.c:132
+msgid "Sorting..."
+msgstr "Sorting..."
+
+#: clients/notes/access.c:194 clients/notes/access.c:208
+#: clients/notes/access.c:276 clients/notes/access.c:296
+msgid "Entry type: "
+msgstr "Entry type: "
+
+#: clients/notes/access.c:274 clients/notes/access.c:292
+msgid "Please enter 'u', 'g', or 's'; or 'q', 'k', or <RET> to exit."
+msgstr "Please enter 'u', 'g', or 's'; or 'q', 'k', or <RET> to exit."
+
+#: clients/notes/access.c:307 clients/notes/access.c:310
+#: clients/notes/access.c:311
+msgid "Name: "
+msgstr "Name: "
+
+#: clients/notes/access.c:319
+msgid "System name: "
+msgstr "System name: "
+
+#: clients/notes/access.c:320
+msgid "Group name: "
+msgstr "Group name: "
+
+#: clients/notes/access.c:321
+msgid "User name: "
+msgstr "User name: "
+
+#: clients/notes/access.c:347
+msgid "--No such user--"
+msgstr "--No such user--"
+
+#: clients/notes/access.c:350
+msgid "No such user."
+msgstr "No such user."
+
+#: clients/notes/access.c:370
+msgid "--No such group--"
+msgstr "--No such group--"
+
+#: clients/notes/access.c:373
+msgid "No such group."
+msgstr "No such group."
+
+#: clients/notes/access.c:392
+#, c-format
+msgid "%s entry exists"
+msgstr "%s entry exists"
+
+#: clients/notes/access.c:396
+msgid "User already exists in permission table."
+msgstr "User already exists in permission table."
+
+#: clients/notes/access.c:398
+msgid "Group already exists in permission table."
+msgstr "Group already exists in permission table."
+
+#: clients/notes/access.c:400
+msgid "System already exists in permission table."
+msgstr "System already exists in permission table."
+
+#: clients/notes/access.c:447
+msgid "Delete entry #: "
+msgstr "Delete entry #: "
+
+#: clients/notes/access.c:449
+msgid "Delete entry number: "
+msgstr "Delete entry number: "
+
+#: clients/notes/access.c:476 clients/notes/access.c:563
+msgid "Bad entry"
+msgstr "Bad entry"
+
+#: clients/notes/access.c:482 clients/notes/access.c:569
+msgid "Invalid entry."
+msgstr "Invalid entry."
+
+#: clients/notes/access.c:506
+msgid " Can't Delete self"
+msgstr " Can't Delete self"
+
+#: clients/notes/access.c:512
+msgid "Can't delete own entry."
+msgstr "Can't delete own entry."
+
+#: clients/notes/access.c:534
+msgid "Modify entry #: "
+msgstr "Modify entry #: "
+
+#: clients/notes/access.c:536
+msgid "Modify entry number: "
+msgstr "Modify entry number: "
+
+#: clients/notes/access.c:620 clients/notes/access.c:640
+msgid " -- More -- "
+msgstr " -- More -- "
+
+#: clients/notes/access.c:669 clients/notes/access.c:677
+#: clients/notes/access.c:707 clients/notes/access.c:715
+#, c-format
+msgid "Mode: %s"
+msgstr "Mode: %s"
+
+#: clients/notes/access.c:671 clients/notes/access.c:709
+msgid "Mods: "
+msgstr "Mods: "
+
+#: clients/notes/compose_note.c:93 clients/notes/read_note.c:848
+msgid "Do you wish this to be anonymous (y/n): "
+msgstr "Do you wish this to be anonymous (y/n): "
+
+#: clients/notes/compose_note.c:96 clients/notes/read_note.c:849
+msgid "Make this note anonymous? (y/n): "
+msgstr "Make this note anonymous? (y/n): "
+
+#: clients/notes/compose_note.c:105
+msgid "Do you REALLY wish this to be anonymous (y/n): "
+msgstr "Do you REALLY wish this to be anonymous (y/n): "
+
+#: clients/notes/compose_note.c:125 clients/notes/read_note.c:881
+msgid "Director message (y/n): "
+msgstr "Director message (y/n): "
+
+#: clients/notes/compose_note.c:126 clients/notes/read_note.c:882
+msgid "Director message? (y/n): "
+msgstr "Director message? (y/n): "
+
+#: clients/notes/director.c:86
+msgid "Sorry, you are not a director"
+msgstr "Sorry, you are not a director"
+
+#: clients/notes/director.c:88
+msgid "Only directors can access the director options screen."
+msgstr "Only directors can access the director options screen."
+
+#: clients/notes/director.c:237
+msgid "Enter new title for notefile"
+msgstr "Enter new title for notefile"
+
+#: clients/notes/director.c:250
+msgid "Enter new notesfile title: "
+msgstr "Enter new notesfile title: "
+
+#: clients/notes/director.c:278
+msgid "Enter new director message"
+msgstr "Enter new director message"
+
+#: clients/notes/director.c:291
+msgid "Enter new director message: "
+msgstr "Enter new director message: "
+
+#: clients/notes/director.c:320 clients/notes/director.c:329
+msgid "Enter list of notes to delete: "
+msgstr "Enter list of notes to delete: "
+
+#: clients/notes/director.c:321
+msgid "Enter list of notes to un-delete: "
+msgstr "Enter list of notes to un-delete: "
+
+#: clients/notes/director.c:330
+msgid "Enter list of notes to undelete: "
+msgstr "Enter list of notes to undelete: "
+
+#: clients/notes/director.c:364
+msgid "Save previous changes? (y/n): "
+msgstr "Save previous changes? (y/n): "
+
+#: clients/notes/director.c:374
+msgid "Deleted: "
+msgstr "Deleted: "
+
+#: clients/notes/director.c:374
+msgid "Undeleted: "
+msgstr "Undeleted: "
+
+#: clients/notes/director.c:409
+msgid "Really Compress? (y/n) "
+msgstr "Really Compress? (y/n) "
+
+#: clients/notes/director.c:417
+msgid "Save previous changes and compress notesfile? (y/n): "
+msgstr "Save previous changes and compress notesfile? (y/n): "
+
+#: clients/notes/director.c:423 clients/notes/director.c:459
+msgid "Compress not done"
+msgstr "Compress not done"
+
+#: clients/notes/director.c:434
+msgid "Compressing..."
+msgstr "Compressing..."
+
+#: clients/notes/director.c:444
+#, c-format
+msgid "Compress left %d notes and %d responses"
+msgstr "Compress left %d notes and %d responses"
+
+#: clients/notes/director.c:448
+#, c-format
+msgid "%d notes and %d responses left after compression."
+msgstr "%d notes and %d responses left after compression."
+
+#: clients/notes/director.c:467
+msgid "Compression aborted."
+msgstr "Compression aborted."
+
+#: clients/notes/director.c:488
+msgid "Rewrite policy? (y/n) :"
+msgstr "Rewrite policy? (y/n) :"
+
+#: clients/notes/director.c:490
+msgid "Rewrite policy note? (y/n): "
+msgstr "Rewrite policy note? (y/n): "
+
+#: clients/notes/director.c:501
+msgid "Edit New Policy Text:"
+msgstr "Edit New Policy Text:"
+
+#: clients/notes/director.c:537 clients/notes/director.c:540
+#: clients/notes/director.c:541
+msgid "New Expiration time: "
+msgstr "New Expiration time: "
+
+#: clients/notes/director.c:544
+msgid "New Expiration Threshold: "
+msgstr "New Expiration Threshold: "
+
+#: clients/notes/director.c:574
+msgid "Expiration Threshold Unchanged"
+msgstr "Expiration Threshold Unchanged"
+
+#: clients/notes/director.c:607
+msgid "Want 'default', 'never', or a number"
+msgstr "Want 'default', 'never', or a number"
+
+#: clients/notes/director.c:610 clients/notes/director.c:743
+msgid "<return> to leave unchanged"
+msgstr "<return> to leave unchanged"
+
+#: clients/notes/director.c:616
+msgid ""
+"Please enter 'default', 'never', a number, or <RET> to leave value unchanged."
+msgstr ""
+"Please enter 'default', 'never', a number, or <RET> to leave value unchanged."
+
+#: clients/notes/director.c:627 clients/notes/director.c:762
+msgid "Maximum valid value exceeded"
+msgstr "Maximum valid value exceeded"
+
+#: clients/notes/director.c:635 clients/notes/director.c:770
+msgid "Maximum valid value exceeded."
+msgstr "Maximum valid value exceeded."
+
+#: clients/notes/director.c:646 clients/notes/director.c:781
+#: clients/notes/director.c:906
+msgid "Negative values not allowed"
+msgstr "Negative values not allowed"
+
+#: clients/notes/director.c:654 clients/notes/director.c:789
+#: clients/notes/director.c:912
+msgid "Negative values not allowed."
+msgstr "Negative values not allowed."
+
+#: clients/notes/director.c:676 clients/notes/director.c:679
+#: clients/notes/director.c:680
+msgid "New Working Set Size: "
+msgstr "New Working Set Size: "
+
+#: clients/notes/director.c:683
+msgid "New minimum number of notes: "
+msgstr "New minimum number of notes: "
+
+#: clients/notes/director.c:713
+msgid "Working Set Size Unchanged"
+msgstr "Working Set Size Unchanged"
+
+#: clients/notes/director.c:740
+msgid "Want 'default' or a number"
+msgstr "Want ‘[1mdefault[0m’ or a number"
+
+#: clients/notes/director.c:749
+msgid "Please enter 'default', a number, or <RET> to leave value unchanged."
+msgstr "Please enter 'default', a number, or <RET> to leave value unchanged."
+
+#: clients/notes/director.c:811 clients/notes/director.c:814
+#: clients/notes/director.c:815
+msgid "New Maximum Message Size: "
+msgstr "New Maximum Message Size: "
+
+#: clients/notes/director.c:818
+msgid "New Maximum Note Size: "
+msgstr "New Maximum Note Size: "
+
+#: clients/notes/director.c:848
+msgid "Maximum Message Size Unchanged"
+msgstr "Maximum Message Size Unchanged"
+
+#: clients/notes/director.c:868
+msgid "Enter an integer or <return>"
+msgstr "Enter an integer or <return>"
+
+#: clients/notes/director.c:874
+msgid "Please enter a number or <RET> to leave value unchanged."
+msgstr "Please enter a number or <RET> to leave value unchanged."
+
+#: clients/notes/director.c:887
+#, c-format
+msgid "Maximum valid value (%d) exceeded"
+msgstr "Maximum valid value (%d) exceeded"
+
+#: clients/notes/director.c:894
+#, c-format
+msgid "Maximum valid value (%dK) exceeded."
+msgstr "Maximum valid value (%dK) exceeded."
+
+#: clients/notes/director.c:1047
+#, c-format
+msgid "%d day"
+msgid_plural "%d days"
+msgstr[0] "%d day"
+msgstr[1] "%d days"
+
+#: clients/notes/director.c:1121
+#, c-format
+msgid "%d Note"
+msgid_plural "%d Notes"
+msgstr[0] "%d Note"
+msgstr[1] "%d Notes"
+
+#: clients/notes/director.c:1124
+#, c-format
+msgid "%d note"
+msgid_plural "%d notes"
+msgstr[0] "%d note"
+msgstr[1] "%d notes"
+
+#: clients/notes/director.c:1133
+#, c-format
+msgid "%d byte"
+msgid_plural "%d bytes"
+msgstr[0] "%d byte"
+msgstr[1] "%d bytes"
+
+#: clients/notes/display_index.c:260 clients/notes/display_index.c:262
+msgid "**** End of Notes ****"
+msgstr "**** End of Notes ****"
+
+#: clients/notes/limited_index.c:58
+msgid "---- Limited Index ----"
+msgstr "---- Limited Index ----"
+
+#: clients/notes/limited_index.c:132
+msgid "Note number > "
+msgstr "Note number > "
+
+#: clients/notes/limited_index.c:167
+#, c-format
+msgid "Note %d isn't available"
+msgstr "Note %d isn't available"
+
+#: clients/notes/limited_index.c:232
+#, c-format
+msgid "Do you really want note %s? "
+msgstr "Do you really want note %s? "
+
+#: clients/notes/limited_index.c:234
+#, c-format
+msgid "Select note %d? (y/n): "
+msgstr "Select note %d? (y/n): "
+
+#: clients/notes/limited_index.c:250
+#, c-format
+msgid "Note %d doesn't exist"
+msgstr "Note %d doesn't exist"
+
+#: clients/notes/limited_index.c:271 clients/notes/read_note.c:999
+#: clients/notes/run_index.c:204
+msgid "Edit Gripe text:"
+msgstr "Edit Gripe text:"
+
+#: clients/notes/limited_index.c:272 clients/notes/read_note.c:1000
+#: clients/notes/run_index.c:205
+msgid "Edit Gripe Text:"
+msgstr "Edit Gripe Text:"
+
+#: clients/notes/limited_index.c:273 clients/notes/read_note.c:1001
+#: clients/notes/run_index.c:206
+msgid "Gripe Header: "
+msgstr "Gripe Header: "
+
+#: clients/notes/limited_index.c:273 clients/notes/read_note.c:1001
+#: clients/notes/run_index.c:206
+msgid "Gripe Title: "
+msgstr "Gripe Title: "
+
+#: clients/notes/limited_index.c:299 clients/notes/read_note.c:1122
+#: clients/notes/run_index.c:343
+msgid "Search author: "
+msgstr "Search author: "
+
+#: clients/notes/limited_index.c:303 clients/notes/read_note.c:1124
+#: clients/notes/run_index.c:347
+msgid "Search by author: "
+msgstr "Search by author: "
+
+#: clients/notes/limited_index.c:371 clients/notes/read_note.c:1187
+#: clients/notes/read_note.c:1260 clients/notes/run_index.c:407
+#: clients/notes/run_index.c:475
+msgid "Search String: "
+msgstr "Search String: "
+
+#: clients/notes/limited_index.c:375 clients/notes/read_note.c:1189
+#: clients/notes/run_index.c:411
+msgid "Search by title: "
+msgstr "Search by title: "
+
+#: clients/notes/limited_index.c:436 clients/notes/run_index.c:684
+msgid "Type ? for help, q to quit"
+msgstr "Type ? for help, q to quit"
+
+#: clients/notes/master.c:92 clients/notes/read_note.c:1856
+#: clients/notes/read_note.c:1857 clients/notes/read_note.c:1982
+#: clients/notes/read_note.c:1983 clients/notes/read_note.c:2088
+#: clients/notes/read_note.c:2310 clients/notes/read_note.c:2311
+#, c-format
+msgid "No such notesfile: '%s'"
+msgstr "No such notesfile: ‘[1m%s[0m’"
+
+#: clients/notes/master.c:96
+#, c-format
+msgid "%s: no such notesfile"
+msgstr "%s: no such notesfile"
+
+#: clients/notes/master.c:103 clients/notes/master.c:106
+msgid "INTERNAL ERROR: unspecified notesfile"
+msgstr "INTERNAL ERROR: unspecified notesfile"
+
+#: clients/notes/master.c:113
+#, c-format
+msgid "Invalid database format: '%s'"
+msgstr "Invalid database format: ‘[1m%s[0m’"
+
+#: clients/notes/master.c:117
+#, c-format
+msgid "%s: no invalid database format"
+msgstr "%s: no invalid database format"
+
+#: clients/notes/master.c:125
+#, c-format
+msgid "Error opening notesfile: '%s'"
+msgstr "Error opening notesfile: ‘[1m%s[0m’"
+
+#: clients/notes/master.c:129
+#, c-format
+msgid "%s: error opening notesfile"
+msgstr "%s: error opening notesfile"
+
+#: clients/notes/master.c:152 clients/notes/master.c:226
+#: clients/notes/master.c:269
+#, c-format
+msgid "You aren't allowed to read %s"
+msgstr "You aren't allowed to read %s"
+
+#: clients/notes/master.c:155 clients/notes/master.c:239
+#: clients/notes/master.c:278
+#, c-format
+msgid "You are not allowed to read '%s'."
+msgstr "You are not allowed to read '%s'."
+
+#: clients/notes/master.c:160
+msgid "Do you wish to see the policy note (y/n)?"
+msgstr "Do you wish to see the policy note (y/n)?"
+
+#: clients/notes/master.c:162
+msgid "Would you like to see the policy note? (y/n): "
+msgstr "Would you like to see the policy note? (y/n): "
+
+#: clients/notes/master.c:181 clients/notes/master.c:230
+msgid "You may leave a note in the notefile"
+msgstr "You may leave a note in the notefile"
+
+#: clients/notes/master.c:184 clients/notes/master.c:233
+msgid "Do you wish to leave a note (y/n) ?"
+msgstr "Do you wish to leave a note (y/n) ?"
+
+#: clients/notes/master.c:191
+#, c-format
+msgid "Would you like to leave a note in '%s'? (y/n): "
+msgstr "Would you like to leave a note in '%s'? (y/n): "
+
+#: clients/notes/master.c:199 clients/notes/master.c:252
+msgid "Edit Note Text:"
+msgstr "Edit Note Text:"
+
+#: clients/notes/master.c:200 clients/notes/master.c:253
+msgid "Note title: "
+msgstr "Note title: "
+
+#: clients/notes/master.c:201 clients/notes/master.c:254
+#: clients/notes/run_index.c:154
+msgid "Note Title: "
+msgstr "Note Title: "
+
+#: clients/notes/master.c:206 clients/notes/master.c:259
+msgid "Your note has been registered"
+msgstr "Your note has been registered"
+
+#: clients/notes/master.c:207 clients/notes/master.c:260
+msgid "Your note has been registered."
+msgstr "Your note has been registered."
+
+#: clients/notes/master.c:214 clients/notes/master.c:272
+msgid "Hit any key to continue"
+msgstr "Hit any key to continue"
+
+#: clients/notes/master.c:228 clients/notes/master.c:271
+#: clients/notes/run_index.c:236 clients/notes/run_index.c:238
+msgid "There is no policy note"
+msgstr "There is no policy note"
+
+#: clients/notes/master.c:241 clients/notes/master.c:280
+msgid "The notesfile has no policy note to read."
+msgstr "The notesfile has no policy note to read."
+
+#: clients/notes/master.c:244
+msgid "Would you like to leave a note in the notesfile? (y/n): "
+msgstr "Would you like to leave a note in the notesfile? (y/n): "
+
+#: clients/notes/master.c:304 clients/notes/master.c:322
+#, c-format
+msgid "Notefile %s is closed"
+msgstr "Notefile %s is closed"
+
+#: clients/notes/master.c:307
+#, c-format
+msgid "%s is locked."
+msgstr "%s is locked."
+
+#: clients/notes/notes.c:133
+#, c-format
+msgid ""
+"%s: could not determine your locale\n"
+"Check the environment variables LANG, LC_ALL, etc.\n"
+msgstr ""
+"%s: could not determine your locale\n"
+"Check the environment variables LANG, LC_ALL, etc.\n"
+
+#: clients/notes/notes.c:198
+#, c-format
+msgid "revision: %s"
+msgstr "revision: %s"
+
+#: clients/notes/notes.c:199
+#, c-format
+msgid "notes - %s %s (%s)\n"
+msgstr "notes - %s %s (%s)\n"
+
+#: clients/notes/notes.c:208 clients/notes/notes.c:435
+#: clients/notes/notes.c:540 clients/frontends/checknotes.c:136
+#: clients/frontends/checknotes.c:199 clients/frontends/checknotes.c:212
+#: clients/frontends/checknotes.c:290 clients/frontends/getnote.c:113
+#: clients/frontends/getnote.c:140 clients/frontends/getnote.c:257
+#: clients/frontends/mknf.c:93 clients/frontends/mknf.c:143
+#: clients/frontends/mknf.c:223 clients/frontends/nfadmin.c:175
+#: clients/frontends/nfadmin.c:561 clients/frontends/nfadmin.c:684
+#: clients/frontends/nfdump.c:97 clients/frontends/nfdump.c:130
+#: clients/frontends/nfdump.c:216 clients/frontends/nfload.c:130
+#: clients/frontends/nfload.c:178 clients/frontends/nfload.c:330
+#: clients/frontends/nfmail.c:126 clients/frontends/nfmail.c:184
+#: clients/frontends/nfmail.c:361 clients/frontends/nfpipe.c:122
+#: clients/frontends/nfpipe.c:173 clients/frontends/nfpipe.c:327
+#: clients/frontends/nfprint.c:161 clients/frontends/nfprint.c:216
+#: clients/frontends/nfprint.c:457 clients/frontends/nfstats.c:90
+#: clients/frontends/nfstats.c:117 clients/frontends/nfstats.c:227
+#: clients/frontends/nftimestamp.c:115 clients/frontends/nftimestamp.c:224
+#: clients/frontends/nftimestamp.c:300 clients/frontends/rmnf.c:91
+#: clients/frontends/rmnf.c:122 clients/frontends/rmnf.c:216
+msgid "error writing output"
+msgstr "error writing output"
+
+#: clients/notes/notes.c:276
+#, c-format
+msgid "%s: cannot specify multiple alternate times\n"
+msgstr "%s: cannot specify multiple alternate times\n"
+
+#: clients/notes/notes.c:278 clients/notes/notes.c:296
+#: clients/notes/notes.c:485 clients/frontends/checknotes.c:227
+#: clients/frontends/nftimestamp.c:150
+#, c-format
+msgid "See 'info newts' for more information.\n"
+msgstr "See ‘[1minfo newts[0m’ for more information.\n"
+
+#: clients/notes/notes.c:294 clients/frontends/nftimestamp.c:148
+#, c-format
+msgid "%s: parsed time '%s' in the future\n"
+msgstr "%s: parsed time ‘[1m%s[0m’ in the future\n"
+
+#: clients/notes/notes.c:306 clients/frontends/nftimestamp.c:156
+#, c-format
+msgid "%s: error parsing time '%s'\n"
+msgstr "%s: error parsing time ‘[1m%s[0m’\n"
+
+#: clients/notes/notes.c:335
+#, c-format
+msgid "%s: only root is allowed to use '--user'\n"
+msgstr "%s: only root is allowed to use ‘[1m--user[0m’\n"
+
+#: clients/notes/notes.c:370
+#, c-format
+msgid "%s: no such user: '%s'\n"
+msgstr "%s: no such user: ‘[1m%s[0m’\n"
+
+#: clients/notes/notes.c:394
+#, c-format
+msgid ""
+"Usage: %s [OPTION]... NOTESFILE...\n"
+"Run the UIUC-compatible notesfile client.\n"
+"\n"
+msgstr ""
+"Usage: %s [OPTION]... NOTESFILE...\n"
+"Run the UIUC-compatible notesfile client.\n"
+"\n"
+
+#: clients/notes/notes.c:398
+#, c-format
+msgid ""
+"If an argument to a long option is mandatory, it is also mandatory for the\n"
+"corresponding short option.\n"
+"\n"
+msgstr ""
+"If an argument to a long option is mandatory, it is also mandatory for the\n"
+"corresponding short option.\n"
+"\n"
+
+#: clients/notes/notes.c:401
+#, c-format
+msgid ""
+"General options:\n"
+"  -f, --file=FILE         Read list of notesfiles to view from specified "
+"file\n"
+"  -g, --no-signature      Turn off automatic signature inclusion\n"
+"  -h, --help              Display this help and exit\n"
+"  -u, --user=USER         As root, run notes as the specified user\n"
+"      --debug             Print debugging messages to stderr\n"
+"      --version           Display version information and exit\n"
+"\n"
+msgstr ""
+"General options:\n"
+"  -f, --file=FILE         Read list of notesfiles to view from specified "
+"file\n"
+"  -g, --no-signature      Turn off automatic signature inclusion\n"
+"  -h, --help              Display this help and exit\n"
+"  -u, --user=USER         As root, run notes as the specified user\n"
+"      --debug             Print debugging messages to stderr\n"
+"      --version           Display version information and exit\n"
+"\n"
+
+#: clients/notes/notes.c:409
+#, c-format
+msgid ""
+"Display options:\n"
+"  -m, --modern            Use modern, consistent display style (default)\n"
+"  -t, --traditional       Use traditional UIUC-style display\n"
+"      --imsa              Use IMSA-style display (same as -t)\n"
+"\n"
+msgstr ""
+"Display options:\n"
+"  -m, --modern            Use modern, consistent display style (default)\n"
+"  -t, --traditional       Use traditional UIUC-style display\n"
+"      --imsa              Use IMSA-style display (same as -t)\n"
+"\n"
+
+#: clients/notes/notes.c:414
+#, c-format
+msgid ""
+"Blacklist options:\n"
+"  -b, --black-threads     Skip threads with blacklisted basenotes while "
+"seqing\n"
+"  -w, --white-basenotes   Do not apply blacklist to basenotes\n"
+"  -z, --no-blacklist      Do not use the blacklist\n"
+"\n"
+msgstr ""
+"Blacklist options:\n"
+"  -b, --black-threads     Skip threads with blacklisted basenotes while "
+"seqing\n"
+"  -w, --white-basenotes   Do not apply blacklist to basenotes\n"
+"  -z, --no-blacklist      Do not use the blacklist\n"
+"\n"
+
+#: clients/notes/notes.c:419
+#, c-format
+msgid ""
+"Sequencer options:\n"
+"  -a, --alternate=SEQ     Use alternate sequencer SEQ\n"
+"  -e, --seq-own-notes     Make the sequencer view your notes\n"
+"  -i, --index             Use the index sequencer\n"
+"  -k, --skip-own-notes    Make the sequencer ignore your notes (default)\n"
+"  -n, --no-sequencer      Do not use the sequencer (default)\n"
+"  -o, --time=TIME         Use this date and time for the sequencer\n"
+"  -s, --sequencer         Use the sequencer to read notes\n"
+"  -x, --extended          Use the extended sequencer\n"
+"\n"
+msgstr ""
+"Sequencer options:\n"
+"  -a, --alternate=SEQ     Use alternate sequencer SEQ\n"
+"  -e, --seq-own-notes     Make the sequencer view your notes\n"
+"  -i, --index             Use the index sequencer\n"
+"  -k, --skip-own-notes    Make the sequencer ignore your notes (default)\n"
+"  -n, --no-sequencer      Do not use the sequencer (default)\n"
+"  -o, --time=TIME         Use this date and time for the sequencer\n"
+"  -s, --sequencer         Use the sequencer to read notes\n"
+"  -x, --extended          Use the extended sequencer\n"
+"\n"
+
+#: clients/notes/notes.c:429 clients/frontends/checknotes.c:192
+#: clients/frontends/getnote.c:135 clients/frontends/mknf.c:138
+#: clients/frontends/nfadmin.c:556 clients/frontends/nfdump.c:124
+#: clients/frontends/nfload.c:173 clients/frontends/nfmail.c:179
+#: clients/frontends/nfpipe.c:168 clients/frontends/nfprint.c:211
+#: clients/frontends/nfstats.c:112 clients/frontends/nftimestamp.c:215
+#: clients/frontends/rmnf.c:117
+#, c-format
+msgid "Report bugs to <%s>.\n"
+msgstr "Report bugs to <%s>.\n"
+
+#: clients/notes/notes.c:440 clients/notes/notes.c:457
+#: clients/frontends/checknotes.c:204 clients/frontends/getnote.c:144
+#: clients/frontends/getnote.c:156 clients/frontends/getnote.c:180
+#: clients/frontends/mknf.c:148 clients/frontends/mknf.c:160
+#: clients/frontends/nfadmin.c:123 clients/frontends/nfadmin.c:191
+#: clients/frontends/nfadmin.c:212 clients/frontends/nfadmin.c:233
+#: clients/frontends/nfadmin.c:254 clients/frontends/nfadmin.c:275
+#: clients/frontends/nfadmin.c:312 clients/frontends/nfadmin.c:339
+#: clients/frontends/nfadmin.c:350 clients/frontends/nfadmin.c:361
+#: clients/frontends/nfadmin.c:389 clients/frontends/nfadmin.c:413
+#: clients/frontends/nfadmin.c:424 clients/frontends/nfadmin.c:435
+#: clients/frontends/nfadmin.c:490 clients/frontends/nfadmin.c:501
+#: clients/frontends/nfadmin.c:512 clients/frontends/nfadmin.c:565
+#: clients/frontends/nfadmin.c:577 clients/frontends/nfdump.c:134
+#: clients/frontends/nfdump.c:147 clients/frontends/nfload.c:182
+#: clients/frontends/nfload.c:194 clients/frontends/nfload.c:205
+#: clients/frontends/nfmail.c:188 clients/frontends/nfmail.c:205
+#: clients/frontends/nfmail.c:228 clients/frontends/nfpipe.c:177
+#: clients/frontends/nfpipe.c:194 clients/frontends/nfpipe.c:218
+#: clients/frontends/nfprint.c:220 clients/frontends/nfprint.c:232
+#: clients/frontends/nfstats.c:121 clients/frontends/nfstats.c:133
+#: clients/frontends/nftimestamp.c:228 clients/frontends/nftimestamp.c:244
+#: clients/frontends/rmnf.c:126 clients/frontends/rmnf.c:138
+#, c-format
+msgid "Try '%s --help' for more information.\n"
+msgstr "Try ‘[1m%s --help[0m’ for more information.\n"
+
+#: clients/notes/notes.c:456 clients/frontends/getnote.c:155
+#: clients/frontends/mknf.c:159 clients/frontends/nfadmin.c:576
+#: clients/frontends/nfdump.c:146 clients/frontends/nfload.c:193
+#: clients/frontends/nfmail.c:204 clients/frontends/nfpipe.c:193
+#: clients/frontends/nfprint.c:231 clients/frontends/nfstats.c:132
+#: clients/frontends/nftimestamp.c:243 clients/frontends/rmnf.c:137
+#, c-format
+msgid "%s: too few arguments\n"
+msgstr "%s: too few arguments\n"
+
+#: clients/notes/notes.c:465
+#, c-format
+msgid "Hit <RET> for a list of notesfiles on this system.\n"
+msgstr "Hit <RET> for a list of notesfiles on this system.\n"
+
+#: clients/notes/notes.c:483 clients/frontends/checknotes.c:225
+#, c-format
+msgid "%s: NFSEQ environment variable not set\n"
+msgstr "%s: NFSEQ environment variable not set\n"
+
+#: clients/notes/read_note.c:560 clients/notes/read_note.c:562
+#: clients/notes/read_note.c:604 clients/notes/read_note.c:606
+#: clients/notes/read_note.c:629 clients/notes/read_note.c:631
+#: clients/notes/read_note.c:722 clients/notes/read_note.c:724
+msgid "You cannot modify a corrupted note."
+msgstr "You cannot modify a corrupted note."
+
+#: clients/notes/read_note.c:586 clients/notes/run_index.c:221
+#, c-format
+msgid "Anonymous: %s   Moderated: %s"
+msgstr "Anonymous: %s   Moderated: %s"
+
+#: clients/notes/read_note.c:643
+msgid "You cannot edit the policy note's title."
+msgstr "You cannot edit the policy note's title."
+
+#: clients/notes/read_note.c:659
+msgid "New Title: "
+msgstr "New Title: "
+
+#: clients/notes/read_note.c:659
+msgid "New title: "
+msgstr "New title: "
+
+#: clients/notes/read_note.c:668 clients/notes/read_note.c:671
+#: clients/notes/read_note.c:790 clients/notes/read_note.c:793
+msgid "You cannot modify a note which is awaiting director approval."
+msgstr "You cannot modify a note which is awaiting director approval."
+
+#: clients/notes/read_note.c:706 clients/notes/read_note.c:743
+#: clients/notes/read_note.c:773 clients/notes/read_note.c:1401
+#: clients/notes/read_note.c:1417 clients/notes/read_note.c:1432
+msgid "Not your note"
+msgstr "Not your note"
+
+#: clients/notes/read_note.c:708 clients/notes/read_note.c:775
+msgid "You are not allowed to edit somebody else's note."
+msgstr "You are not allowed to edit somebody else's note."
+
+#: clients/notes/read_note.c:742 clients/notes/read_note.c:760
+#: clients/notes/read_note.c:1432
+msgid "Not your response"
+msgstr "Not your response"
+
+#: clients/notes/read_note.c:745
+msgid "You are not allowed to edit an anonymous note."
+msgstr "You are not allowed to edit an anonymous note."
+
+#: clients/notes/read_note.c:762
+msgid "You are not allowed to edit somebody else's response."
+msgstr "You are not allowed to edit somebody else's response."
+
+#: clients/notes/read_note.c:805
+msgid "Can't edit; not last response"
+msgstr "Can't edit; not last response"
+
+#: clients/notes/read_note.c:807
+msgid "You are not allowed to edit any response other than the last."
+msgstr "You are not allowed to edit any response other than the last."
+
+#: clients/notes/read_note.c:820
+msgid "Can't edit; note has responses"
+msgstr "Can't edit; note has responses"
+
+#: clients/notes/read_note.c:822
+msgid "You are not allowed to edit a note which has responses."
+msgstr "You are not allowed to edit a note which has responses."
+
+#: clients/notes/read_note.c:858
+msgid "Do you wish REALLY this to be anonymous (y/n): "
+msgstr "Do you wish REALLY this to be anonymous (y/n): "
+
+#: clients/notes/read_note.c:916 clients/notes/read_note.c:918
+msgid "You cannot reply to a corrupted note."
+msgstr "You cannot reply to a corrupted note."
+
+#: clients/notes/read_note.c:929 clients/notes/read_note.c:932
+msgid "You cannot reply to a note which is awaiting director approval."
+msgstr "You cannot reply to a note which is awaiting director approval."
+
+#: clients/notes/read_note.c:944 clients/notes/run_index.c:180
+msgid "Sorry, you are not allowed to write"
+msgstr "Sorry, you are not allowed to write"
+
+#: clients/notes/read_note.c:946
+msgid "You are not allowed to reply in this notesfile."
+msgstr "You are not allowed to reply in this notesfile."
+
+#: clients/notes/read_note.c:957
+msgid "No responses allowed to policy note"
+msgstr "No responses allowed to policy note"
+
+#: clients/notes/read_note.c:959
+msgid "No responses allowed for policy note"
+msgstr "No responses allowed for policy note"
+
+#: clients/notes/read_note.c:967
+msgid "Edit Response Text:"
+msgstr "Edit Response Text:"
+
+#: clients/notes/read_note.c:1013 clients/notes/run_index.c:245
+msgid "Archives are currently unsupported."
+msgstr "Archives are currently unsupported."
+
+#: clients/notes/read_note.c:1030 clients/notes/read_note.c:1033
+#: clients/notes/run_index.c:262 clients/notes/run_index.c:265
+msgid "New notesfile: "
+msgstr "New notesfile: "
+
+#: clients/notes/read_note.c:1036 clients/notes/run_index.c:268
+msgid "New Notesfile: "
+msgstr "New Notesfile: "
+
+#: clients/notes/read_note.c:1150 clients/notes/run_index.c:371
+#, c-format
+msgid "Searching for articles by %s"
+msgstr "Searching for articles by %s"
+
+#: clients/notes/read_note.c:1159 clients/notes/run_index.c:378
+#, c-format
+msgid "Can't find any articles by %s"
+msgstr "Can't find any articles by %s"
+
+#: clients/notes/read_note.c:1215 clients/notes/run_index.c:436
+#, c-format
+msgid "Searching for articles titled '%s'"
+msgstr "Searching for articles titled ‘[1m%s[0m’"
+
+#: clients/notes/read_note.c:1222 clients/notes/read_note.c:1358
+#: clients/notes/run_index.c:444 clients/notes/run_index.c:512
+#, c-format
+msgid "%s: Not Found"
+msgstr "%s: Not Found"
+
+#: clients/notes/read_note.c:1226 clients/notes/run_index.c:446
+#, c-format
+msgid "Can't find any articles titled '%s'"
+msgstr "Can't find any articles titled ‘[1m%s[0m’"
+
+#: clients/notes/read_note.c:1262 clients/notes/run_index.c:479
+msgid "Search for text: "
+msgstr "Search for text: "
+
+#: clients/notes/read_note.c:1350 clients/notes/run_index.c:504
+#, c-format
+msgid "Searching for articles with text '%s'"
+msgstr "Searching for articles with text ‘[1m%s[0m’"
+
+#: clients/notes/read_note.c:1360
+#, c-format
+msgid "Can't find any notes with text '%s' after this note"
+msgstr "Can't find any notes with text ‘[1m%s[0m’ after this note"
+
+#: clients/notes/read_note.c:1384 clients/notes/read_note.c:1387
+#: clients/notes/read_note.c:1561 clients/notes/read_note.c:1563
+msgid "Corrupted notes are automatically deleted."
+msgstr "Corrupted notes are automatically deleted."
+
+#: clients/notes/read_note.c:1404
+msgid "Use 'Z' to delete policy"
+msgstr "Use ‘[1mZ[0m’ to delete policy"
+
+#: clients/notes/read_note.c:1407
+msgid "Use the 'Z' key to delete the policy note."
+msgstr "Use the ‘[1mZ[0m’ key to delete the policy note."
+
+#: clients/notes/read_note.c:1419
+msgid "You are not allowed to delete the policy note."
+msgstr "You are not allowed to delete the policy note."
+
+#: clients/notes/read_note.c:1435
+msgid "You are not allowed to delete somebody else's response."
+msgstr "You are not allowed to delete somebody else's response."
+
+#: clients/notes/read_note.c:1437
+msgid "You are not allowed to delete somebody else's note."
+msgstr "You are not allowed to delete somebody else's note."
+
+#: clients/notes/read_note.c:1448 clients/notes/read_note.c:1487
+msgid "Can't delete; not last response"
+msgstr "Can't delete; not last response"
+
+#: clients/notes/read_note.c:1450 clients/notes/read_note.c:1489
+msgid "You are not allowed to delete any response other than the last."
+msgstr "You are not allowed to delete any response other than the last."
+
+#: clients/notes/read_note.c:1462 clients/notes/read_note.c:1510
+msgid "Can't delete; note has responses"
+msgstr "Can't delete; note has responses"
+
+#: clients/notes/read_note.c:1464 clients/notes/read_note.c:1512
+msgid "You are not allowed to delete a note with responses."
+msgstr "You are not allowed to delete a note with responses."
+
+#: clients/notes/read_note.c:1473 clients/notes/read_note.c:1571
+msgid "Delete? (y/n): "
+msgstr "Delete? (y/n): "
+
+#: clients/notes/read_note.c:1474 clients/notes/read_note.c:1572
+msgid "Delete response? (y/n): "
+msgstr "Delete response? (y/n): "
+
+#: clients/notes/read_note.c:1475 clients/notes/read_note.c:1573
+msgid "Delete note? (y/n): "
+msgstr "Delete note? (y/n): "
+
+#: clients/notes/read_note.c:1547
+msgid "Not a director"
+msgstr "Not a director"
+
+#: clients/notes/read_note.c:1549
+msgid "You are not a director; only directors can use 'Z'."
+msgstr "You are not a director; only directors can use 'Z'."
+
+#: clients/notes/read_note.c:1687
+msgid "File name: "
+msgstr "File name: "
+
+#: clients/notes/read_note.c:1690
+msgid "Filename: "
+msgstr "Filename: "
+
+#: clients/notes/read_note.c:1705
+msgid "No Text Saved"
+msgstr "No Text Saved"
+
+#: clients/notes/read_note.c:1734
+msgid "Pipe"
+msgstr "Pipe"
+
+#: clients/notes/read_note.c:1739
+msgid "Appended"
+msgstr "Appended"
+
+#: clients/notes/read_note.c:1741
+msgid "New File"
+msgstr "New File"
+
+#: clients/notes/read_note.c:1778
+#, c-format
+msgid "Saved %d lines in \"%s\" [%s]"
+msgstr "Saved %d lines in “[1m%s[0m” [%s]"
+
+#: clients/notes/read_note.c:1795
+msgid "f/F only allowed from base note"
+msgstr "f/F only allowed from base note"
+
+#: clients/notes/read_note.c:1797
+msgid "Forwarding is only permitted from basenotes."
+msgstr "Forwarding is only permitted from basenotes."
+
+#: clients/notes/read_note.c:1814
+msgid "Forward to: "
+msgstr "Forward to: "
+
+#: clients/notes/read_note.c:1875 clients/notes/read_note.c:1887
+#: clients/notes/read_note.c:2001 clients/notes/read_note.c:2013
+#: clients/notes/read_note.c:2105 clients/notes/read_note.c:2342
+#: clients/notes/read_note.c:2370
+msgid "You haven't permission"
+msgstr "You haven't permission"
+
+#: clients/notes/read_note.c:1876 clients/notes/read_note.c:2002
+#: clients/notes/read_note.c:2106 clients/notes/read_note.c:2371
+#, c-format
+msgid "You do not have permission to write in %s."
+msgstr "You do not have permission to write in %s."
+
+#: clients/notes/read_note.c:1888 clients/notes/read_note.c:2014
+#, c-format
+msgid "You do not have permission to create responses in %s."
+msgstr "You do not have permission to create responses in %s."
+
+#: clients/notes/read_note.c:1895 clients/notes/read_note.c:1904
+#: clients/notes/read_note.c:2356
+msgid "Edit copy text:"
+msgstr "Edit copy text:"
+
+#: clients/notes/read_note.c:1896 clients/notes/read_note.c:1905
+#: clients/notes/read_note.c:2357 clients/notes/read_note.c:2378
+msgid "Edit Copy Text:"
+msgstr "Edit Copy Text:"
+
+#: clients/notes/read_note.c:1896 clients/notes/read_note.c:1905
+#: clients/notes/read_note.c:2358 clients/notes/read_note.c:2378
+msgid "Copy title:"
+msgstr "Copy title:"
+
+#: clients/notes/read_note.c:1897 clients/notes/read_note.c:1906
+#: clients/notes/read_note.c:2358
+msgid "Copy Title: "
+msgstr "Copy Title: "
+
+#: clients/notes/read_note.c:1921
+msgid "v only allowed from base note"
+msgstr "v only allowed from base note"
+
+#: clients/notes/read_note.c:1923
+msgid "Vectoring is only permitted from basenotes."
+msgstr "Vectoring is only permitted from basenotes."
+
+#: clients/notes/read_note.c:1940
+msgid "Vector to: "
+msgstr "Vector to: "
+
+#: clients/notes/read_note.c:2047
+msgid "Report bug to: "
+msgstr "Report bug to: "
+
+#: clients/notes/read_note.c:2122
+msgid "Priority: "
+msgstr "Priority: "
+
+#: clients/notes/read_note.c:2143 clients/notes/read_note.c:2146
+#: clients/notes/read_note.c:2149
+msgid "Assign to: "
+msgstr "Assign to: "
+
+#: clients/notes/read_note.c:2179 clients/notes/read_note.c:2182
+msgid "Brief Descr: "
+msgstr "Brief Descr: "
+
+#: clients/notes/read_note.c:2185
+msgid "Brief Description: "
+msgstr "Brief Description: "
+
+#: clients/notes/read_note.c:2211
+#, c-format
+msgid "Really send note \"%c:%s:%s\" to '%s' (y/n)? "
+msgstr "Really send note “[1m%c:%s:%s[0m” to ‘[1m%s[0m’ (y/n)? "
+
+#: clients/notes/read_note.c:2212
+#, c-format
+msgid "Report bug as \"%c:%s:%s\" in %s? (y/n): "
+msgstr "Report bug as “[1m%c:%s:%s[0m” in %s? (y/n): "
+
+#: clients/notes/read_note.c:2268
+msgid "Copy to: "
+msgstr "Copy to: "
+
+#: clients/notes/read_note.c:2331
+msgid "Copy as response (y/n)? "
+msgstr "Copy as response (y/n)? "
+
+#: clients/notes/read_note.c:2332
+msgid "Copy as response? (y/n): "
+msgstr "Copy as response? (y/n): "
+
+#: clients/notes/read_note.c:2343
+#, c-format
+msgid "You do not have permission to respond in %s."
+msgstr "You do not have permission to respond in %s."
+
+#: clients/notes/read_note.c:2377
+msgid "Edit copied text:"
+msgstr "Edit copied text:"
+
+#: clients/notes/read_note.c:2397
+msgid ""
+"This message was posted anonymously; you can't send messages to its author."
+msgstr ""
+"This message was posted anonymously; you can't send messages to its author."
+
+#: clients/notes/read_note.c:2430
+#, c-format
+msgid "The user '%s' is not logged in."
+msgstr "The user ‘[1m%s[0m’ is not logged in."
+
+#: clients/notes/read_note.c:2439
+#, c-format
+msgid "The user '%s' is not accepting messages."
+msgstr "The user ‘[1m%s[0m’ is not accepting messages."
+
+#: clients/notes/read_note.c:2471
+#, c-format
+msgid "The '%s' program returned an error."
+msgstr "The ‘[1m%s[0m’ program returned an error."
+
+#: clients/notes/read_note.c:2513
+msgid "Send to whom? "
+msgstr "Send to whom? "
+
+#: clients/notes/read_note.c:2517
+msgid "Send mail to: "
+msgstr "Send mail to: "
+
+#: clients/notes/read_note.c:2642 clients/notes/read_note.c:2816
+msgid "[Continued] "
+msgstr "[Continued] "
+
+#: clients/notes/read_note.c:2643 clients/notes/read_note.c:2817
+#: clients/frontends/nfprint.c:591
+#, c-format
+msgid "Note %d"
+msgstr "Note %d"
+
+#: clients/notes/read_note.c:2657
+#, c-format
+msgid "Response %d of %d"
+msgstr "Response %d of %d"
+
+#: clients/notes/read_note.c:2670 clients/notes/read_note.c:2676
+#: clients/frontends/nfprint.c:596
+#, c-format
+msgid "%d response"
+msgid_plural "%d responses"
+msgstr[0] "%d response"
+msgstr[1] "%d responses"
+
+#: clients/notes/read_note.c:2689 clients/frontends/nfload.c:512
+msgid "Anonymous"
+msgstr "Anonymous"
+
+#: clients/notes/read_note.c:2689 clients/frontends/mknf.c:48
+#: clients/frontends/nfadmin.c:71
+msgid "anonymous"
+msgstr "anonymous"
+
+#: clients/notes/read_note.c:2739
+#, c-format
+msgid "Response %2d of %2d"
+msgstr "Response %2d of %2d"
+
+#: clients/notes/read_note.c:2787 clients/notes/read_note.c:2788
+#: clients/notes/read_note.c:2790 clients/notes/read_note.c:2791
+msgid "** Corrupted Response **"
+msgstr "** Corrupted Response **"
+
+#: clients/notes/read_note.c:2794
+msgid "-- (Moderated) --"
+msgstr "-- (Moderated) --"
+
+#: clients/notes/read_note.c:2796
+msgid "-- (Write Only) --"
+msgstr "-- (Write Only) --"
+
+#: clients/notes/read_note.c:2799
+msgid "[Deleted]"
+msgstr "[Deleted]"
+
+#: clients/notes/read_note.c:2801 clients/notes/read_note.c:2802
+msgid "[Approval Pending]"
+msgstr "[Approval Pending]"
+
+#: clients/notes/read_note.c:2804 clients/notes/read_note.c:2805
+msgid "[Write-only]"
+msgstr "[Write-only]"
+
+#: clients/notes/read_note.c:2857 clients/notes/read_note.c:2859
+#: clients/notes/read_note.c:2860
+msgid "-- More --"
+msgstr "-- More --"
+
+#: clients/notes/read_note.c:2871 clients/notes/read_note.c:2872
+msgid "-- Next response --"
+msgstr "-- Next response --"
+
+#: clients/notes/read_note.c:2874 clients/notes/read_note.c:2875
+msgid "-- Next note --"
+msgstr "-- Next note --"
+
+#: clients/notes/read_note.c:2877 clients/notes/read_note.c:2878
+msgid "-- Return to index --"
+msgstr "-- Return to index --"
+
+#: clients/notes/read_note.c:2924
+#, c-format
+msgid "Response %d/%d to "
+msgstr "Response %d/%d to "
+
+#: clients/notes/read_note.c:2926
+#, c-format
+msgid "\"%s\" (Note %d) from =%s\n"
+msgstr "“[1m%s[0m” (Note %d) from =%s\n"
+
+#: clients/notes/read_note.c:2928
+#, c-format
+msgid ""
+"Author: %s@%s\n"
+"Date: "
+msgstr ""
+"Author: %s@%s\n"
+"Date: "
+
+#: clients/notes/run_index.c:131
+msgid "Read note > "
+msgstr "Read note > "
+
+#: clients/notes/run_index.c:152
+msgid "Edit Note text:"
+msgstr "Edit Note text:"
+
+#: clients/notes/run_index.c:153
+msgid "Edit Note Text"
+msgstr "Edit Note Text"
+
+#: clients/notes/run_index.c:162
+msgid "Sorry, you can not write in an archive"
+msgstr "Sorry, you can not write in an archive"
+
+#: clients/notes/run_index.c:164
+msgid "You are not allowed to write in an archive."
+msgstr "You are not allowed to write in an archive."
+
+#: clients/notes/run_index.c:182
+msgid "You are not allowed to write basenotes in this notesfile."
+msgstr "You are not allowed to write basenotes in this notesfile."
+
+#: clients/notes/run_index.c:514
+#, c-format
+msgid "Can't find any articles with text '%s'"
+msgstr "Can't find any articles with text ‘[1m%s[0m’"
+
+#: clients/notes/run_index.c:576 clients/notes/run_index.c:608
+#: clients/notes/run_index.c:642 clients/notes/run_index.c:656
+msgid "Set to read notes since: "
+msgstr "Set to read notes since: "
+
+#: clients/notes/run_index.c:593 clients/notes/run_index.c:596
+#: clients/notes/run_index.c:600
+msgid "New Date > "
+msgstr "New Date > "
+
+#: clients/notes/run_index.c:682
+msgid "type ? for help, q to quit"
+msgstr "type ? for help, q to quit"
+
+#: clients/frontends/checknotes.c:84
+msgid "alternate"
+msgstr "alternate"
+
+#: clients/frontends/checknotes.c:85 clients/frontends/getnote.c:72
+#: clients/frontends/mknf.c:50 clients/frontends/nfadmin.c:73
+#: clients/frontends/nfdump.c:54 clients/frontends/nfload.c:86
+msgid "debug"
+msgstr "debug"
+
+#: clients/frontends/checknotes.c:86
+msgid "file"
+msgstr "file"
+
+#: clients/frontends/checknotes.c:87
+msgid "quiet"
+msgstr "quiet"
+
+#: clients/frontends/checknotes.c:88
+msgid "silent"
+msgstr "silent"
+
+#: clients/frontends/checknotes.c:89 clients/frontends/mknf.c:56
+#: clients/frontends/nfdump.c:56 clients/frontends/nfload.c:90
+msgid "verbose"
+msgstr "verbose"
+
+#: clients/frontends/checknotes.c:90
+msgid "no-blacklist"
+msgstr "no-blacklist"
+
+#: clients/frontends/checknotes.c:91 clients/frontends/getnote.c:73
+#: clients/frontends/mknf.c:57 clients/frontends/nfadmin.c:80
+#: clients/frontends/nfdump.c:57 clients/frontends/nfload.c:91
+msgid "help"
+msgstr "help"
+
+#: clients/frontends/checknotes.c:92 clients/frontends/getnote.c:75
+#: clients/frontends/mknf.c:58 clients/frontends/nfadmin.c:83
+#: clients/frontends/nfdump.c:58 clients/frontends/nfload.c:92
+msgid "version"
+msgstr "version"
+
+#: clients/frontends/checknotes.c:122
+msgid "a:f:hnqsv"
+msgstr "a:f:hnqsv"
+
+#: clients/frontends/checknotes.c:129
+msgid "checknotes"
+msgstr "checknotes"
+
+#: clients/frontends/checknotes.c:178
+#, c-format
+msgid ""
+"Usage: %s [OPTION]... [NOTESFILE]...\n"
+"Check for new notes in your sequencer path or in listed notesfiles.\n"
+"\n"
+msgstr ""
+"Usage: %s [OPTION]... [NOTESFILE]...\n"
+"Check for new notes in your sequencer path or in listed notesfiles.\n"
+"\n"
+
+#: clients/frontends/checknotes.c:182
+#, c-format
+msgid ""
+"  -a, --alternate=SEQ   Use alternate sequencer SEQ\n"
+"  -f, --file=FILE       Read list of notesfiles to view from specified file\n"
+"  -s, --silent          Display no output\n"
+"  -v, --verbose         Display each notesfile with new notes\n"
+"  -z, --no-blacklist    Ignore blacklist while checking notesfiles.\n"
+"      --debug           Display debugging messages\n"
+"      --quiet           Same as -s\n"
+"\n"
+"  -h, --help            Display this help and exit\n"
+"      --version         Display version information and exit\n"
+"\n"
+msgstr ""
+"  -a, --alternate=SEQ   Use alternate sequencer SEQ\n"
+"  -f, --file=FILE       Read list of notesfiles to view from specified file\n"
+"  -s, --silent          Display no output\n"
+"  -v, --verbose         Display each notesfile with new notes\n"
+"  -z, --no-blacklist    Ignore blacklist while checking notesfiles.\n"
+"      --debug           Display debugging messages\n"
+"      --quiet           Same as -s\n"
+"\n"
+"  -h, --help            Display this help and exit\n"
+"      --version         Display version information and exit\n"
+"\n"
+
+#: clients/frontends/checknotes.c:258 clients/frontends/nftimestamp.c:270
+#, c-format
+msgid "%s: error opening '%s'\n"
+msgstr "%s: error opening ‘[1m%s[0m’\n"
+
+#: clients/frontends/checknotes.c:271
+#, c-format
+msgid "%s\n"
+msgstr "%s\n"
+
+#: clients/frontends/checknotes.c:280
+#, c-format
+msgid "There are new notes\n"
+msgstr "There are new notes\n"
+
+#: clients/frontends/checknotes.c:282
+#, c-format
+msgid "There are no new notes\n"
+msgstr "There are no new notes\n"
+
+#: clients/frontends/getnote.c:74
+msgid "print-header"
+msgstr "print-header"
+
+#: clients/frontends/getnote.c:101
+msgid "hp"
+msgstr "hp"
+
+#: clients/frontends/getnote.c:108
+msgid "getnote"
+msgstr "getnote"
+
+#: clients/frontends/getnote.c:126
+#, c-format
+msgid ""
+"Usage: %s [OPTION]... NOTESFILE NOTENUM [RESPNUM]\n"
+"Print the specified note from NOTESFILE.\n"
+"\n"
+msgstr ""
+"Usage: %s [OPTION]... NOTESFILE NOTENUM [RESPNUM]\n"
+"Print the specified note from NOTESFILE.\n"
+"\n"
+
+#: clients/frontends/getnote.c:130
+#, c-format
+msgid ""
+"  -p, --print-header   Print header information (author, etc.) for the note\n"
+"  -h, --help           Display this help and exit\n"
+"      --debug          Display debugging messages\n"
+"      --version        Display version information and exit\n"
+"\n"
+msgstr ""
+"  -p, --print-header   Print header information (author, etc.) for the note\n"
+"  -h, --help           Display this help and exit\n"
+"      --debug          Display debugging messages\n"
+"      --version        Display version information and exit\n"
+"\n"
+
+#: clients/frontends/getnote.c:179 clients/frontends/nfload.c:204
+#: clients/frontends/nfmail.c:227 clients/frontends/nfpipe.c:217
+#, c-format
+msgid "%s: too many arguments\n"
+msgstr "%s: too many arguments\n"
+
+#: clients/frontends/getnote.c:193 clients/frontends/nfmail.c:244
+#: clients/frontends/nfpipe.c:236 clients/frontends/nfprint.c:260
+#, c-format
+msgid "error opening notesfile '%s'"
+msgstr "error opening notesfile ‘[1m%s[0m’"
+
+#: clients/frontends/getnote.c:202 clients/frontends/nfprint.c:269
+#, c-format
+msgid "you are not allowed to read notesfile '%s'"
+msgstr "you are not allowed to read notesfile ‘[1m%s[0m’"
+
+#: clients/frontends/getnote.c:213
+#, c-format
+msgid "Notesfile: %s\n"
+msgstr "Notesfile: %s\n"
+
+#: clients/frontends/getnote.c:215
+#, c-format
+msgid "Note: %d of %d\n"
+msgstr "Note: %d of %d\n"
+
+#: clients/frontends/getnote.c:217
+#, c-format
+msgid "Response: %d of %d\n"
+msgstr "Response: %d of %d\n"
+
+#: clients/frontends/getnote.c:218
+#, c-format
+msgid "Title: %s\n"
+msgstr "Title: %s\n"
+
+#: clients/frontends/getnote.c:220
+#, c-format
+msgid "Director message: %s\n"
+msgstr "Director message: %s\n"
+
+#: clients/frontends/getnote.c:227
+msgid ":,"
+msgstr ":,"
+
+#: clients/frontends/getnote.c:230
+#, c-format
+msgid "Author: %s <%s@%s>\n"
+msgstr "Author: %s <%s@%s>\n"
+
+#: clients/frontends/getnote.c:236
+#, c-format
+msgid "Author: %s@%s\n"
+msgstr "Author: %s@%s\n"
+
+#: clients/frontends/getnote.c:241
+#, c-format
+msgid "%s"
+msgstr "%s"
+
+#: clients/frontends/getnote.c:245
+#, c-format
+msgid "%s: no such note\n"
+msgstr "%s: no such note\n"
+
+#: clients/frontends/mknf.c:49
+msgid "closed"
+msgstr "closed"
+
+#: clients/frontends/mknf.c:51 clients/frontends/nfadmin.c:74
+msgid "locked"
+msgstr "locked"
+
+#: clients/frontends/mknf.c:52 clients/frontends/nfadmin.c:75
+msgid "moderated"
+msgstr "moderated"
+
+#: clients/frontends/mknf.c:53
+msgid "networked"
+msgstr "networked"
+
+#: clients/frontends/mknf.c:54 clients/frontends/nfadmin.c:76
+msgid "open"
+msgstr "open"
+
+#: clients/frontends/mknf.c:55
+msgid "unlocked"
+msgstr "unlocked"
+
+#: clients/frontends/mknf.c:81
+msgid "achlmnouv"
+msgstr "achlmnouv"
+
+#: clients/frontends/mknf.c:88
+msgid "mknf"
+msgstr "mknf"
+
+#: clients/frontends/mknf.c:127
+#, c-format
+msgid ""
+"Usage: %s [OPTION]... NOTESFILE...\n"
+"Create new NOTESFILE(s).\n"
+"\n"
+msgstr ""
+"Usage: %s [OPTION]... NOTESFILE...\n"
+"Create new NOTESFILE(s).\n"
+"\n"
+
+#: clients/frontends/mknf.c:130
+#, c-format
+msgid ""
+"  -a, --anonymous   Allow anonymous notes in new notesfile\n"
+"  -l, --locked      Create a locked notesfile\n"
+"  -u, --unlocked    Create an unlocked notesfile (default)\n"
+"  -v, --verbose     Display a message for each notesfile created\n"
+"      --debug       Display debugging messages\n"
+"\n"
+"  -h, --help        Display this help and exit\n"
+"      --version     Display version information and exit\n"
+"\n"
+msgstr ""
+"  -a, --anonymous   Allow anonymous notes in new notesfile\n"
+"  -l, --locked      Create a locked notesfile\n"
+"  -u, --unlocked    Create an unlocked notesfile (default)\n"
+"  -v, --verbose     Display a message for each notesfile created\n"
+"      --debug       Display debugging messages\n"
+"\n"
+"  -h, --help        Display this help and exit\n"
+"      --version     Display version information and exit\n"
+"\n"
+
+#: clients/frontends/mknf.c:193
+#, c-format
+msgid "%s: created notesfile '%s'\n"
+msgstr "%s: created notesfile ‘[1m%s[0m’\n"
+
+#: clients/frontends/mknf.c:199 clients/frontends/nfload.c:290
+#, c-format
+msgid "%s: error creating '%s': Already exists\n"
+msgstr "%s: error creating '%s': Already exists\n"
+
+#: clients/frontends/mknf.c:208
+#, c-format
+msgid "%s: error creating '%s'\n"
+msgstr "%s: error creating ‘[1m%s[0m’\n"
+
+#: clients/frontends/nfadmin.c:72
+msgid "archive"
+msgstr "archive"
+
+#: clients/frontends/nfadmin.c:77
+msgid "expire-dirmsg"
+msgstr "expire-dirmsg"
+
+#: clients/frontends/nfadmin.c:78
+msgid "expire-time"
+msgstr "expire-time"
+
+#: clients/frontends/nfadmin.c:79
+msgid "expire-action"
+msgstr "expire-action"
+
+#: clients/frontends/nfadmin.c:81
+msgid "max-note-size"
+msgstr "max-note-size"
+
+#: clients/frontends/nfadmin.c:82
+msgid "minimum-notes"
+msgstr "minimum-notes"
+
+#: clients/frontends/nfadmin.c:117 clients/frontends/nfadmin.c:129
+msgid "-N"
+msgstr "-N"
+
+#: clients/frontends/nfadmin.c:117 clients/frontends/nfadmin.c:133
+msgid "-n"
+msgstr "-n"
+
+#: clients/frontends/nfadmin.c:118 clients/frontends/nfadmin.c:137
+msgid "-Q"
+msgstr "-Q"
+
+#: clients/frontends/nfadmin.c:118 clients/frontends/nfadmin.c:141
+msgid "-q"
+msgstr "-q"
+
+#: clients/frontends/nfadmin.c:119 clients/frontends/nfadmin.c:146
+msgid "-P"
+msgstr "-P"
+
+#: clients/frontends/nfadmin.c:119 clients/frontends/nfadmin.c:151
+msgid "-p"
+msgstr "-p"
+
+#: clients/frontends/nfadmin.c:120 clients/frontends/nfadmin.c:155
+msgid "-B"
+msgstr "-B"
+
+#: clients/frontends/nfadmin.c:120 clients/frontends/nfadmin.c:159
+msgid "-b"
+msgstr "-b"
+
+#: clients/frontends/nfadmin.c:122
+#, c-format
+msgid "%s: invalid option -- %c\n"
+msgstr "%s: invalid option -- %c\n"
+
+#: clients/frontends/nfadmin.c:127
+msgid "-a+"
+msgstr "-a+"
+
+#: clients/frontends/nfadmin.c:127
+msgid "-a"
+msgstr "-a"
+
+#: clients/frontends/nfadmin.c:131
+msgid "-a-"
+msgstr "-a-"
+
+#: clients/frontends/nfadmin.c:135
+msgid "-M+"
+msgstr "-M+"
+
+#: clients/frontends/nfadmin.c:135
+msgid "-M"
+msgstr "-M"
+
+#: clients/frontends/nfadmin.c:139
+msgid "-M-"
+msgstr "-M-"
+
+#: clients/frontends/nfadmin.c:143
+msgid "-o-"
+msgstr "-o-"
+
+#: clients/frontends/nfadmin.c:143
+msgid "-l"
+msgstr "-l"
+
+#: clients/frontends/nfadmin.c:144
+msgid "-l+"
+msgstr "-l+"
+
+#: clients/frontends/nfadmin.c:148
+msgid "-o+"
+msgstr "-o+"
+
+#: clients/frontends/nfadmin.c:148
+msgid "-o"
+msgstr "-o"
+
+#: clients/frontends/nfadmin.c:149
+msgid "-l-"
+msgstr "-l-"
+
+#: clients/frontends/nfadmin.c:153
+msgid "-A+"
+msgstr "-A+"
+
+#: clients/frontends/nfadmin.c:153
+msgid "-A"
+msgstr "-A"
+
+#: clients/frontends/nfadmin.c:157
+msgid "-A-"
+msgstr "-A-"
+
+#: clients/frontends/nfadmin.c:163
+msgid "bBd:e:E:hl:nNpPqQW:"
+msgstr "bBd:e:E:hl:nNpPqQW:"
+
+#: clients/frontends/nfadmin.c:170
+msgid "nfadmin"
+msgstr "nfadmin"
+
+#: clients/frontends/nfadmin.c:180 clients/frontends/nfadmin.c:201
+#: clients/frontends/nfadmin.c:222 clients/frontends/nfadmin.c:243
+#: clients/frontends/nfadmin.c:264 clients/frontends/nfadmin.c:297
+msgid "yes"
+msgstr "yes"
+
+#: clients/frontends/nfadmin.c:181 clients/frontends/nfadmin.c:202
+#: clients/frontends/nfadmin.c:223 clients/frontends/nfadmin.c:244
+#: clients/frontends/nfadmin.c:265 clients/frontends/nfadmin.c:297
+msgid "on"
+msgstr "on"
+
+#: clients/frontends/nfadmin.c:181 clients/frontends/nfadmin.c:202
+#: clients/frontends/nfadmin.c:223 clients/frontends/nfadmin.c:244
+#: clients/frontends/nfadmin.c:265
+msgid "y"
+msgstr "y"
+
+#: clients/frontends/nfadmin.c:182 clients/frontends/nfadmin.c:203
+#: clients/frontends/nfadmin.c:224 clients/frontends/nfadmin.c:245
+#: clients/frontends/nfadmin.c:266
+msgid "+"
+msgstr "+"
+
+#: clients/frontends/nfadmin.c:184 clients/frontends/nfadmin.c:205
+#: clients/frontends/nfadmin.c:226 clients/frontends/nfadmin.c:247
+#: clients/frontends/nfadmin.c:268 clients/frontends/nfadmin.c:299
+msgid "no"
+msgstr "no"
+
+#: clients/frontends/nfadmin.c:184 clients/frontends/nfadmin.c:205
+#: clients/frontends/nfadmin.c:226 clients/frontends/nfadmin.c:247
+#: clients/frontends/nfadmin.c:268 clients/frontends/nfadmin.c:299
+msgid "off"
+msgstr "off"
+
+#: clients/frontends/nfadmin.c:185 clients/frontends/nfadmin.c:206
+#: clients/frontends/nfadmin.c:227 clients/frontends/nfadmin.c:248
+#: clients/frontends/nfadmin.c:269 clients/frontends/nfadmin.c:326
+msgid "n"
+msgstr "n"
+
+#: clients/frontends/nfadmin.c:185 clients/frontends/nfadmin.c:206
+#: clients/frontends/nfadmin.c:227 clients/frontends/nfadmin.c:248
+#: clients/frontends/nfadmin.c:269
+msgid "-"
+msgstr "-"
+
+#: clients/frontends/nfadmin.c:189 clients/frontends/nfadmin.c:210
+#: clients/frontends/nfadmin.c:231 clients/frontends/nfadmin.c:252
+#: clients/frontends/nfadmin.c:273 clients/frontends/nfadmin.c:310
+#: clients/frontends/nfadmin.c:337 clients/frontends/nfadmin.c:387
+#: clients/frontends/nfadmin.c:411 clients/frontends/nfadmin.c:488
+#, c-format
+msgid "%s: invalid argument -- %s\n"
+msgstr "%s: invalid argument -- %s\n"
+
+#: clients/frontends/nfadmin.c:301
+msgid "ign"
+msgstr "ign"
+
+#: clients/frontends/nfadmin.c:303
+msgid "any"
+msgstr "any"
+
+#: clients/frontends/nfadmin.c:305 clients/frontends/nfadmin.c:328
+#: clients/frontends/nfadmin.c:382 clients/frontends/nfadmin.c:479
+msgid "def"
+msgstr "def"
+
+#: clients/frontends/nfadmin.c:306 clients/frontends/nfadmin.c:330
+#: clients/frontends/nfadmin.c:383 clients/frontends/nfadmin.c:481
+msgid "dfl"
+msgstr "dfl"
+
+#: clients/frontends/nfadmin.c:326
+msgid "nev"
+msgstr "nev"
+
+#: clients/frontends/nfadmin.c:329 clients/frontends/nfadmin.c:480
+msgid "d"
+msgstr "d"
+
+#: clients/frontends/nfadmin.c:348 clients/frontends/nfadmin.c:422
+#: clients/frontends/nfadmin.c:499
+#, c-format
+msgid "%s: invalid argument -- %s (exceeded maximum value)\n"
+msgstr "%s: invalid argument -- %s (exceeded maximum value)\n"
+
+#: clients/frontends/nfadmin.c:359 clients/frontends/nfadmin.c:433
+#: clients/frontends/nfadmin.c:510
+#, c-format
+msgid "%s: invalid argument -- %s (no negative values)\n"
+msgstr "%s: invalid argument -- %s (no negative values)\n"
+
+#: clients/frontends/nfadmin.c:378
+msgid "arc"
+msgstr "arc"
+
+#: clients/frontends/nfadmin.c:380
+msgid "del"
+msgstr "del"
+
+#: clients/frontends/nfadmin.c:407
+msgid "k"
+msgstr "k"
+
+#: clients/frontends/nfadmin.c:407
+msgid "K"
+msgstr "K"
+
+#: clients/frontends/nfadmin.c:529
+#, c-format
+msgid ""
+"Usage: %s [OPTION]... NOTESFILE...\n"
+"Adjust director options for the specified NOTESFILE(s).\n"
+"\n"
+msgstr ""
+"Usage: %s [OPTION]... NOTESFILE...\n"
+"Adjust director options for the specified NOTESFILE(s).\n"
+"\n"
+
+#: clients/frontends/nfadmin.c:533
+#, c-format
+msgid ""
+"General options:\n"
+"  -h, --help                Display this help and exit\n"
+"      --debug               Display debugging messages\n"
+"      --version             Display version information and exit\n"
+"\n"
+msgstr ""
+"General options:\n"
+"  -h, --help                Display this help and exit\n"
+"      --debug               Display debugging messages\n"
+"      --version             Display version information and exit\n"
+"\n"
+
+#: clients/frontends/nfadmin.c:538
+#, c-format
+msgid ""
+"Value options:\n"
+"  -d, --expire-dirmsg=VAL   Set expiration by director message flag\n"
+"  -e, --expire-time=VAL     Set number of days before note expiration\n"
+"  -E, --expire-action=VAL   Set action to take upon expiration\n"
+"  -L, --max-note-size=VAL   Set maximum note size in bytes or kilobytes (-"
+"k)\n"
+"  -W, --minimum-notes=VAL   Set minimum notes to retain after archiving\n"
+"\n"
+msgstr ""
+"Value options:\n"
+"  -d, --expire-dirmsg=VAL   Set expiration by director message flag\n"
+"  -e, --expire-time=VAL     Set number of days before note expiration\n"
+"  -E, --expire-action=VAL   Set action to take upon expiration\n"
+"  -L, --max-note-size=VAL   Set maximum note size in bytes or kilobytes (-"
+"k)\n"
+"  -W, --minimum-notes=VAL   Set minimum notes to retain after archiving\n"
+"\n"
+
+#: clients/frontends/nfadmin.c:545
+#, c-format
+msgid ""
+"Flag options:\n"
+"  -a, --anonymous           Set value of 'anonymous' flag\n"
+"  -A, --archive             Set value of 'archive' flag\n"
+"  -l, --locked              Set value of 'locked' flag\n"
+"  -M, --moderated           Set value of 'moderated' flag\n"
+"  -o, --open                Set value of 'locked' flag backwards\n"
+"\n"
+msgstr ""
+"Flag options:\n"
+"  -a, --anonymous           Set value of ‘[1manonymous[0m’ flag\n"
+"  -A, --archive             Set value of ‘[1marchive[0m’ flag\n"
+"  -l, --locked              Set value of ‘[1mlocked[0m’ flag\n"
+"  -M, --moderated           Set value of ‘[1mmoderated[0m’ flag\n"
+"  -o, --open                Set value of ‘[1mlocked[0m’ flag backwards\n"
+"\n"
+
+#: clients/frontends/nfadmin.c:552
+#, c-format
+msgid ""
+"Value options can be set to whatever the various options allow; for "
+"details,\n"
+"see 'info nfadmin'. Flag options can be set with + or - following the short\n"
+"options, or 'on', 'off', 'yes', and 'no' for the long options.\n"
+"\n"
+msgstr ""
+"Value options can be set to whatever the various options allow; for "
+"details,\n"
+"see 'info nfadmin'. Flag options can be set with + or - following the short\n"
+"options, or 'on', 'off', 'yes', and ‘[1mno[0m’ for the long options.\n"
+"\n"
+
+#. TRANSLATORS: Please keep this aligned as is; I know that's annoying but the
+#. * layout is fussy.
+#.
+#: clients/frontends/nfadmin.c:593
+#, c-format
+msgid ""
+"        Notesfile         : Lock Anon Arch Modr Minm Expr Expr Expr   #    "
+"Maxm\n"
+"------------------------- : -------Flags------- Note Time Actn DirM Notes  "
+"NtSz\n"
+msgstr ""
+"        Notesfile         : Lock Anon Arch Modr Minm Expr Expr Expr   #    "
+"Maxm\n"
+"------------------------- : -------Flags------- Note Time Actn DirM Notes  "
+"NtSz\n"
+
+#: clients/frontends/nfadmin.c:613
+#, c-format
+msgid "%-25.25s : Error opening notesfile\n"
+msgstr "%-25.25s : Error opening notesfile\n"
+
+#: clients/frontends/nfadmin.c:621
+#, c-format
+msgid "%-25.25s : Not a director\n"
+msgstr "%-25.25s : Not a director\n"
+
+#: clients/frontends/nfadmin.c:694
+#, c-format
+msgid "%-25.25s : "
+msgstr "%-25.25s : "
+
+#: clients/frontends/nfadmin.c:695
+#, c-format
+msgid "%s %s %s %s "
+msgstr "%s %s %s %s "
+
+#: clients/frontends/nfadmin.c:696 clients/frontends/nfadmin.c:697
+#: clients/frontends/nfadmin.c:698 clients/frontends/nfadmin.c:699
+msgid "YES "
+msgstr "YES "
+
+#: clients/frontends/nfadmin.c:696 clients/frontends/nfadmin.c:697
+#: clients/frontends/nfadmin.c:698 clients/frontends/nfadmin.c:699
+msgid " NO "
+msgstr " NO "
+
+#: clients/frontends/nfadmin.c:700 clients/frontends/nfadmin.c:706
+#, c-format
+msgid "%4d "
+msgstr "%4d "
+
+#: clients/frontends/nfadmin.c:702
+#, c-format
+msgid "NEVR "
+msgstr "NEVR "
+
+#: clients/frontends/nfadmin.c:704
+#, c-format
+msgid "DFLT "
+msgstr "DFLT "
+
+#: clients/frontends/nfadmin.c:707 clients/frontends/nfadmin.c:709
+#, c-format
+msgid "%s "
+msgstr "%s "
+
+#: clients/frontends/nfadmin.c:707
+msgid "DEL "
+msgstr "DEL "
+
+#: clients/frontends/nfadmin.c:708
+msgid "ARCH"
+msgstr "ARCH"
+
+#: clients/frontends/nfadmin.c:708 clients/frontends/nfadmin.c:712
+msgid "DFLT"
+msgstr "DFLT"
+
+#: clients/frontends/nfadmin.c:709
+msgid " ON "
+msgstr " ON "
+
+#: clients/frontends/nfadmin.c:710
+msgid "OFF "
+msgstr "OFF "
+
+#: clients/frontends/nfadmin.c:711
+msgid "ANY "
+msgstr "ANY "
+
+#: clients/frontends/nfadmin.c:712
+msgid "IGNR"
+msgstr "IGNR"
+
+#: clients/frontends/nfadmin.c:713
+#, c-format
+msgid "%5d "
+msgstr "%5d "
+
+#: clients/frontends/nfadmin.c:714
+#, c-format
+msgid "%4dk\n"
+msgstr "%4dk\n"
+
+#: clients/frontends/nfdump.c:55
+msgid "extension"
+msgstr "extension"
+
+#: clients/frontends/nfdump.c:82
+msgid "dump"
+msgstr "dump"
+
+#: clients/frontends/nfdump.c:84
+msgid "e:hv"
+msgstr "e:hv"
+
+#: clients/frontends/nfdump.c:91
+msgid "nfdump"
+msgstr "nfdump"
+
+#: clients/frontends/nfdump.c:115
+#, c-format
+msgid ""
+"Usage: %s [OPTION]... NOTESFILE...\n"
+"Create a saved image file for each NOTESFILE.\n"
+"\n"
+msgstr ""
+"Usage: %s [OPTION]... NOTESFILE...\n"
+"Create a saved image file for each NOTESFILE.\n"
+"\n"
+
+#: clients/frontends/nfdump.c:118
+#, c-format
+msgid ""
+"  -e, --extension=EXT   Specify an extension for the images\n"
+"  -v, --verbose         Display extra status messages\n"
+"      --debug           Display debugging messages\n"
+"\n"
+"  -h, --help            Display this help and exit\n"
+"      --version         Display version information and exit\n"
+"\n"
+msgstr ""
+"  -e, --extension=EXT   Specify an extension for the images\n"
+"  -v, --verbose         Display extra status messages\n"
+"      --debug           Display debugging messages\n"
+"\n"
+"  -h, --help            Display this help and exit\n"
+"      --version         Display version information and exit\n"
+"\n"
+
+#: clients/frontends/nfdump.c:177
+#, c-format
+msgid "%s: couldn't open notesfile '%s'\n"
+msgstr "%s: couldn't open notesfile ‘[1m%s[0m’\n"
+
+#: clients/frontends/nfdump.c:185
+#, c-format
+msgid "%s: you are not allowed to read notesfile '%s'\n"
+msgstr "%s: you are not allowed to read notesfile ‘[1m%s[0m’\n"
+
+#: clients/frontends/nfdump.c:195
+#, c-format
+msgid "%s: dumped notesfile '%s'\n"
+msgstr "%s: dumped notesfile ‘[1m%s[0m’\n"
+
+#: clients/frontends/nfdump.c:202
+#, c-format
+msgid "%s: error dumping '%s'\n"
+msgstr "%s: error dumping ‘[1m%s[0m’\n"
+
+#: clients/frontends/nfload.c:85
+msgid "force-access"
+msgstr "force-access"
+
+#: clients/frontends/nfload.c:87
+msgid "force"
+msgstr "force"
+
+#: clients/frontends/nfload.c:88
+msgid "replace-access"
+msgstr "replace-access"
+
+#: clients/frontends/nfload.c:89
+msgid "skip-access"
+msgstr "skip-access"
+
+#: clients/frontends/nfload.c:118
+msgid "afhrsv"
+msgstr "afhrsv"
+
+#: clients/frontends/nfload.c:125
+msgid "nfload"
+msgstr "nfload"
+
+#: clients/frontends/nfload.c:161
+#, c-format
+msgid ""
+"Usage: %s [OPTION]... IMAGE NOTESFILE\n"
+"Load notesfile IMAGE into NOTESFILE.\n"
+"\n"
+msgstr ""
+"Usage: %s [OPTION]... IMAGE NOTESFILE\n"
+"Load notesfile IMAGE into NOTESFILE.\n"
+"\n"
+
+#: clients/frontends/nfload.c:164
+#, c-format
+msgid ""
+"  -a, --force-access     Add access entries without asking for confirmation\n"
+"  -f, --force            Make all changes without asking for confirmation\n"
+"  -r, --replace-access   Replace existing access entries\n"
+"  -s, --skip-access      Do not alter access entries\n"
+"  -v, --verbose          Display extra status messages\n"
+"      --debug            Display debugging messages\n"
+"\n"
+"  -h, --help             Display this help and exit\n"
+"      --version          Display version information and exit\n"
+"\n"
+msgstr ""
+"  -a, --force-access     Add access entries without asking for confirmation\n"
+"  -f, --force            Make all changes without asking for confirmation\n"
+"  -r, --replace-access   Replace existing access entries\n"
+"  -s, --skip-access      Do not alter access entries\n"
+"  -v, --verbose          Display extra status messages\n"
+"      --debug            Display debugging messages\n"
+"\n"
+"  -h, --help             Display this help and exit\n"
+"      --version          Display version information and exit\n"
+"\n"
+
+#: clients/frontends/nfload.c:227
+#, c-format
+msgid "file '%s' not found"
+msgstr "file ‘[1m%s[0m’ not found"
+
+#: clients/frontends/nfload.c:234
+msgid "NF-Title: "
+msgstr "NF-Title: "
+
+#: clients/frontends/nfload.c:237
+#, c-format
+msgid "Looks like a UIUC-format nfdump...\n"
+msgstr "Looks like a UIUC-format nfdump...\n"
+
+#: clients/frontends/nfload.c:244
+msgid "nfdump file format not recognized"
+msgstr "nfdump file format not recognized"
+
+#: clients/frontends/nfload.c:274
+#, c-format
+msgid "Created notesfile '%s'.\n"
+msgstr "Created notesfile '%s'.\n"
+
+#: clients/frontends/nfload.c:283
+#, c-format
+msgid "error opening newly-created notesfile '%s'"
+msgstr "error opening newly-created notesfile ‘[1m%s[0m’"
+
+#: clients/frontends/nfload.c:292
+#, c-format
+msgid ""
+"You should probably never get this error message.\n"
+"If you do, it's probably a bug.\n"
+msgstr ""
+"You should probably never get this error message.\n"
+"If you do, it's probably a bug.\n"
+
+#: clients/frontends/nfload.c:305
+#, c-format
+msgid "error creating '%s'"
+msgstr "error creating ‘[1m%s[0m’"
+
+#: clients/frontends/nfload.c:316
+#, c-format
+msgid "%s: aborting attempt to load dump file"
+msgstr "%s: aborting attempt to load dump file"
+
+#: clients/frontends/nfload.c:321
+#, c-format
+msgid "Successfully loaded '%s'.\n"
+msgstr "Successfully loaded '%s'.\n"
+
+#: clients/frontends/nfload.c:342
+#, c-format
+msgid "%s: error loading UIUC descriptor"
+msgstr "%s: error loading UIUC descriptor"
+
+#: clients/frontends/nfload.c:348
+#, c-format
+msgid "Loaded notesfile descriptor.\n"
+msgstr "Loaded notesfile descriptor.\n"
+
+#: clients/frontends/nfload.c:356
+#, c-format
+msgid "%s: error reading policy note"
+msgstr "%s: error reading policy note"
+
+#: clients/frontends/nfload.c:365
+#, c-format
+msgid "Replace existing policy note (y/n)? "
+msgstr "Replace existing policy note (y/n)? "
+
+#: clients/frontends/nfload.c:374
+#, c-format
+msgid "Loaded policy note.\n"
+msgstr "Loaded policy note.\n"
+
+#: clients/frontends/nfload.c:381
+#, c-format
+msgid "%s: error reading access records"
+msgstr "%s: error reading access records"
+
+#: clients/frontends/nfload.c:386
+#, c-format
+msgid "Loaded notesfile access records.\n"
+msgstr "Loaded notesfile access records.\n"
+
+#: clients/frontends/nfload.c:398
+#, c-format
+msgid "%s: error reading basenote"
+msgstr "%s: error reading basenote"
+
+#: clients/frontends/nfload.c:408
+#, c-format
+msgid "Loaded note: '%s'\n"
+msgstr "Loaded note: ‘[1m%s[0m’\n"
+
+#: clients/frontends/nfload.c:420
+#, c-format
+msgid "%s: error reading response"
+msgstr "%s: error reading response"
+
+#: clients/frontends/nfload.c:431
+#, c-format
+msgid "Loaded response %d of %d.\n"
+msgstr "Loaded response %d of %d.\n"
+
+#: clients/frontends/nfload.c:465
+#, c-format
+msgid "Replace notesfile title (y/n)? "
+msgstr "Replace notesfile title (y/n)? "
+
+#: clients/frontends/nfload.c:480
+#, c-format
+msgid "Replace notesfile director message (y/n)? "
+msgstr "Replace notesfile director message (y/n)? "
+
+#: clients/frontends/nfload.c:499
+#, c-format
+msgid "Replace notesfile options (y/n)? "
+msgstr "Replace notesfile options (y/n)? "
+
+#: clients/frontends/nfload.c:508
+#, c-format
+msgid "%10s"
+msgstr "%10s"
+
+#: clients/frontends/nfload.c:511
+#, c-format
+msgid "  Option: '%s'\n"
+msgstr "  Option: ‘[1m%s[0m’\n"
+
+#: clients/frontends/nfload.c:514
+msgid "Open"
+msgstr "Open"
+
+#: clients/frontends/nfload.c:516 clients/frontends/nfload.c:565
+msgid "Archive"
+msgstr "Archive"
+
+#: clients/frontends/nfload.c:518
+msgid "Moderated"
+msgstr "Moderated"
+
+#: clients/frontends/nfload.c:520
+msgid "Networked"
+msgstr "Networked"
+
+#: clients/frontends/nfload.c:521
+msgid "Local"
+msgstr "Local"
+
+#: clients/frontends/nfload.c:525
+#, c-format
+msgid "Invalid option in Status field: '%s'\n"
+msgstr "Invalid option in Status field: ‘[1m%s[0m’\n"
+
+#: clients/frontends/nfload.c:541
+#, c-format
+msgid "Replace expiration threshold (y/n)? "
+msgstr "Replace expiration threshold (y/n)? "
+
+#: clients/frontends/nfload.c:550
+#, c-format
+msgid "Invalid value for Expiration-Age field.\n"
+msgstr "Invalid value for Expiration-Age field.\n"
+
+#: clients/frontends/nfload.c:559
+#, c-format
+msgid "Replace expiration action (y/n)? "
+msgstr "Replace expiration action (y/n)? "
+
+#: clients/frontends/nfload.c:567
+msgid "Delete"
+msgstr "Delete"
+
+#: clients/frontends/nfload.c:569 clients/frontends/nfload.c:594
+msgid "Default"
+msgstr "Default"
+
+#: clients/frontends/nfload.c:573
+#, c-format
+msgid "Unknown value for Expiration-Action field.\n"
+msgstr "Unknown value for Expiration-Action field.\n"
+
+#: clients/frontends/nfload.c:582
+#, c-format
+msgid "Replace expire-by-director-message setting (y/n)? "
+msgstr "Replace expire-by-director-message setting (y/n)? "
+
+#: clients/frontends/nfload.c:588
+msgid "On"
+msgstr "On"
+
+#: clients/frontends/nfload.c:590
+msgid "Off"
+msgstr "Off"
+
+#: clients/frontends/nfload.c:592
+msgid "Either"
+msgstr "Either"
+
+#: clients/frontends/nfload.c:598
+#, c-format
+msgid "Unknown value for Expiration-Status field.\n"
+msgstr "Unknown value for Expiration-Status field.\n"
+
+#: clients/frontends/nfload.c:607
+#, c-format
+msgid "Replace maximum number of notes in notesfile? "
+msgstr "Replace maximum number of notes in notesfile? "
+
+#: clients/frontends/nfload.c:616
+#, c-format
+msgid "Invalid value for Working-Set-Size field.\n"
+msgstr "Invalid value for Working-Set-Size field.\n"
+
+#: clients/frontends/nfload.c:625
+#, c-format
+msgid "Replace value for the maximum length of a note (y/n)? "
+msgstr "Replace value for the maximum length of a note (y/n)? "
+
+#: clients/frontends/nfload.c:634
+#, c-format
+msgid "Invalid value for Longest-Text field.\n"
+msgstr "Invalid value for Longest-Text field.\n"
+
+#: clients/frontends/nfload.c:641
+msgid "Yes"
+msgstr "Yes"
+
+#: clients/frontends/nfload.c:650
+#, c-format
+msgid "Read an unexpected access entry.\n"
+msgstr "Read an unexpected access entry.\n"
+
+#: clients/frontends/nfload.c:655 clients/frontends/nfload.c:835
+#, c-format
+msgid "Read an unexpected note or response.\n"
+msgstr "Read an unexpected note or response.\n"
+
+#: clients/frontends/nfload.c:659 clients/frontends/nfload.c:840
+#, c-format
+msgid "Received an error parsing token.\n"
+msgstr "Received an error parsing token.\n"
+
+#: clients/frontends/nfload.c:663 clients/frontends/nfload.c:845
+#, c-format
+msgid "Unknown token type.\n"
+msgstr "Unknown token type.\n"
+
+#: clients/frontends/nfload.c:690
+#, c-format
+msgid "Cleared out old access privileges.\n"
+msgstr "Cleared out old access privileges.\n"
+
+#: clients/frontends/nfload.c:713
+#, c-format
+msgid "Skipped an access privilege.\n"
+msgstr "Skipped an access privilege.\n"
+
+#: clients/frontends/nfload.c:723
+msgid "User"
+msgstr "User"
+
+#: clients/frontends/nfload.c:728
+msgid "Group"
+msgstr "Group"
+
+#: clients/frontends/nfload.c:733
+msgid "System"
+msgstr "System"
+
+#: clients/frontends/nfload.c:740
+#, c-format
+msgid "Read a bad access privilege; moving on.\n"
+msgstr "Read a bad access privilege; moving on.\n"
+
+#: clients/frontends/nfload.c:765
+#, c-format
+msgid "Set %s permission for %s to %s (y/n)? "
+msgstr "Set %s permission for %s to %s (y/n)? "
+
+#: clients/frontends/nfload.c:806
+#, c-format
+msgid "Loaded access privilege for '%s'.\n"
+msgstr "Loaded access privilege for '%s'.\n"
+
+#: clients/frontends/nfload.c:829
+#, c-format
+msgid "Read an unexpected descriptor field.\n"
+msgstr "Read an unexpected descriptor field.\n"
+
+#: clients/frontends/nfmail.c:121
+msgid "nfmail"
+msgstr "nfmail"
+
+#: clients/frontends/nfmail.c:162
+#, c-format
+msgid ""
+"Usage: %s [OPTION]... [FILE] NOTESFILE\n"
+"Create a note in NOTESFILE with text from saved mail message in FILE (or "
+"stdin\n"
+"if unspecified)\n"
+"\n"
+msgstr ""
+"Usage: %s [OPTION]... [FILE] NOTESFILE\n"
+"Create a note in NOTESFILE with text from saved mail message in FILE (or "
+"stdin\n"
+"if unspecified)\n"
+"\n"
+
+#: clients/frontends/nfmail.c:167 clients/frontends/nfpipe.c:157
+#, c-format
+msgid ""
+"If an argument to a long option is mandatory, it is also mandatory for the\n"
+"corresponding short option; the same is true for optional arguments.\n"
+"\n"
+msgstr ""
+"If an argument to a long option is mandatory, it is also mandatory for the\n"
+"corresponding short option; the same is true for optional arguments.\n"
+"\n"
+
+#: clients/frontends/nfmail.c:170
+#, c-format
+msgid ""
+"  -a, --anonymous            Make note anonymous\n"
+"  -d, --director-msg[=MSG]   Give the note a director message\n"
+"  -s, --strip-headers        Strip the mail headers from FILE\n"
+"  -t, --title=TITLE          Set note's title to TITLE\n"
+"  -v, --verbose              Print extra status messages\n"
+"      --debug                Display debugging messages\n"
+"\n"
+"  -h, --help                 Display this help and exit\n"
+"      --version              Display version information and exit\n"
+"\n"
+msgstr ""
+"  -a, --anonymous            Make note anonymous\n"
+"  -d, --director-msg[=MSG]   Give the note a director message\n"
+"  -s, --strip-headers        Strip the mail headers from FILE\n"
+"  -t, --title=TITLE          Set note's title to TITLE\n"
+"  -v, --verbose              Print extra status messages\n"
+"      --debug                Display debugging messages\n"
+"\n"
+"  -h, --help                 Display this help and exit\n"
+"      --version              Display version information and exit\n"
+"\n"
+
+#: clients/frontends/nfmail.c:253 clients/frontends/nfpipe.c:246
+#, c-format
+msgid "permission denied: can't write to notesfile '%s'"
+msgstr "permission denied: can't write to notesfile ‘[1m%s[0m’"
+
+#: clients/frontends/nfmail.c:262 clients/frontends/nfpipe.c:256
+#, c-format
+msgid "permission denied: can't write to archive '%s'"
+msgstr "permission denied: can't write to archive ‘[1m%s[0m’"
+
+#: clients/frontends/nfmail.c:353 clients/frontends/nfpipe.c:318
+#, c-format
+msgid "Added '%s' to %s.\n"
+msgstr "Added ‘[1m%s[0m’ to %s.\n"
+
+#: clients/frontends/nfpipe.c:117
+msgid "nfpipe"
+msgstr "nfpipe"
+
+#: clients/frontends/nfpipe.c:153
+#, c-format
+msgid ""
+"Usage: %s [OPTION]... [FILE] NOTESFILE\n"
+"Create a note in NOTESFILE with text from FILE (or stdin if unspecified).\n"
+"\n"
+msgstr ""
+"Usage: %s [OPTION]... [FILE] NOTESFILE\n"
+"Create a note in NOTESFILE with text from FILE (or stdin if unspecified).\n"
+"\n"
+
+#: clients/frontends/nfpipe.c:160
+#, c-format
+msgid ""
+"  -a, --anonymous            Make note anonymous\n"
+"  -d, --director-msg[=MSG]   Give the note a director message\n"
+"  -t, --title=TITLE          Set note's title to TITLE\n"
+"  -v, --verbose              Print a confirmation message\n"
+"      --debug                Display debugging messages\n"
+"\n"
+"  -h, --help                 Display this help and exit\n"
+"      --version              Display version information and exit\n"
+"\n"
+msgstr ""
+"  -a, --anonymous            Make note anonymous\n"
+"  -d, --director-msg[=MSG]   Give the note a director message\n"
+"  -t, --title=TITLE          Set note's title to TITLE\n"
+"  -v, --verbose              Print a confirmation message\n"
+"      --debug                Display debugging messages\n"
+"\n"
+"  -h, --help                 Display this help and exit\n"
+"      --version              Display version information and exit\n"
+"\n"
+
+#: clients/frontends/nfprint.c:156
+msgid "nfprint"
+msgstr "nfprint"
+
+#: clients/frontends/nfprint.c:197
+#, c-format
+msgid ""
+"Usage: %s [OPTION]... NOTESFILE [LIST]\n"
+"Format and print notes (in LIST) from NOTESFILE.\n"
+"\n"
+msgstr ""
+"Usage: %s [OPTION]... NOTESFILE [LIST]\n"
+"Format and print notes (in LIST) from NOTESFILE.\n"
+"\n"
+
+#: clients/frontends/nfprint.c:201
+#, c-format
+msgid ""
+"  -c, --cat           Use cat(1) instead of pr(1)\n"
+"  -d, --director      Select only notes with director messages\n"
+"  -i, --index-only    Print a table of note titles only\n"
+"  -l, --length=LEN    Use a page length of LEN lines\n"
+"  -n, --no-director   Select only notes without director messages\n"
+"  -p, --page-breaks   Insert a page break after each thread\n"
+"      --debug         Display debugging messages\n"
+"\n"
+"  -h, --help          Display this help and exit\n"
+"      --version       Display version information and exit\n"
+"\n"
+msgstr ""
+"  -c, --cat           Use cat(1) instead of pr(1)\n"
+"  -d, --director      Select only notes with director messages\n"
+"  -i, --index-only    Print a table of note titles only\n"
+"  -l, --length=LEN    Use a page length of LEN lines\n"
+"  -n, --no-director   Select only notes without director messages\n"
+"  -p, --page-breaks   Insert a page break after each thread\n"
+"      --debug         Display debugging messages\n"
+"\n"
+"  -h, --help          Display this help and exit\n"
+"      --version       Display version information and exit\n"
+"\n"
+
+#: clients/frontends/nfprint.c:279
+#, c-format
+msgid ""
+"================================ Index =================================\n"
+"\n"
+msgstr ""
+"================================ Index =================================\n"
+"\n"
+
+#: clients/frontends/nfprint.c:294
+msgid "pipe failed"
+msgstr "pipe failed"
+
+#: clients/frontends/nfprint.c:705
+#, c-format
+msgid "Response %d"
+msgstr "Response %d"
+
+#: clients/frontends/nfstats.c:85
+msgid "nfstats"
+msgstr "nfstats"
+
+#: clients/frontends/nfstats.c:103
+#, c-format
+msgid ""
+"Usage: %s [OPTION]... NOTESFILE...\n"
+"Display usage statistics for NOTESFILE(s), including a total.\n"
+"\n"
+msgstr ""
+"Usage: %s [OPTION]... NOTESFILE...\n"
+"Display usage statistics for NOTESFILE(s), including a total.\n"
+"\n"
+
+#: clients/frontends/nfstats.c:107
+#, c-format
+msgid ""
+"  -s, --summary   Print only the total for all listed notesfiles\n"
+"      --debug     Display debugging messages\n"
+"\n"
+"  -h, --help      Display this help and exit\n"
+"      --version   Display version information and exit\n"
+"\n"
+msgstr ""
+"  -s, --summary   Print only the total for all listed notesfiles\n"
+"      --debug     Display debugging messages\n"
+"\n"
+"  -h, --help      Display this help and exit\n"
+"      --version   Display version information and exit\n"
+"\n"
+
+#: clients/frontends/nfstats.c:160
+#, c-format
+msgid "%s: error getting stats for '%s'\n"
+msgstr "%s: error getting stats for ‘[1m%s[0m’\n"
+
+#: clients/frontends/nfstats.c:169
+#, c-format
+msgid "Usage statistics for %s\n"
+msgstr "Usage statistics for %s\n"
+
+#: clients/frontends/nfstats.c:171
+#, c-format
+msgid "                         NOTES   RESPS  TOTALS\n"
+msgstr "                         NOTES   RESPS  TOTALS\n"
+
+#: clients/frontends/nfstats.c:172
+#, c-format
+msgid "Local Reads:           %7u %7u %7u\n"
+msgstr "Local Reads:           %7u %7u %7u\n"
+
+#: clients/frontends/nfstats.c:175
+#, c-format
+msgid "Local Writes:          %7u %7u %7u\n"
+msgstr "Local Writes:          %7u %7u %7u\n"
+
+#: clients/frontends/nfstats.c:180
+#, c-format
+msgid "Entries into Notesfile:  %u\n"
+msgstr "Entries into Notesfile:  %u\n"
+
+#: clients/frontends/nfstats.c:181
+#, c-format
+msgid "Total Time in Notesfile: %.2f minutes\n"
+msgstr "Total Time in Notesfile: %.2f minutes\n"
+
+#: clients/frontends/nfstats.c:184
+#, c-format
+msgid "Average Time/Entry:      %.2f minutes\n"
+msgstr "Average Time/Entry:      %.2f minutes\n"
+
+#: clients/frontends/nfstats.c:202
+#, c-format
+msgid "Total for all requested notesfiles\n"
+msgstr "Total for all requested notesfiles\n"
+
+#: clients/frontends/nfstats.c:203
+#, c-format
+msgid "                          NOTES   RESPS  TOTALS\n"
+msgstr "                          NOTES   RESPS  TOTALS\n"
+
+#: clients/frontends/nfstats.c:204
+#, c-format
+msgid "Local Reads:            %7u %7u %7u\n"
+msgstr "Local Reads:            %7u %7u %7u\n"
+
+#: clients/frontends/nfstats.c:207
+#, c-format
+msgid "Local Writes:           %7u %7u %7u\n"
+msgstr "Local Writes:           %7u %7u %7u\n"
+
+#: clients/frontends/nfstats.c:212
+#, c-format
+msgid "Entries into Notesfiles:  %u\n"
+msgstr "Entries into Notesfiles:  %u\n"
+
+#: clients/frontends/nfstats.c:213
+#, c-format
+msgid "Total Time in Notesfiles: %.2f minutes\n"
+msgstr "Total Time in Notesfiles: %.2f minutes\n"
+
+#: clients/frontends/nfstats.c:216
+#, c-format
+msgid "Average Time/Entry:       %.2f minutes\n"
+msgstr "Average Time/Entry:       %.2f minutes\n"
+
+#: clients/frontends/nftimestamp.c:106
+msgid "nftimestamp"
+msgstr "nftimestamp"
+
+#: clients/frontends/nftimestamp.c:183
+#, c-format
+msgid "%s: only user '%s' can use -u option\n"
+msgstr "%s: only user ‘[1m%s[0m’ can use -u option\n"
+
+#: clients/frontends/nftimestamp.c:185
+#, c-format
+msgid "See 'info nftimestamp' for more information.\n"
+msgstr "See ‘[1minfo nftimestamp[0m’ for more information.\n"
+
+#: clients/frontends/nftimestamp.c:202
+#, c-format
+msgid ""
+"Usage: %s [OPTION]... NOTESFILE...\n"
+"Update sequencer times for specified NOTESFILE(s).\n"
+"\n"
+msgstr ""
+"Usage: %s [OPTION]... NOTESFILE...\n"
+"Update sequencer times for specified NOTESFILE(s).\n"
+"\n"
+
+#: clients/frontends/nftimestamp.c:206
+#, c-format
+msgid ""
+"  -a, --alternate=SEQ   Use alternate sequencer SEQ\n"
+"  -f, --file=FILE       Read list of notesfiles to update from specified "
+"file\n"
+"  -o, --time=TIME       Use specified time (default is now)\n"
+"  -u, --user=NAME       Set specified user's sequencer times (Notes owner "
+"only)\n"
+"  -v, --verbose         Display each notesfile with new notes\n"
+"      --debug           Display debugging messages\n"
+"\n"
+"  -h, --help            Display this help and exit\n"
+"      --version         Display version information and exit\n"
+"\n"
+msgstr ""
+"  -a, --alternate=SEQ   Use alternate sequencer SEQ\n"
+"  -f, --file=FILE       Read list of notesfiles to update from specified "
+"file\n"
+"  -o, --time=TIME       Use specified time (default is now)\n"
+"  -u, --user=NAME       Set specified user's sequencer times (Notes owner "
+"only)\n"
+"  -v, --verbose         Display each notesfile with new notes\n"
+"      --debug           Display debugging messages\n"
+"\n"
+"  -h, --help            Display this help and exit\n"
+"      --version         Display version information and exit\n"
+"\n"
+
+#: clients/frontends/nftimestamp.c:282
+#, c-format
+msgid "%s: timestamp set\n"
+msgstr "%s: timestamp set\n"
+
+#: clients/frontends/nftimestamp.c:287
+#, c-format
+msgid "%s: timestamp not set: no read access\n"
+msgstr "%s: timestamp not set: no read access\n"
+
+#: clients/frontends/rmnf.c:86
+msgid "rmnf"
+msgstr "rmnf"
+
+#: clients/frontends/rmnf.c:108
+#, c-format
+msgid ""
+"Usage: %s [OPTION]... NOTESFILE...\n"
+"Delete existing NOTESFILE(s).\n"
+"\n"
+msgstr ""
+"Usage: %s [OPTION]... NOTESFILE...\n"
+"Delete existing NOTESFILE(s).\n"
+"\n"
+
+#: clients/frontends/rmnf.c:111
+#, c-format
+msgid ""
+"  -f, --force     Do not prompt to confirm removal\n"
+"  -v, --verbose   Display a message for each notesfile processed\n"
+"      --debug     Display debugging messages\n"
+"\n"
+"  -h, --help      Display this help and exit\n"
+"      --version   Display version information and exit\n"
+"\n"
+msgstr ""
+"  -f, --force     Do not prompt to confirm removal\n"
+"  -v, --verbose   Display a message for each notesfile processed\n"
+"      --debug     Display debugging messages\n"
+"\n"
+"  -h, --help      Display this help and exit\n"
+"      --version   Display version information and exit\n"
+"\n"
+
+#: clients/frontends/rmnf.c:179
+#, c-format
+msgid "%s: notesfile '%s' doesn't exist\n"
+msgstr "%s: notesfile ‘[1m%s[0m’ doesn't exist\n"
+
+#: clients/frontends/rmnf.c:188
+#, c-format
+msgid "%s: remove '%s'? (y/n) "
+msgstr "%s: remove '%s'? (y/n) "
+
+#: clients/frontends/rmnf.c:198
+#, c-format
+msgid "%s: removing notesfile '%s'\n"
+msgstr "%s: removing notesfile ‘[1m%s[0m’\n"
+
+#: clients/frontends/rmnf.c:204
+#, c-format
+msgid "%s: error removing notesfile '%s'\n"
+msgstr "%s: error removing notesfile ‘[1m%s[0m’\n"

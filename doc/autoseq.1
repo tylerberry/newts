@@ -1,0 +1,43 @@
+.TH AUTOSEQ 1 "August 2004" "Newts" "Newts Reference Manual"
+
+.SH NAME
+autoseq \- read only updated threads in notesfiles
+
+.SH SYNOPSIS
+.B autoseq
+[\fIoptions\fR] [\fINOTESFILE\fR]...
+
+.SH DESCRIPTION
+.B autoseq
+will invoke the notes sequencer to read the specified notesfiles, or if no
+notesfiles are given on the command-line, the notesfiles listed in the
+.B NFSEQ
+environment variable.
+.B autoseq
+is identical to \fBnotes -s\fR.
+
+.SH OPTIONS
+.B autoseq
+supports all the options available for \fBnotes\fR(1).
+
+.SH AUTHOR
+.B Newts
+was written and is maintained by Tyler Berry <tyler+newts@thoughtlocker.net>.
+
+.SH SEE ALSO
+\fBchecknotes\fR(1), \fBgetnote\fR(1), \fBmknf\fR(1), \fBnfadmin\fR(1),
+\fBnfdump\fR(1), \fBnfload\fR(1), \fBnfmail\fR(1), \fBnfpipe\fR(1),
+\fBnfprint\fR(1), \fBnfstats\fR(1), \fBnftimestamp\fR(1), \fBnotes\fR(1),
+\fBrmnf\fR(1)
+
+The full documentation for
+.B Newts
+is maintained as a Texinfo manual.  If the
+.B info
+and
+.B Newts
+programs are properly installed at your site, the command
+.IP
+.B info newts
+.PP
+should give you access to the complete manual.

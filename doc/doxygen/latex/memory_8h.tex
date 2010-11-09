@@ -1,0 +1,182 @@
+\section{memory.h File Reference}
+\label{memory_8h}\index{memory.h@{memory.h}}
+{\tt \#include \char`\"{}newts/config.h\char`\"{}}\par
+\subsection*{Functions}
+\begin{CompactItemize}
+\item 
+void $\ast$ {\bf newts\_\-calloc} (size\_\-t number, size\_\-t size)
+\item 
+void {\bf newts\_\-free} (void $\ast$pointer)
+\item 
+void $\ast$ {\bf newts\_\-malloc} (size\_\-t size)
+\item 
+void {\bf newts\_\-malloc\_\-die} (void)
+\item 
+void $\ast$ {\bf newts\_\-memdup} (const void $\ast$pointer, size\_\-t size)
+\item 
+void $\ast$ {\bf newts\_\-nmalloc} (size\_\-t number, size\_\-t size)
+\item 
+void $\ast$ {\bf newts\_\-nrealloc} (void $\ast$pointer, size\_\-t number, size\_\-t size)
+\item 
+void $\ast$ {\bf newts\_\-nrealloc2} (void $\ast$pointer, size\_\-t $\ast$number, size\_\-t size)
+\item 
+void $\ast$ {\bf newts\_\-realloc} (void $\ast$pointer, size\_\-t size)
+\item 
+void $\ast$ {\bf newts\_\-realloc2} (void $\ast$pointer, size\_\-t $\ast$size)
+\item 
+char $\ast$ {\bf newts\_\-strdup} (const char $\ast$string)
+\item 
+void $\ast$ {\bf newts\_\-zalloc} (size\_\-t size)
+\end{CompactItemize}
+\subsection*{Variables}
+\begin{CompactItemize}
+\item 
+void($\ast$ {\bf newts\_\-failed\_\-malloc\_\-hook} )(void)
+\item 
+void($\ast$ {\bf newts\_\-free\_\-function} )(void $\ast$pointer)
+\item 
+void $\ast$($\ast$ {\bf newts\_\-malloc\_\-function} )(size\_\-t size)
+\item 
+void $\ast$($\ast$ {\bf newts\_\-realloc\_\-function} )(void $\ast$pointer, size\_\-t size)
+\item 
+void($\ast$ {\bf newts\_\-successful\_\-malloc\_\-hook} )(void $\ast$pointer)
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+Memory allocation functions and hooks.
+
+These functions are used for all memory management performed by libnewtsclient. All other functions in the library dealing with memory allocation or deallocation call a function defined in this file.
+
+The global function pointer variables in this file define the basic interface to memory management. If those variables are reassigned, the higher-level interface to memory management in this file, and by extension all other memory-related functions in libnewtsclient, will automatically use the new functions stored in those variables. If you need to handle memory allocation in a special way, for example to accommodate requirements for writing extensions for dynamic languages like Python, you can accomplish that by redefining these variables.
+
+The higher-level interface provides error checking as well as numerous specialized variations of the basic memory allocation functions. If you're directly allocating memory (as opposed to using structure-specific allocation functions such as alloc\_\-nfref), you should use this higher-level interface. 
+
+\subsection{Function Documentation}
+\index{memory.h@{memory.h}!newts\_\-calloc@{newts\_\-calloc}}
+\index{newts\_\-calloc@{newts\_\-calloc}!memory.h@{memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ newts\_\-calloc (size\_\-t {\em number}, size\_\-t {\em size})}\label{memory_8h_e818e95ded1e6806f2c1c84a8bd8c63f}
+
+
+Allocate and return sufficient memory for {\em number\/} items of {\em size\/} bytes each, all initialized to 0. {\em size\/} must be nonzero. \index{memory.h@{memory.h}!newts\_\-free@{newts\_\-free}}
+\index{newts\_\-free@{newts\_\-free}!memory.h@{memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void newts\_\-free (void $\ast$ {\em pointer})}\label{memory_8h_4ef6c30009d51ccad199bc330a65a9a9}
+
+
+Free memory allocated by any of the allocation functions in this file. \index{memory.h@{memory.h}!newts\_\-malloc@{newts\_\-malloc}}
+\index{newts\_\-malloc@{newts\_\-malloc}!memory.h@{memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ newts\_\-malloc (size\_\-t {\em size})}\label{memory_8h_5327eb4e72a1ef5a09484d60161bbdbb}
+
+
+Allocate and return {\em size\/} bytes of uninitializd memory. \index{memory.h@{memory.h}!newts\_\-malloc\_\-die@{newts\_\-malloc\_\-die}}
+\index{newts\_\-malloc\_\-die@{newts\_\-malloc\_\-die}!memory.h@{memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void newts\_\-malloc\_\-die (void)}\label{memory_8h_bb73d69f4b2f79c49694b44b9345e9bb}
+
+
+Abort execution in the case of failed memory allocation. This function is the default value of \doxyref{newts\_\-failed\_\-malloc\_\-hook}{p.}{memory_8h_dfaf0c3e78b88f793b11af86dda4ec8a}. \index{memory.h@{memory.h}!newts\_\-memdup@{newts\_\-memdup}}
+\index{newts\_\-memdup@{newts\_\-memdup}!memory.h@{memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ newts\_\-memdup (const void $\ast$ {\em pointer}, size\_\-t {\em size})}\label{memory_8h_990236cf6b3eb910380c3ccae6fe1c57}
+
+
+Allocate and return {\em size\/} bytes of memory, and fill that memory with the contents of the first {\em size\/} bytes of the memory starting at {\em pointer\/}. \index{memory.h@{memory.h}!newts\_\-nmalloc@{newts\_\-nmalloc}}
+\index{newts\_\-nmalloc@{newts\_\-nmalloc}!memory.h@{memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ newts\_\-nmalloc (size\_\-t {\em number}, size\_\-t {\em size})}\label{memory_8h_a514a26b4ea04ecf0855668be0052526}
+
+
+Allocate and return sufficient uninitialized memory for {\em number\/} items of {\em size\/} bytes each. {\em size\/} must be nonzero. \index{memory.h@{memory.h}!newts\_\-nrealloc@{newts\_\-nrealloc}}
+\index{newts\_\-nrealloc@{newts\_\-nrealloc}!memory.h@{memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ newts\_\-nrealloc (void $\ast$ {\em pointer}, size\_\-t {\em number}, size\_\-t {\em size})}\label{memory_8h_a46d35dfee6cb2a37778623661a3a224}
+
+
+If {\em pointer\/} is NULL, allocate and return sufficient uninitialized memory for {\em number\/} items of {\em size\/} bytes each. Otherwise, change the size of {\em pointer\/} to accommodate {\em number\/} items of {\em size\/} bytes each, and return the location of the newly resized block of memory. {\em size\/} must be nonzero. \index{memory.h@{memory.h}!newts\_\-nrealloc2@{newts\_\-nrealloc2}}
+\index{newts\_\-nrealloc2@{newts\_\-nrealloc2}!memory.h@{memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ newts\_\-nrealloc2 (void $\ast$ {\em pointer}, size\_\-t $\ast$ {\em number}, size\_\-t {\em size})}\label{memory_8h_b4e7c5016782b1612ff1c558c3d7ded8}
+
+
+If {\em pointer\/} is NULL, allocate and return sufficient uninitialized memory to accommodate, at minimum, {\em number\/} items of {\em size\/} bytes each. If {\em pointer\/} is NULL and {\em number\/} is also NULL, allocate and return memory for some implementation-defined number of items of {\em size\/} bytes each.
+
+If {\em pointer\/} is not NULL, change the size of {\em pointer\/} to accommodate at least {\em number\/} items of {\em size\/} bytes each, and return the location of the newly resized block of memory. If {\em pointer\/} is not NULL, {\em size\/} must not be NULL.
+
+Repeated reallocations are guaranteed to \char`\"{}make progress\char`\"{}, either by allocating an initial block with a nonzero size, or by reallocating a larger block.
+
+\begin{Desc}
+\item[Side effects:]{\em number\/} is set to the number of items of size {\em size\/} allocated; this may be greater than the number requested, but will never be fewer. On return, {\em number\/} will never contain a value of zero unless memory failed to be allocated. \end{Desc}
+\index{memory.h@{memory.h}!newts\_\-realloc@{newts\_\-realloc}}
+\index{newts\_\-realloc@{newts\_\-realloc}!memory.h@{memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ newts\_\-realloc (void $\ast$ {\em pointer}, size\_\-t {\em size})}\label{memory_8h_13510684e0eba92a7ff0b264a0a66366}
+
+
+If {\em pointer\/} is NULL, allocate and return {\em size\/} bytes of uninitialized memory. Otherwise, change the size of {\em pointer\/} to {\em size\/} bytes, and return the location of the newly resized block of memory. \index{memory.h@{memory.h}!newts\_\-realloc2@{newts\_\-realloc2}}
+\index{newts\_\-realloc2@{newts\_\-realloc2}!memory.h@{memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ newts\_\-realloc2 (void $\ast$ {\em pointer}, size\_\-t $\ast$ {\em size})}\label{memory_8h_982b0366fffaf0a65629f48e2c751ae8}
+
+
+If {\em pointer\/} is NULL, allocate and return sufficient uninitialized memory to accommodate, at minimum, {\em size\/} bytes. If {\em pointer\/} is NULL and {\em size\/} is also NULL, allocate and return memory for some implementation-defined number of bytes.
+
+If {\em pointer\/} is not NULL, change the size of {\em pointer\/} to accommodate at least {\em size\/} bytes, and return the location of the newly resized block of memory. If {\em pointer\/} is not NULL, {\em size\/} must not be NULL.
+
+Repeated reallocations are guaranteed to \char`\"{}make progress\char`\"{}, either by allocating an initial block with a nonzero size, or by reallocating a larger block.
+
+\begin{Desc}
+\item[Side effects:]{\em size\/} is set to the number of bytes allocated; this may be greater than the number requested, but will never be fewer. On return, {\em size\/} will never contain a value of zero unless memory failed to be allocated. \end{Desc}
+\index{memory.h@{memory.h}!newts\_\-strdup@{newts\_\-strdup}}
+\index{newts\_\-strdup@{newts\_\-strdup}!memory.h@{memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ newts\_\-strdup (const char $\ast$ {\em string})}\label{memory_8h_ee3d620a72a01f25d26f9e53d64df951}
+
+
+Allocate and return a copy of {\em string\/}. \index{memory.h@{memory.h}!newts\_\-zalloc@{newts\_\-zalloc}}
+\index{newts\_\-zalloc@{newts\_\-zalloc}!memory.h@{memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ newts\_\-zalloc (size\_\-t {\em size})}\label{memory_8h_4c0148a96e0a9e127270558db97be3d6}
+
+
+Allocate and return {\em size\/} bytes of memory, initialized to 0. 
+
+\subsection{Variable Documentation}
+\index{memory.h@{memory.h}!newts\_\-failed\_\-malloc\_\-hook@{newts\_\-failed\_\-malloc\_\-hook}}
+\index{newts\_\-failed\_\-malloc\_\-hook@{newts\_\-failed\_\-malloc\_\-hook}!memory.h@{memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ {\bf newts\_\-failed\_\-malloc\_\-hook})(void)}\label{memory_8h_dfaf0c3e78b88f793b11af86dda4ec8a}
+
+
+A function that should be called if \doxyref{newts\_\-malloc\_\-function}{p.}{memory_8h_296ad1087aeb2903b55fbe6ccd0098ef} or \doxyref{newts\_\-realloc\_\-function}{p.}{memory_8h_343e9e175f07e766220fde3bfe129e7d} fails to successfully allocate or reallocate memory. Defaults to \doxyref{newts\_\-malloc\_\-die}{p.}{memory_8h_bb73d69f4b2f79c49694b44b9345e9bb}.
+
+This function is permitted to abort execution, but is not required to, if the client application prefers to raise an exception, attempt to recover memory, or otherwise handle the allocation error gracefully. \index{memory.h@{memory.h}!newts\_\-free\_\-function@{newts\_\-free\_\-function}}
+\index{newts\_\-free\_\-function@{newts\_\-free\_\-function}!memory.h@{memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ {\bf newts\_\-free\_\-function})(void $\ast$pointer)}\label{memory_8h_1d6590489b28e9f8020392ccf2bb39df}
+
+
+The function that should be used to deallocate pointers allocated using either \doxyref{newts\_\-malloc\_\-function}{p.}{memory_8h_296ad1087aeb2903b55fbe6ccd0098ef} or \doxyref{newts\_\-realloc\_\-function}{p.}{memory_8h_343e9e175f07e766220fde3bfe129e7d}. Defaults to free(3).
+
+This function is called by \doxyref{newts\_\-free}{p.}{memory_8h_4ef6c30009d51ccad199bc330a65a9a9}. \index{memory.h@{memory.h}!newts\_\-malloc\_\-function@{newts\_\-malloc\_\-function}}
+\index{newts\_\-malloc\_\-function@{newts\_\-malloc\_\-function}!memory.h@{memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$($\ast$ {\bf newts\_\-malloc\_\-function})(size\_\-t size)}\label{memory_8h_296ad1087aeb2903b55fbe6ccd0098ef}
+
+
+The function that should be used to allocate new blocks of memory. Defaults to malloc(3).
+
+This function is called by \doxyref{newts\_\-calloc}{p.}{memory_8h_e818e95ded1e6806f2c1c84a8bd8c63f}, \doxyref{newts\_\-malloc}{p.}{memory_8h_5327eb4e72a1ef5a09484d60161bbdbb}, \doxyref{newts\_\-memdup}{p.}{memory_8h_990236cf6b3eb910380c3ccae6fe1c57}, \doxyref{newts\_\-nmalloc}{p.}{memory_8h_a514a26b4ea04ecf0855668be0052526}, \doxyref{newts\_\-strdup}{p.}{memory_8h_ee3d620a72a01f25d26f9e53d64df951}, and \doxyref{newts\_\-zalloc}{p.}{memory_8h_4c0148a96e0a9e127270558db97be3d6}.
+
+\begin{Desc}
+\item[See also:]\doxyref{newts\_\-free\_\-function}{p.}{memory_8h_1d6590489b28e9f8020392ccf2bb39df} \end{Desc}
+\index{memory.h@{memory.h}!newts\_\-realloc\_\-function@{newts\_\-realloc\_\-function}}
+\index{newts\_\-realloc\_\-function@{newts\_\-realloc\_\-function}!memory.h@{memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void$\ast$($\ast$ {\bf newts\_\-realloc\_\-function})(void $\ast$pointer, size\_\-t size)}\label{memory_8h_343e9e175f07e766220fde3bfe129e7d}
+
+
+The function that should be used to re-allocate blocks of memory previously allocated by \doxyref{newts\_\-malloc\_\-function}{p.}{memory_8h_296ad1087aeb2903b55fbe6ccd0098ef}. Defaults to realloc(3).
+
+This function is called by \doxyref{newts\_\-nrealloc}{p.}{memory_8h_a46d35dfee6cb2a37778623661a3a224}, \doxyref{newts\_\-nrealloc2}{p.}{memory_8h_b4e7c5016782b1612ff1c558c3d7ded8}, \doxyref{newts\_\-realloc}{p.}{memory_8h_13510684e0eba92a7ff0b264a0a66366}, and \doxyref{newts\_\-realloc2}{p.}{memory_8h_982b0366fffaf0a65629f48e2c751ae8}.
+
+\begin{Desc}
+\item[See also:]\doxyref{newts\_\-free\_\-function}{p.}{memory_8h_1d6590489b28e9f8020392ccf2bb39df} \end{Desc}
+\index{memory.h@{memory.h}!newts\_\-successful\_\-malloc\_\-hook@{newts\_\-successful\_\-malloc\_\-hook}}
+\index{newts\_\-successful\_\-malloc\_\-hook@{newts\_\-successful\_\-malloc\_\-hook}!memory.h@{memory.h}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ {\bf newts\_\-successful\_\-malloc\_\-hook})(void $\ast$pointer)}\label{memory_8h_7b8d0746add6eadd8037974a5f0043e9}
+
+
+A function that should be called if \doxyref{newts\_\-malloc\_\-function}{p.}{memory_8h_296ad1087aeb2903b55fbe6ccd0098ef} or \doxyref{newts\_\-realloc\_\-function}{p.}{memory_8h_343e9e175f07e766220fde3bfe129e7d} successfully allocates or reallocates memory. No default value.
+
+\begin{Desc}
+\item[Parameters:]
+\begin{description}
+\item[{\em pointer}]The address of the newly allocated or reallocated memory. \end{description}
+\end{Desc}

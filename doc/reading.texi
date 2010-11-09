@@ -1,0 +1,342 @@
+@node Reading
+@chapter Reading and moving around in Notes
+@cindex reading notes
+@cindex Notes, reading notes in
+
+After entering the Notes client, the most basic activity is to go
+through the notesfile and read various notes.  This chapter will
+explain how to read notes using the Notes client, starting with
+selecting a note from the index, proceeding to how to move around in that
+note and changing to different notes in the notesfile, and finally
+explaining the various search capabilities of the Notes client.
+Additionally, a brief introduction to access privileges will be
+presented at the end of the chapter.
+
+@menu
+* Index screen::        The layout of the index screen.
+* Scrolling::           Moving around the notesfile index screen.
+* Opening a note::      Selecting a note from the index.
+* Note layout::         The layout of the note display.
+* Moving around::       Moving around a note and changing notes.
+* Searching::           Search notes by author, title, or text.
+@end menu
+
+@node Index screen
+@section Index screen layout
+@cindex index, layout
+
+A sample index screen is shown below; the description of the elements
+on the screen follows.
+
+@example
+@cartouche
+Newts discussion forum (=newts.forum)     12:00 pm  May 30, 2003
+
+5/21/03     1 Welcome to =newts.forum               tyler
+5/22        2 Discussion for new features        27 tyler
+            3 Basenote for bug reports           49 tyler
+5/26        5 Changing visual appearance?         4 john@@foo.com
+5/29        6*New version released                  tyler
+
+               **** End of Notes ****
+@end cartouche
+@end example
+
+The top line of the index shows the notesfile's title, and unless
+Notes was invoked in traditional mode, the name of the notesfile in
+parentheses.  On the right side of the top line is the current time
+and date; the time will be updated each time the screen is redrawn.
+
+Each basenote is listed on its own line; from left to right, the
+information for an individual basenote is:
+
+@enumerate
+@item
+The date the basenote was composed.  If multiple basenotes were
+written on the same date, the date will only be printed for the first
+displayed note written on that date.
+
+@item
+The basenote number.  It is possible for basenote numbers to be
+non-consecutive.  This can happen if an existing basenote is deleted,
+for example.
+
+@item
+A symbol designating the basenote's status.  The most common symbol is
+@samp{*}, which is printed for any basenote with a director message.
+If a basenote has no special status, this space will be blank.
+
+@item
+The basenote's title.
+
+@item
+The number of responses to the basenote, if any.
+
+@item
+The author of the basenote.  If the author is a user from the same
+system that the Newts system is installed on, the system will be omitted.
+@end enumerate
+
+If the list includes the most recent basenote, the message
+@w{@samp{**** End of Notes ****}} will be shown after the list of
+basenotes.
+
+@node Scrolling
+@section Scrolling on the index screen
+@cindex index, scrolling
+
+There are several ways to scroll up and down the index screen when
+there are too many basenotes in a notesfile to display on the screen
+at once.
+
+The simplest way to scroll is with the arrow keys; the up and down
+arrow keys will scroll the index screen up or down one basenote at a
+time.
+
+The @key{PGUP} and @key{PGDN} keys can be used to scroll up and down
+one page at a time.  Each of these keys have several alternatives; the
+@key{RET}, @key{SPC}, and @kbd{+} keys all scroll down a page, and the
+@key{BS} and @kbd{-} keys scroll up a page.
+
+The @key{HOME} and @kbd{=} keys both move to the beginning of the list
+of basenotes, and the @key{END} and @kbd{*} keys both move to the end
+of the list.  Since basenotes are sorted by the date that each note
+was composed, the @key{HOME} and @kbd{=} keys will show the oldest
+basenotes, and the @key{END} and @kbd{*} keys will show the most
+recent basenotes.
+
+The scrolling commands on the index screen:
+
+@table @asis
+@item Up arrow
+Scroll up one note at a time.
+
+@item Down arrow
+Scroll down one note at a time.
+
+@item @key{PGUP}
+@itemx @key{BS}
+@itemx @kbd{-}
+Scroll up one screenful of notes.
+
+@item @key{PGDN}
+@itemx @key{RET}
+@itemx @key{SPC}
+@itemx @kbd{+}
+Scroll down one screenful of notes.
+
+@item @key{HOME}
+@itemx @kbd{=}
+Move to the beginning of the list of notes.
+
+@item @key{END}
+@itemx @kbd{*}
+Move to the end of the list of notes.
+@end table
+
+@node Opening a note
+@section Opening a note
+@cindex opening a note
+@cindex index, opening a note from
+
+The primary use of the index screen is to select and open individual
+basenotes to read.  To do this, you need to know the location of
+basenote numbers on the index screen; for that information, refer to
+@ref{Index screen}.
+
+To open an individual basenote, simply type that basenote's number
+while on the index screen; the number is displayed immediately to the
+left of the basenote's title.  Since a basenote might have a number
+with more than one digit, a prompt will be displayed on the screen as
+you type the number, and you will need to type @key{RET} after
+entering the number.
+
+@node Note layout
+@section Note layout
+@cindex note layout
+
+A sample note in the ``modern'' display style is shown below; the
+description of the elements on the screen follows.
+
+@example
+@cartouche
+Note 1                Newts discussion forum            3 responses
+Tyler Berry (tyler)  Welcome to =newts.forum 10:00 am  May 30, 2003
+
+
+This is a sample note which is being used to demonstrate the layout
+that the Notes program uses to display basenotes and responses.
+
+I hope you've enjoyed this example.
+
+                                                -- Next response --
+@end cartouche
+@end example
+
+The top line always shows which basenote you're currently reading, the
+title of the current notesfile, and the number of responses to the
+current basenote (and which response you're currently viewing, if
+applicable).  There may be no responses; in that case, the rightmost
+field will be blank.
+
+The second line always contains the author of the note, with the
+author's username in parentheses, followed by the title of the note,
+followed by the date and time the note was composed.
+
+A note with a director message will have that message displayed in the
+center of the third line, underneath the note title.
+
+Several indicators can appear on the third line underneath the
+author's name.  If a basenote was written by a person without
+permission to read the notesfile, a message will be displayed
+indicating that the note was ``write only''.  Also, if the note was
+composed by a user at a different site, that site will be indicated
+beneath the author field.
+
+At the bottom of the screen, a message will be displayed (in reverse
+video if possible) indicating what action will be taken if the
+@key{SPC} key is pressed.  This can be to view more pages of the
+current note, to read the next response or basenote, or to return to
+the index.  If there are more pages of the current note to display,
+there will also be an indicator showing what percentage of the note
+has been shown.
+
+@node Moving around
+@section Moving around a note and changing notes
+@cindex moving around a note
+
+A variety of different types of navigation are possible while viewing
+individual notes.
+
+First of all, when a given note has too much text to display on the
+screen at once, the arrow keys and @key{PGUP} and @key{PGDN} can be
+used to scroll inside the current note; these keys will not change
+notes.
+
+The @key{SPC} key is special.  It will go to the next page of the
+current note if there are more pages to view.  Failing that, it will
+move to the next response to the current note.  If there are no more
+responses (or you are viewing the last response to a basenote), it
+will move to the next basenote in the notesfile.  Finally, if you are
+already viewing the last basenote in the notesfile, it will return you
+to the notesfile index.  Unless you are using the traditional display
+mode, the current behavior of the @key{SPC} key will be displayed at
+the bottom of the screen.
+
+Similarly, the @key{BS} and @kbd{-} keys will move to the previous
+page.  If there is no previous page, they will change to the previous
+response.  If you are viewing a basenote, they will change to the
+previous basenote.  If you are viewing the first basenote in a
+notesfile, and you are not using traditional mode, they will return
+you to the index.
+
+The @kbd{+} and @kbd{;} keys are identical, and will both advance to
+the next response, basenote, or return to the index.  In other words,
+they are exactly like @key{SPC} except that they will not scroll
+forward in the current note.
+
+The @kbd{*} key will move to the last response to the current
+basenote, and the @kbd{=} key will return to the basenote.
+
+The @kbd{i} key will return directly to the notesfile index.
+
+Finally, you can also type the numbers from 1 to 9; each of these keys
+will skip that number of responses forward, but not past the last
+response.  This can be useful for moving quickly through a long thread
+of responses.
+
+@node Searching
+@section Searching
+@cindex searching
+
+Notes provides several different ways to search through the notes in a
+notesfile; each of these search methods is usable both from the index
+and while viewing notes.
+
+@menu
+* Author search::   Looking for specific authors.
+* Title search::    Finding notes with specified titles.
+* Text search::     Searching through the text off all the notes in a
+                      notesfile.
+@end menu
+
+@node Author search
+@subsection Author search
+@cindex author search
+@cindex searching for an author
+
+Searching for an author is performed using the @kbd{a} and @kbd{A}
+keys, both of which will work on both the notesfile index screen and
+while viewing notes.
+
+The @kbd{a} key will prompt you for an author name to search for, and
+will find the next note or response written by that author.
+
+Author search proceeds from most recent basenote to least recent, and
+from least recent response to most recent.  In order words, the most
+recent basenote will be checked first, followed by the first response
+to that basenote, and so on; if the author is not found in the most
+recent basenote, the second most recent will be scanned.  If you are
+viewing a note when you use the @kbd{a} command, the scan will proceed
+from your current position in the notesfile.
+
+If you have already searched for an author with the @kbd{a} key, you
+can use the @kbd{A} key to repeat the most recent search.  If there
+was no previous search, then the @kbd{A} key will act indentically to
+@kbd{a}.
+
+Author search is not case sensitive.
+
+@node Title search
+@subsection Title search
+@cindex title search
+@cindex searching for a title
+
+You can search for a particular basenote by title using the @kbd{x}
+and @kbd{X} keys.  As with author search, both of these commands work
+from both the notesfile index screen and while viewing notes and
+responses.
+
+The @kbd{x} key will always prompt for a new title to search for, and
+will find the most recent basenote containing the string you entered
+in its title.  If you are viewing a note when you use the @kbd{x} key,
+only notes with a basenote older than the currect note will be found.
+
+The @kbd{X} key will repeat a previous title search, or prompt for a
+title string if no search has been made.
+
+Title search is not case sensitive.
+
+@node Text search
+@subsection Text search
+@cindex text search
+@cindex searching for text
+
+In addition to the author search and text search capabilities which
+were provided by Notesfiles 1.7 by Essick and Kolstad, Newts has the
+ability to search the text of notes and responses for specific words
+or phrases.
+
+Similar to author and title search, text search is activated by the
+@kbd{/} and @kbd{\} keys, and works from the notesfile index and while
+viewing a note.
+
+The @kbd{/} key prompts for a new text string to search for.  Text
+search moves through notes in the same pattern as author search
+(@pxref{Author search}); recent basenotes to old basenotes and old
+responses to new responses.  If you are viewing a note when you use
+text search to search for a new string, the current note will be
+searched first.
+
+When a match is found, it will be highlighted on the screen and the
+note will automatically scroll down so that the text will be visible.
+All copies of the text in the note will be highlighted, whether they
+are currently visible or not.
+
+Similar to the @kbd{A} and @kbd{X} keys, the @kbd{\} key can be used
+to repeat a previous search.  If there are additional instances of the
+search text on the current note, they will be displayed before the
+next note in sequence is searched.
+
+Like author search and title search, text search is not case
+sensitive.

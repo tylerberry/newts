@@ -1,0 +1,81 @@
+\section{notesfile Struct Reference}
+\label{structnotesfile}\index{notesfile@{notesfile}}
+{\tt \#include $<$notesfile.h$>$}
+
+\subsection*{Data Fields}
+\begin{CompactItemize}
+\item 
+struct {\bf nfref} $\ast$ {\bf ref}
+\item 
+char $\ast$ {\bf title}
+\item 
+char $\ast$ {\bf director\_\-message}
+\item 
+unsigned {\bf total\_\-notes}
+\item 
+time\_\-t {\bf modified}
+\item 
+time\_\-t {\bf time\_\-entered}
+\item 
+int {\bf options}
+\item 
+short {\bf perms}
+\item 
+struct {\bf opts} $\ast$ {\bf opts}
+\end{CompactItemize}
+
+
+\subsection{Detailed Description}
+This structure stores metadata about a \doxyref{notesfile}{p.}{structnotesfile}. 
+
+\subsection{Field Documentation}
+\index{notesfile@{notesfile}!ref@{ref}}
+\index{ref@{ref}!notesfile@{notesfile}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}struct {\bf nfref}$\ast$ {\bf notesfile::ref}\hspace{0.3cm}{\tt  [read]}}\label{structnotesfile_fcb7daac87c22bb4198eba0d70bf8c33}
+
+
+The reference to the \doxyref{notesfile}{p.}{structnotesfile}. \index{notesfile@{notesfile}!title@{title}}
+\index{title@{title}!notesfile@{notesfile}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ {\bf notesfile::title}}\label{structnotesfile_c4c7dcf018a3e10ac9f3aa83cb4a0b0c}
+
+
+The title of the \doxyref{notesfile}{p.}{structnotesfile}. \index{notesfile@{notesfile}!director\_\-message@{director\_\-message}}
+\index{director\_\-message@{director\_\-message}!notesfile@{notesfile}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ {\bf notesfile::director\_\-message}}\label{structnotesfile_cc4f702959a879f9cf91170d141f5c2b}
+
+
+The default director message for the \doxyref{notesfile}{p.}{structnotesfile}. Given backends may provide per-note director messages. \index{notesfile@{notesfile}!total\_\-notes@{total\_\-notes}}
+\index{total\_\-notes@{total\_\-notes}!notesfile@{notesfile}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}unsigned {\bf notesfile::total\_\-notes}}\label{structnotesfile_e35aae7cbfead48dad46c1895ba31229}
+
+
+The number of threads in the \doxyref{notesfile}{p.}{structnotesfile}. \index{notesfile@{notesfile}!modified@{modified}}
+\index{modified@{modified}!notesfile@{notesfile}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}time\_\-t {\bf notesfile::modified}}\label{structnotesfile_1d0f0f8603a54d626332f815b3c58bc7}
+
+
+The most recent time this \doxyref{notesfile}{p.}{structnotesfile} was modified, for use by the sequencer. \index{notesfile@{notesfile}!time\_\-entered@{time\_\-entered}}
+\index{time\_\-entered@{time\_\-entered}!notesfile@{notesfile}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}time\_\-t {\bf notesfile::time\_\-entered}}\label{structnotesfile_6b4040b7f97844fb29f77289c14dc7b6}
+
+
+The time that the user \char`\"{}entered\char`\"{} the \doxyref{notesfile}{p.}{structnotesfile}. This is used for keeping track of how much time has been spent viewing the \doxyref{notesfile}{p.}{structnotesfile} by users. \index{notesfile@{notesfile}!options@{options}}
+\index{options@{options}!notesfile@{notesfile}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}int {\bf notesfile::options}}\label{structnotesfile_f6f2b6f5299fe15f16cb4ec5b2455bb0}
+
+
+A bitmap of \doxyref{statuses}{p.}{notesfile_8h_592b40327dd94a5be49dbabb7d666eca}. \index{notesfile@{notesfile}!perms@{perms}}
+\index{perms@{perms}!notesfile@{notesfile}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}short {\bf notesfile::perms}}\label{structnotesfile_88dd482f73240ff0f2f1f46ee357d09f}
+
+
+The permissions the user accessing the \doxyref{notesfile}{p.}{structnotesfile} has. \index{notesfile@{notesfile}!opts@{opts}}
+\index{opts@{opts}!notesfile@{notesfile}}
+\subsubsection{\setlength{\rightskip}{0pt plus 5cm}struct {\bf opts}$\ast$ {\bf notesfile::opts}\hspace{0.3cm}{\tt  [read]}}\label{structnotesfile_61441e0eb488ebd8fbb97f111e495d70}
+
+
+Custom options for the \doxyref{notesfile}{p.}{structnotesfile}; these options are backend-specific. 
+
+The documentation for this struct was generated from the following file:\begin{CompactItemize}
+\item 
+{\bf notesfile.h}\end{CompactItemize}

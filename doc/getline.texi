@@ -1,0 +1,117 @@
+@node Getline
+@appendix The `getline' input-editing library
+@cindex command entry
+@cindex line editing
+@cindex editing a line
+
+getline is a text input editing library written by Christopher
+Thewalt.  Like GNU Readline, getline provides various editing, command
+history, and various other features.
+
+I would seriously prefer to use Readline rather than getline in Newts;
+it has a more extensive editing command set, its keybindings are more
+Emacs-like (and its vi keybindings are superior), and it is a standard
+for the GNU system.  However, the Readline library does not play well
+with Curses.  getline doesn't really play that well with Curses
+either, but I've managed to coerce it into doing what I want.
+
+If you know of a way to combine Readline and Curses effectively,
+please let me know about it, or better yet send me a patch.
+
+The editing commands in getline are moderately Emacs-esque, although
+there is a semi-complete vi-like mode as well.
+
+In addition to the following keybindings, reproduced from the getline
+man page, DOS and ANSI arrow keys are accepted, performing the
+expected actions; namely, left and right move the cursor, and up and
+down scroll through the command history.
+
+@table @kbd
+@item C-a
+Move cursor to the beginning of line.
+
+@item C-b
+Move cursor back one column.
+
+@item ESC b
+Move cursor back one word.
+
+@item C-d
+
+Delete the character under the cursor.
+
+@item C-e
+Move cursor to the end of the line.
+
+@item C-f
+Move cursor forward one column.
+
+@item ESC f
+Move cursor forward one word.
+
+@item C-h
+Delete the character to the left of the cursor.
+
+@item C-i
+Move the cursor to the next tab stop.
+
+@item C-j
+Return the current line.
+
+@item C-k
+Kill from the cursor to the end of the line.
+
+@item C-l
+Redisplay the current line.
+
+@item C-m
+Return the current line.
+
+@item C-n
+Get the next line from the history list.
+
+@item C-o
+Toggle from overwrite to insert mode (initially in insert mode).
+
+@item C-p
+Get the previous line from the history list.
+
+@item C-r
+Begin a reverse incremental search through the history list.  Each
+character typed adds to the initially empty search substring, and
+getline finds and displays the first (most recent) matching location.
+Typing @kbd{C-r} again marks the current location and begins a new
+search with the current substring.  Typing @kbd{C-h} or
+@kbd{@key{DEL}} deletes the last character from the current substring,
+and getline restarts the search from the last starting location.
+Therefore, repeated @kbd{C-h} or @kbd{@key{DEL}} commands appear to
+unwind the search to the match nearest the point where the user began
+the search.  Typing @kbd{C-h} or @kbd{@key{DEL}} until the search
+substring is empty causes getline to reset the start of the search to
+the beginning of the history list.  Typing @kbd{@key{ESC}} or any
+other editing character accepts the current match and terminates the
+search.
+
+@item C-s
+Begin a forward incremental search through the history list; this is
+exactly like @kbd{C-r} except that it moves in the opposite direction.
+
+@item C-t
+Transpose the current character and the previous character.
+
+@item C-u
+Kill the entire line.
+
+@item C-y
+Yank previously killed text back at the current location.
+
+@item @key{BS}
+@itemx @key{DEL}
+Delete the character to the left of the cursor.
+
+@item @key{RET}
+Return the current line.
+
+@item @key{TAB}
+Move the cursor to the next tab stop.
+@end table

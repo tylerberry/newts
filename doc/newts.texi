@@ -1,0 +1,315 @@
+\input texinfo   @c -*-texinfo-*-
+@c %**start of header
+@setfilename newts.info
+@include version.texi
+@settitle Newts Reference Manual
+@paragraphindent 2
+@c %**end of header
+
+@dircategory Newts notesfile system
+@direntry
+* Newts: (newts).
+* Notes: (newts)Invoking Notes.
+* checknotes: (newts)Invoking checknotes.
+* getnote: (newts)Invoking getnote.
+* mknf: (newts)Invoking mknf.
+* nfadmin: (newts)Invoking nfadmin.
+* nfdump: (newts)Invoking nfdump.
+* nfload: (newts)Invoking nfload.
+* nfpipe: (newts)Invoking nfpipe.
+* nfprint: (newts)Invoking nfprint.
+* nfstats: (newts)Invoking nfstats.
+* nftimestamp: (newts)Invoking nftimestamp.
+* rmnf: (newts)Invoking rmnf.
+@end direntry
+
+@copying
+This manual is for Newts @value{VERSION} by Tyler Berry.
+
+Copyright @copyright{} 2003, 2004, 2005, 2006, 2007 Tyler Berry.
+
+@quotation
+Permission is granted to make and distribute verbatim copies of this
+manual provided the copyright notice and this permission notice are
+preserved on all copies.
+
+Permission is granted to copy and distribute modified versions of this
+manual under the conditions for verbatim copying, provided also that
+the sections that reprint ``The GNU General Public License,'' ``The
+GNU Library General Public License,'' and other clearly marked
+sections held under separate copyright are reproduced under the
+conditions given within them, and provided that the entire resulting
+derived work is distributed under the terms of a permission notice
+identical to this one.
+
+Permission is granted to copy and distribute translations of this
+manual into another language under the conditions for modified
+versions.  ``The GNU General Public License'' and ``The GNU Library
+General Public License'' may be included in a translation approved by
+the Free Software Foundation instead of in the original English.
+
+At your option, you may distribute verbatim and modified versions of
+this document, excepting the clearly marked sections held under
+separate copyright, under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2 of the
+License, or (at your option) any later version.
+@end quotation
+@end copying
+
+@titlepage
+@title Newts Reference Manual
+@author Tyler Berry
+@page
+@vskip 0pt plus 1filll
+@insertcopying
+@end titlepage
+
+@c Output the contents of the file at the beginning
+@contents
+
+@ifnottex
+@node Top
+@top Newts Reference Manual
+
+This manual is for Newts @value{VERSION} by Tyler Berry.
+
+Copyright @copyright{} 2003, 2004, 2005, 2006, 2007 Tyler Berry.
+
+@quotation
+Permission is granted to make and distribute verbatim copies of this
+manual provided the copyright notice and this permission notice are
+preserved on all copies.
+
+Permission is granted to copy and distribute modified versions of this
+manual under the conditions for verbatim copying, provided also that
+the sections that reprint ``The GNU General Public License,'' ``The
+GNU Library General Public License,'' and other clearly marked
+sections held under separate copyright are reproduced under the
+conditions given within them, and provided that the entire resulting
+derived work is distributed under the terms of a permission notice
+identical to this one.
+
+Permission is granted to copy and distribute translations of this
+manual into another language under the conditions for modified
+versions.  ``The GNU General Public License'' and ``The GNU Library
+General Public License'' may be included in a translation approved by
+the Free Software Foundation instead of in the original English.
+
+At your option, you may distribute verbatim and modified versions of
+this document, excepting the clearly marked sections held under
+separate copyright, under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2 of the
+License, or (at your option) any later version.
+@end quotation
+
+@menu
+The Newts Notesfile System
+
+* Introduction::           An introduction to Newts and notesfiles.
+* History::                A brief history of notesfiles.
+* Entering and exiting::   How to start and stop the Notes program.
+* Reading::                Maneuvering around and viewing notes.
+* Writing::                Adding new notes and responses.
+* Correcting mistakes::    What to do if you make a mistake.
+* Notes sequencer::        Using the sequencer to read only new notes.
+* Utilities::              Auxilliary command-line utilities.
+
+Program information
+
+* Bugs::                   Current known bugs and issues with Newts.
+
+GNU date format reference
+
+* Date input formats::     Syntax for date and time options.
+
+Appendices
+
+* Getline::                The `getline' input-editing library.
+* Licenses::               Texts for licenses used in Newts.
+@end menu
+@end ifnottex
+
+@node Introduction
+@chapter Introduction to Newts
+@cindex introduction
+
+This software package, called @i{Newts} for ``New Notes'', is the only
+currently available notesfile system which maintains compatibility
+with Ray Essick and Rob Kolstad's Notesfile software.  Currently,
+almost all major features of Notesfiles are supported, and Notesfiles
+and Newts can operate on the same files without difficulty if properly
+configured.  (This setup is not recommended for actual use.)
+
+Newts improves upon Notesfiles in several ways.  First, and most
+visible to the user, the ``compatibility client'' has received a
+face-lift.  With the addition of support for the Curses display
+library, various display bugs (which could cause hanging text to
+remain on the screen while scrolling through pages of text) have been
+fixed.  Support for line editing has been added to the various text
+prompts throughout the system.  Additionally, the user interface has
+been cleaned up and standardized (although a command-line option
+supports the old style of interface for nostalgic users).
+
+The current release of Newts is client-only; future releases will
+delineate into server and client, include additional backends, and
+eventually provide different client interfaces.
+
+@node History
+@chapter A brief history of notesfiles
+@cindex history of notesfile systems
+@cindex notesfiles, history of
+
+The first incarnation of the concept of notesfiles seems to have been
+a component of the PLATO system, which was developed by Don Bitzer,
+founder of @acronym{CERL}, the Computer-based Education Research
+Laboratory at the University of Illinois at Urbana-Champaign.
+
+PLATO Notes began as a replacement for a simple text file used to
+report bugs in the PLATO system.  David Woolley, at the time a
+17-year-old university student and junior system programmer, was
+assigned to write a replacement system to correct multiple flaws with
+the text file system of bug reporting --- including a single-user
+access limit and an absence of security.
+
+Woolley began with a program to automatically store a given bug report
+in a secure file along with the date it was received and the ID of the
+user who reported the bug.  The first version of the program allowed a
+single response to a given bug, displayed beneath the bug report.
+Noting that some bugs might require extended conversation between
+users and the system administrators, Woolley extended the program to
+allow up to 63 responses in a star-structured format --- a single
+thread of responses, as opposed the tree-structured format now common
+in Usenet and elsewhere.
+
+The first prototype had only a single file to store bug reports in.
+Other members of the system staff observed that additional forums,
+such as ``System Announcements'' and ``Help'', might be useful, and
+Woolley expanded the program to allow multiple separate files.
+
+The first release was on August 7, 1973.  The software was called
+``notes'' because that had been the name of the original text file
+used for bug reports.
+
+Over the next several years, PLATO Notes received multiple
+enhancements and new features.  ``Group Notes'', released in January of
+1976, included varying access permissions for individuals or groups of
+users, deletion of notes, director messages, anonymity --- and most
+importantly, an arbitrary number of notesfiles.  In 1978, PLATO Notes
+user John Matheny implemented the @dfn{sequencer}, which allowed a
+user to read only notes and responses posted since the last time that
+user accessed notes.
+
+PLATO continued to be used into the 1980s as a worldwide system.  As
+time progressed, the rise of the PC provided a more cost-effective
+solution for educational technology; the PLATO system and its
+dedicated hardware declined.
+
+In the early 1980s --- the first date referenced in the source code is
+``Fall 1980'' --- Raymond Essick and Rob Kolstad, then two graduate
+students at the University of Illinois, began developing a UNIX clone
+of the PLATO Notes system.  Dubbed ``Notesfiles'', this implementation
+included most of the identifying features of PLATO Notes, from access
+lists and director messages to the sequencer.  The first official
+release of Notesfiles was at the 1982 USENIX conference.
+
+Notesfiles underwent multiple revisions throughout its lifetime.
+Various additional features, including automatic expiration of old
+notes, an interface with the Usenet news system, searching, and a
+complex (and arcane) archival system, were added.
+
+The last official release of Notesfiles was version 1.7 in 1985.  In
+1987, Rich $alz --- later the author of the Usenet server software
+@uref{http://www.isc.org/products/INN/, INN} --- released a patch
+adding moderated notesfiles and automated signatures; the patch was
+subsequently revised by Paul Pomes of the University of Illinois at
+Urbana-Champaign.  Following $alz's and Pomes' patches, there have
+been no further public releases of the Notesfiles software.  In 1995,
+the news.software.notes Usenet newsgroup shut down.
+
+Notesfiles's small but dedicated user community continued enhancing
+its functionality using the means available to them.  For example, a
+program called ``notewrap'' implemented in Tcl/Expect by Paul Hebble
+added blacklists (also called killfiles) to the Notesfiles system.
+
+At its peak, Notesfiles was used quite extensively on a very large
+installation base.  If you scan through old archives of Usenet, you are
+quite likely to find many articles whose ``Posting version'' is one of
+several releases of Notesfiles.
+
+Apart from Newts, there have been several attempts at writing a new
+version of Notesfiles.  Most of these attempts have originated from
+various students or alumni of @uref{http://www.imsa.edu, the Illinois
+Math and Science Academy}, which is one notable institution which uses
+a slightly modified variant of Notesfiles to this day.  These attempts
+have included @i{Notes} by Jonathan Rockway, @i{Banter} by Jonathan
+Perkins, and @i{@acronym{ZINN}} (@acronym{ZINN} Is Not Notes) by
+Justin Doran and Jakob Beachem --- all current or past students of
+@acronym{IMSA}.
+
+All three of these attempts shared various features.  First, they all
+changed the basic model of Notesfiles from a trusted client system to
+a client/server architecture.  Each used the MySQL database as a
+backend to store all of the data associated with notes and their
+responses.  (Rockway's Notes intended to provide a modular backend
+eventually.)  Each maintained the star-structure of PLATO Notes.
+Banter and @acronym{ZINN} both implemented their server in C++, while
+Rockway's Notes used C.  (Both the original Notesfiles software by
+Essick and Kolstad and Newts are also implemented in C.)
+
+According to myth recounted by various alumni of @acronym{IMSA}, every
+attempt to reimplement Notesfiles is cursed to never be successfully
+completed.  All other previously available Notes reimplementations are
+now unavailable --- only Newts has reached a usable state.
+
+References:
+
+@itemize @bullet
+@item Woolley, David R.@: (1994)
+@uref{http://www.thinkofit.com/plato/dwplato.htm, @cite{PLATO: The
+Emergence of Online Community}}
+
+@item Essick, Raymond B.@: and Rob Kolstad (1985)
+@uref{ftp://ftp.thoughtlocker.net/uiuc-notesfiles/notesfile-reference-manual.pdf,
+@cite{Notesfile Reference Manual (Revised)}}
+
+@item $alz, Rich and Pomes, Paul (1987)
+@uref{ftp://ftp.uu.net/usenet/comp.sources.unix/volume10/notes-mod.pch.Z,
+moderation patch for Notesfiles}
+
+@item --- (1987)
+@uref{ftp://ftp.thoughtlocker.net/uiuc-notesfiles/uiuc-notesfiles-1.7p.tar.gz,
+Notesfiles 1.7 with moderation patch}
+@end itemize
+
+@include entering.texi
+@include reading.texi
+@include writing.texi
+@include mistakes.texi
+@include sequencer.texi
+@include utilities.texi
+
+@node Bugs
+@chapter Bugs
+@cindex bugs in Newts
+
+Please refer to the BUGS file in the Newts source distribution to read
+about any outstanding bugs in the system.
+
+@include getdate.texi
+@include getline.texi
+
+@node Licenses
+@appendix Licenses
+@cindex licenses
+
+The following licenses are used by Newts or a component thereof.
+
+@menu
+* GNU GPL::    The GNU General Public License.
+* GNU LGPL::   The GNU Lesser General Public License.
+@end menu
+
+@include gpl.texi
+@include lgpl.texi
+
+@bye
