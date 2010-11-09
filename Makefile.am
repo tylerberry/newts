@@ -6,7 +6,7 @@ ACLOCAL_AMFLAGS = -I m4 -I m4/gnulib
 EXTRA_DIST = BUGS HACKING NEWS.PRE SURVEY WANTED bootstrap gnulib/xalloc.h
 MAINTAINERCLEANFILES = ChangeLog Makefile.in aclocal.m4 autom4te.cache \
 	compile config.guess config.h.in config.rpath config.sub configure \
-	depcomp install.sh ltmain.sh missing m4/libtool.m4 ylwrap
+	depcomp install-sh ltmain.sh missing m4/libtool.m4 ylwrap
 
 SUBDIRS = m4 doc include gnulib lib libnewts backends libnewtsclient clients \
 	bindings contrib tests po
