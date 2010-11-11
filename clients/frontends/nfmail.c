@@ -290,7 +290,7 @@ main (int argc, char **argv)
     short matched_subject = FALSE;
     register int blocks = 1;
     register int count = 0;
-    unsigned length;
+    size_t length;
     char *line = NULL;
     register char *c;
 

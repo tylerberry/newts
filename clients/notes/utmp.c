@@ -41,7 +41,7 @@
 int
 get_author_utmp (const char *user)
 {
-  unsigned num_users;
+  size_t num_users;
   STRUCT_UTMP *utmp_list, *ut;
   int fail;
   int result = 0;

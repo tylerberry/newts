@@ -39,7 +39,7 @@ getpeereid (int sock, uid_t *euid, gid_t *egid)
 {
 #ifdef SO_PEERCRED
   struct ucred credential;
-  size_t len = sizeof (credential);
+  socklen_t len = sizeof (credential);
 
   if (getsockopt (sock, SOL_SOCKET, SO_PEERCRED, &credential, &len) == 0)
     {
