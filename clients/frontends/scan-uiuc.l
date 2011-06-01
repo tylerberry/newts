@@ -28,7 +28,6 @@
 
 #include "newts/uiuc-compatibility.h"
 #include "scan-uiuc.h"
-#include "strcase.h"
 
 #include <assert.h>
 

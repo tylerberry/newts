@@ -28,7 +28,6 @@
 #include "newts/util.h"
 #include "newts/version.h"
 
-#include "vasprintf.h"
 #include "which.h"
 
 #if HAVE_PWD_H

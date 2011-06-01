@@ -27,7 +27,6 @@
 
 #include "dirname.h"
 #include "error.h"
-#include "getline.h"
 #include "getopt.h"
 
 #if HAVE_FCNTL_H

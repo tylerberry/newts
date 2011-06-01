@@ -1,44 +1,46 @@
-/* Copyright (C) 1992,1995-1999,2000-2002,2005-2006 Free Software Foundation, Inc.
+/* Copyright (C) 1992, 1995-2002, 2005-2011 Free Software Foundation, Inc.
    This file is part of the GNU C Library.
 
-   This program is free software; you can redistribute it and/or modify
+   This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
-   the Free Software Foundation; either version 2, or (at your option)
-   any later version.
+   the Free Software Foundation; either version 3 of the License, or
+   (at your option) any later version.
 
    This program is distributed in the hope that it will be useful,
    but WITHOUT ANY WARRANTY; without even the implied warranty of
    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
    GNU General Public License for more details.
 
-   You should have received a copy of the GNU General Public License along
-   with this program; if not, write to the Free Software Foundation,
-   Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA. */
+   You should have received a copy of the GNU General Public License
+   along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
 
 #include <config.h>
+
+/* Don't use __attribute__ __nonnull__ in this compilation unit.  Otherwise gcc
+   optimizes away the name == NULL test below.  */
+#define _GL_ARG_NONNULL(params)
+
+/* Specification.  */
+#include <stdlib.h>
 
 #include <errno.h>
 #if !_LIBC
 # define __set_errno(ev) ((errno) = (ev))
 #endif
 
-#include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
 
 #if !_LIBC
-# define __environ	environ
-# ifndef HAVE_ENVIRON_DECL
-extern char **environ;
-# endif
+# define __environ      environ
 #endif
 
 #if _LIBC
 /* This lock protects against simultaneous modifications of `environ'.  */
 # include <bits/libc-lock.h>
 __libc_lock_define_initialized (static, envlock)
-# define LOCK	__libc_lock_lock (envlock)
-# define UNLOCK	__libc_lock_unlock (envlock)
+# define LOCK   __libc_lock_lock (envlock)
+# define UNLOCK __libc_lock_unlock (envlock)
 #else
 # define LOCK
 # define UNLOCK
@@ -49,6 +51,7 @@ __libc_lock_define_initialized (static, envlock)
 # define unsetenv __unsetenv
 #endif
 
+#if _LIBC || !HAVE_UNSETENV
 
 int
 unsetenv (const char *name)
@@ -70,13 +73,13 @@ unsetenv (const char *name)
   while (*ep != NULL)
     if (!strncmp (*ep, name, len) && (*ep)[len] == '=')
       {
-	/* Found it.  Remove this pointer by moving later ones back.  */
-	char **dp = ep;
+        /* Found it.  Remove this pointer by moving later ones back.  */
+        char **dp = ep;
 
-	do
-	  dp[0] = dp[1];
-	while (*dp++);
-	/* Continue the loop in case NAME appears again.  */
+        do
+          dp[0] = dp[1];
+        while (*dp++);
+        /* Continue the loop in case NAME appears again.  */
       }
     else
       ++ep;
@@ -90,3 +93,28 @@ unsetenv (const char *name)
 # undef unsetenv
 weak_alias (__unsetenv, unsetenv)
 #endif
+
+#else /* HAVE_UNSETENV */
+
+# undef unsetenv
+
+/* Call the underlying unsetenv, in case there is hidden bookkeeping
+   that needs updating beyond just modifying environ.  */
+int
+rpl_unsetenv (const char *name)
+{
+  int result = 0;
+  if (!name || !*name || strchr (name, '='))
+    {
+      errno = EINVAL;
+      return -1;
+    }
+  while (getenv (name))
+# if !VOID_UNSETENV
+    result =
+# endif
+      unsetenv (name);
+  return result;
+}
+
+#endif /* HAVE_UNSETENV */

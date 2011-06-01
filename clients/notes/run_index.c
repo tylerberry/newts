@@ -29,8 +29,8 @@
 
 #include "notes.h"
 
-#include "getdate.h"
 #include "gl_getline.h"
+#include "parse-datetime.h"
 #include "which.h"
 
 #if HAVE_NCURSES_H
@@ -625,7 +625,7 @@ run_index (struct notesfile *nf, int *first, int *last, int *respnum,
                   }
                 gl_histadd (datestr);
 
-                if (get_date (&result, datestr, &now))
+                if (parse_datetime (&result, datestr, &now))
                   if (result.tv_sec <= now.tv_sec)
                     {
                       seqtime = result.tv_sec;

@@ -1,11 +1,11 @@
 /* gethostname emulation for SysV and POSIX.1.
 
-   Copyright (C) 1992, 2003, 2006 Free Software Foundation, Inc.
+   Copyright (C) 1992, 2003, 2006, 2008-2011 Free Software Foundation, Inc.
 
-   This program is free software; you can redistribute it and/or modify
+   This program is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
-   the Free Software Foundation; either version 2, or (at your option)
-   any later version.
+   the Free Software Foundation; either version 3 of the License, or
+   (at your option) any later version.
 
    This program is distributed in the hope that it will be useful,
    but WITHOUT ANY WARRANTY; without even the implied warranty of
@@ -13,16 +13,24 @@
    GNU General Public License for more details.
 
    You should have received a copy of the GNU General Public License
-   along with this program; if not, write to the Free Software Foundation,
-   Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.  */
+   along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
 
-/* David MacKenzie <djm@gnu.ai.mit.edu> */
+/* David MacKenzie <djm@gnu.ai.mit.edu>
+   Windows port by Simon Josefsson <simon@josefsson.org> */
 
 #include <config.h>
+
+#if !((defined _WIN32 || defined __WIN32__) && !defined __CYGWIN__)
+/* Unix API.  */
+
+/* Specification.  */
+#include <unistd.h>
 
 #ifdef HAVE_UNAME
 # include <sys/utsname.h>
 #endif
+
+#include <string.h>
 
 /* Put up to LEN chars of the host name into NAME.
    Null terminate it if the name is shorter than LEN.
@@ -46,7 +54,51 @@ gethostname (char *name, size_t len)
     }
   strncpy (name, uts.nodename, len);
 #else
-  strcpy (name, "");		/* Hardcode your system name if you want.  */
+  strcpy (name, "");            /* Hardcode your system name if you want.  */
 #endif
   return 0;
 }
+
+#else
+/* Native Windows API.  Which primitive to choose?
+   - gethostname() requires linking with -lws2_32.
+   - GetComputerName() does not return the right kind of hostname.
+   - GetComputerNameEx(ComputerNameDnsHostname,...) returns the right hostname,
+     but it is hard to use portably:
+       - It requires defining _WIN32_WINNT to at least 0x0500.
+       - With mingw, it also requires
+         "#define GetComputerNameEx GetComputerNameExA".
+       - With older versions of mingw, none of the declarations are present at
+         all, not even of the enum value ComputerNameDnsHostname.
+   So we use gethostname().  Linking with -lws2_32 is the least evil.  */
+
+#define WIN32_LEAN_AND_MEAN
+/* Get winsock2.h. */
+#include <unistd.h>
+
+/* Get INT_MAX.  */
+#include <limits.h>
+
+/* Get set_winsock_errno. */
+#include "w32sock.h"
+
+#include "sockets.h"
+
+#undef gethostname
+
+int
+rpl_gethostname (char *name, size_t len)
+{
+  int r;
+
+  if (len > INT_MAX)
+    len = INT_MAX;
+  gl_sockets_startup (SOCKETS_1_1);
+  r = gethostname (name, (int) len);
+  if (r < 0)
+    set_winsock_errno ();
+
+  return r;
+}
+
+#endif

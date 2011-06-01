@@ -26,10 +26,8 @@
 #include "internal.h"
 
 #include "error.h"
-#include "getline.h"
 #include "newts/list.h"
 #include "newts/newts.h"
-#include "strtok_r.h"
 #include "which.h"
 
 #if HAVE_GLOB_H

@@ -1,12 +1,12 @@
 /* Definitions for data structures and routines for the regular
    expression library.
-   Copyright (C) 1985,1989-93,1995-98,2000,2001,2002,2003,2005,2006
+   Copyright (C) 1985, 1989-1993, 1995-1998, 2000-2003, 2005-2006, 2009-2011
    Free Software Foundation, Inc.
    This file is part of the GNU C Library.
 
    This program is free software; you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
-   the Free Software Foundation; either version 2, or (at your option)
+   the Free Software Foundation; either version 3, or (at your option)
    any later version.
 
    This program is distributed in the hope that it will be useful,
@@ -113,10 +113,10 @@ typedef unsigned long int reg_syntax_t;
 /* If this bit is set, then ^ and $ are always anchors (outside bracket
      expressions, of course).
    If this bit is not set, then it depends:
-        ^  is an anchor if it is at the beginning of a regular
-           expression or after an open-group or an alternation operator;
-        $  is an anchor if it is at the end of a regular expression, or
-           before a close-group or an alternation operator.
+	^  is an anchor if it is at the beginning of a regular
+	   expression or after an open-group or an alternation operator;
+	$  is an anchor if it is at the end of a regular expression, or
+	   before a close-group or an alternation operator.
 
    This bit could be (re)combined with RE_CONTEXT_INDEP_OPS, because
    POSIX draft 11.2 says that * etc. in leading positions is undefined.
@@ -218,8 +218,8 @@ typedef unsigned long int reg_syntax_t;
    whether ^ should be special.  */
 # define RE_CARET_ANCHORS_HERE (RE_ICASE << 1)
 
-/* If this bit is set, then \{ cannot be first in an bre or
-   immediately after an alternation or begin-group operator.  */
+/* If this bit is set, then \{ cannot be first in a regex or
+   immediately after an alternation, open-group or \} operator.  */
 # define RE_CONTEXT_INVALID_DUP (RE_CARET_ANCHORS_HERE << 1)
 
 /* If this bit is set, then no_sub will be set to 1 during
@@ -494,8 +494,8 @@ struct re_pattern_buffer
 #endif
   unsigned int _REG_RE_NAME (regs_allocated) : 2;
 
-  /* Set to zero when `regex_compile' compiles a pattern; set to one
-     by `re_compile_fastmap' if it updates the fastmap.  */
+  /* Set to zero when `re_compile_pattern' compiles a pattern; set to
+     one by `re_compile_fastmap' if it updates the fastmap.  */
   unsigned int _REG_RE_NAME (fastmap_accurate) : 1;
 
   /* If set, `re_match_2' does not return information about
@@ -609,8 +609,8 @@ extern regoff_t re_match_2 (struct re_pattern_buffer *__buffer,
    register data.
 
    Unless this function is called, the first search or match using
-   PATTERN_BUFFER will allocate its own register data, without
-   freeing the old data.  */
+   BUFFER will allocate its own register data, without freeing the old
+   data.  */
 extern void re_set_registers (struct re_pattern_buffer *__buffer,
 			      struct re_registers *__regs,
 			      __re_size_t __num_regs,
@@ -625,41 +625,45 @@ extern int re_exec (const char *);
 #endif
 
 /* GCC 2.95 and later have "__restrict"; C99 compilers have
-   "restrict", and "configure" may have defined "restrict".  */
-#ifndef __restrict
-# if ! (2 < __GNUC__ || (2 == __GNUC__ && 95 <= __GNUC_MINOR__))
-#  if defined restrict || 199901L <= __STDC_VERSION__
-#   define __restrict restrict
-#  else
-#   define __restrict
-#  endif
+   "restrict", and "configure" may have defined "restrict".
+   Other compilers use __restrict, __restrict__, and _Restrict, and
+   'configure' might #define 'restrict' to those words, so pick a
+   different name.  */
+#ifndef _Restrict_
+# if 199901L <= __STDC_VERSION__
+#  define _Restrict_ restrict
+# elif 2 < __GNUC__ || (2 == __GNUC__ && 95 <= __GNUC_MINOR__)
+#  define _Restrict_ __restrict
+# else
+#  define _Restrict_
 # endif
 #endif
 /* gcc 3.1 and up support the [restrict] syntax.  Don't trust
    sys/cdefs.h's definition of __restrict_arr, though, as it
    mishandles gcc -ansi -pedantic.  */
-#undef __restrict_arr
-#if ((199901L <= __STDC_VERSION__					\
-      || ((3 < __GNUC__ || (3 == __GNUC__ && 1 <= __GNUC_MINOR__))	\
-	  && !__STRICT_ANSI__))						\
-     && !defined __GNUG__)
-# define __restrict_arr __restrict
-#else
-# define __restrict_arr
+#ifndef _Restrict_arr_
+# if ((199901L <= __STDC_VERSION__					\
+       || ((3 < __GNUC__ || (3 == __GNUC__ && 1 <= __GNUC_MINOR__))	\
+	   && !__STRICT_ANSI__))					\
+      && !defined __GNUG__)
+#  define _Restrict_arr_ _Restrict_
+# else
+#  define _Restrict_arr_
+# endif
 #endif
 
 /* POSIX compatibility.  */
-extern int regcomp (regex_t *__restrict __preg,
-		    const char *__restrict __pattern,
+extern int regcomp (regex_t *_Restrict_ __preg,
+		    const char *_Restrict_ __pattern,
 		    int __cflags);
 
-extern int regexec (const regex_t *__restrict __preg,
-		    const char *__restrict __string, size_t __nmatch,
-		    regmatch_t __pmatch[__restrict_arr],
+extern int regexec (const regex_t *_Restrict_ __preg,
+		    const char *_Restrict_ __string, size_t __nmatch,
+		    regmatch_t __pmatch[_Restrict_arr_],
 		    int __eflags);
 
-extern size_t regerror (int __errcode, const regex_t *__restrict __preg,
-			char *__restrict __errbuf, size_t __errbuf_size);
+extern size_t regerror (int __errcode, const regex_t *_Restrict_ __preg,
+			char *_Restrict_ __errbuf, size_t __errbuf_size);
 
 extern void regfree (regex_t *__preg);
 

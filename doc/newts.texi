@@ -295,7 +295,7 @@ Notesfiles 1.7 with moderation patch}
 Please refer to the BUGS file in the Newts source distribution to read
 about any outstanding bugs in the system.
 
-@include getdate.texi
+@include parse-datetime.texi
 @include getline.texi
 
 @node Licenses

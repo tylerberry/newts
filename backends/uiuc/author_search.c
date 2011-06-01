@@ -29,9 +29,6 @@
 
 #include "uiuc-backend.h"
 
-#include "strpbrk.h"
-#include "strstr.h"
-
 #if STDC_HEADERS
 # include <ctype.h>
 #endif

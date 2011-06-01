@@ -29,8 +29,6 @@
 
 #include "uiuc-backend.h"
 
-#include "strcase.h"
-
 #if STDC_HEADERS
 # include <ctype.h>
 #endif

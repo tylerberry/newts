@@ -30,7 +30,6 @@
 #include "internal.h"
 #include "newts/access.h"
 #include "newts/memory.h"
-#include "strcase.h"
 
 void
 access_add_permissions (struct access *access, unsigned permissions)

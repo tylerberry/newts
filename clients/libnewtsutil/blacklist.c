@@ -27,7 +27,6 @@
 
 #include "newts/list.h"
 #include "newts/newts.h"
-#include "strtok_r.h"
 
 extern short no_blacklist;
 extern short white_basenotes;

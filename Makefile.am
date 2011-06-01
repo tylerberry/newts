@@ -4,9 +4,9 @@ AUTOMAKE_OPTIONS = 1.7 gnits dist-bzip2
 ACLOCAL_AMFLAGS = -I m4 -I m4/gnulib
 
 EXTRA_DIST = BUGS HACKING NEWS.PRE SURVEY WANTED bootstrap gnulib/xalloc.h
-MAINTAINERCLEANFILES = ChangeLog Makefile.in aclocal.m4 autom4te.cache \
-	compile config.guess config.h.in config.rpath config.sub configure \
-	depcomp install-sh ltmain.sh missing m4/libtool.m4 ylwrap
+MAINTAINERCLEANFILES = ABOUT-NLS ChangeLog Makefile.in aclocal.m4 \
+	compile config.guess config.h.in config.rpath config.sub configure
+	m4/libtool.m4 po/Makefile.in.in
 
 SUBDIRS = m4 doc include gnulib lib libnewts backends libnewtsclient clients \
 	bindings contrib tests po
@@ -22,6 +22,7 @@ dist-hook:
 
 maintainer-clean-local:
 	rm -rf libltdl
+	rm depcomp install-sh ltmain.sh missing ylwrap
 
 install-data-hook:
 	mkdir -p ${DESTDIR}/${SPOOL}

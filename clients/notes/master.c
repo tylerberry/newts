@@ -30,7 +30,6 @@
 #include "notes.h"
 
 #include "curses_wrapper.h"
-#include "vasprintf.h"
 
 #if HAVE_NCURSES_H
 # include <ncurses.h>

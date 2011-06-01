@@ -30,8 +30,6 @@
 #include "notes.h"
 #include "pager.h"
 
-#include "strpbrk.h"
-
 #if HAVE_NCURSES_H
 # include <ncurses.h>
 #elif HAVE_CURSES_H

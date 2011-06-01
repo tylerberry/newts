@@ -127,10 +127,6 @@
 #include <ctype.h>
 #include <signal.h>
 
-#include "strcase.h"
-#include "strpbrk.h"
-#include "strstr.h"
-
 #define _getline_c_ 1
 #include "gl_getline.h"
 

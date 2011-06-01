@@ -31,7 +31,6 @@
 
 #include "gl_getline.h"
 #include "newts/uiuc-compatibility.h"
-#include "strcase.h"
 
 #if HAVE_GRP_H
 # include <grp.h>

@@ -33,9 +33,6 @@
 #include "notes.h"
 #include "signals.h"
 
-#include "strcase.h"
-#include "strpbrk.h"
-
 #if HAVE_DIRENT_H
 # include <dirent.h>
 #endif

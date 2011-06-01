@@ -28,10 +28,8 @@
 
 #include "curses_wrapper.h"
 #include "dirname.h"
-#include "getdate.h"
 #include "getopt.h"
-#include "strtok_r.h"
-#include "vasprintf.h"
+#include "parse-datetime.h"
 
 #if HAVE_LANGINFO_H
 # include <langinfo.h>
@@ -269,7 +267,7 @@ main (int argc, char **argv)
             struct timespec parsed_time, now;
             now.tv_sec = orig_seqtime;
 
-            if (get_date (&parsed_time, optarg, &now))
+            if (parse_datetime (&parsed_time, optarg, &now))
               {
                 if (alt_time)
                   {

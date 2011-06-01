@@ -30,7 +30,6 @@
 #include "notes.h"
 
 #include "gl_getline.h"
-#include "strcase.h"
 #include "newts/uiuc-compatibility.h"
 
 #if HAVE_NCURSES_H

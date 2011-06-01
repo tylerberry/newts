@@ -33,7 +33,6 @@
 #include "error.h"
 #include "getopt.h"
 #include "newts/uiuc-compatibility.h"
-#include "strcase.h"
 
 #if HAVE_FCNTL_H
 # include <fcntl.h>

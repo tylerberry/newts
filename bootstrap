@@ -1,11 +1,9 @@
 #!/bin/sh
 
 set -x
-#autopoint --force
 libtoolize --automake
-cp /usr/share/aclocal/libtool.m4 m4/
+autopoint
 aclocal -I m4 -I m4/gnulib
 autoheader
-cp /usr/share/gettext/config.rpath .
 automake --add-missing
 autoconf

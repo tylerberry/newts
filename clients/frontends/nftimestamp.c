@@ -27,8 +27,8 @@
 
 #include "dirname.h"
 #include "error.h"
-#include "getdate.h"
 #include "getopt.h"
+#include "parse-datetime.h"
 
 /* Whether to display debugging messages. */
 int debug = FALSE;
@@ -139,7 +139,7 @@ main (int argc, char **argv)
             struct timespec result, now;
             now.tv_sec = truetime;
 
-            if (get_date (&result, optarg, &now))
+            if (parse_datetime (&result, optarg, &now))
               {
                 if (result.tv_sec <= truetime)
                   seqtime = result.tv_sec;

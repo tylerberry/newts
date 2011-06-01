@@ -51,10 +51,6 @@ avoid all the nasty redisplays.
 
 #include "dirname.h"
 #include "gl_getline.h"
-#include "strcase.h"
-#include "strpbrk.h"
-#include "strstr.h"
-#include "vasprintf.h"
 #include "which.h"
 
 #if HAVE_NCURSES_H

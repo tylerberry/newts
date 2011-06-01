@@ -2,6 +2,8 @@
 
 AC_INIT([newts], [0.15], [bug-newts@thoughtlocker.net])
 AC_PREREQ([2.60])
+AC_CONFIG_AUX_DIR([build-aux])
+
 echo \
 "
 Configuring Newts 0.15
@@ -199,9 +201,9 @@ AC_HEADER_STAT
 AC_HEADER_SYS_WAIT
 AC_HEADER_TIME
 AC_CHECK_HEADERS([dirent.h fcntl.h float.h getopt.h glob.h grp.h \
-    langinfo.h libintl.h netdb.h netinet/in.h pwd.h sgtty.h strings.h \
-    sys/ioctl.h sys/param.h sys/socket.h sys/stat.h sys/time.h sys/types.h \
-    termio.h termios.h unistd.h wchar.h wctype.h])
+    langinfo.h libintl.h netdb.h netinet/in.h pwd.h sgtty.h stdbool.h \
+    strings.h sys/ioctl.h sys/param.h sys/socket.h sys/stat.h sys/time.h \
+    sys/types.h termio.h termios.h unistd.h wchar.h wctype.h])
 
 echo \
 "

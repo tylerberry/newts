@@ -26,7 +26,6 @@
 #include "internal.h"
 #include "newts/author.h"
 #include "newts/memory.h"
-#include "strcase.h"
 
 struct author *
 author_alloc (void)

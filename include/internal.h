@@ -61,8 +61,6 @@ extern int errno;
 # include <unistd.h>
 #endif
 
-#include "exit.h"
-
 #include "gettext.h"
 #define N_(string) gettext_noop (string)
 #define _(string) gettext (string)

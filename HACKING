@@ -1,11 +1,11 @@
 Requests for People HACKING on Newts                               -*- Text -*-
 -------------------------------------------------------------------------------
 
-Interested in developing for Newts? Write access is over SSH only, so you'll
-need to arrange for an account on the development server. If you're interested,
-get in touch with me at <tyler+newts@thoughtlocker.net>.
+== General info for potential Newts hackers ==
 
-If you do work on Newts, I'd appreciate it if you kept the followings things in
+The master Newts repository is hosted at <http://github.org/tylerberry/newts>.
+
+If you code for Newts, I'd appreciate it if you kept the followings things in
 mind.
 
 1. Use the GNU code style, as described in the GNU Standards document.
@@ -17,11 +17,27 @@ mind.
      <http://www.cl.cam.ac.uk/~mgk25/ucs/quotes.html>
 
 2. Comment your changes where appropriate.
-3. Make your Subversion log entries informative and useful.
+3. Make your Git log entries informative and useful.
 4. If you're working on something significant, as opposed to bugfixes or small
    changes, please let me know so that I can take your work into account while
    coming up with a release schedule.
 
-Thanks!
+== Using the bootstrap script ==
 
-- Tyler
+The bootstrap script will run GNU autotools to generate the configure script
+and other necessary files. It requires the following to be installed and in
+$PATH on your computer:
+
+* GNU autoconf.
+* GNU automake.
+* GNU gettext.
+* GNU libtool.
+
+Finally, it requires a copy of the gnulib portability suite to be installed on
+your computer. At the time of writing, gnulib is available via git at
+<git://git.savannah.gnu.org/gnulib.git>.
+
+The bootstrap script invokes gnulib-tool, which you need to place in
+your $PATH. However, it must be run from the gnulib directory, which
+means the easiest way to guarantee that it works correctly is to symlink
+gnulib-tool to $HOME/bin and make sure $HOME/bin is in your $PATH.

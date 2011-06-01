@@ -28,7 +28,6 @@
 #include "dirname.h"
 #include "error.h"
 #include "getopt.h"
-#include "strpbrk.h"
 
 #if HAVE_FCNTL_H
 # include <fcntl.h>

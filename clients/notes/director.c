@@ -32,7 +32,6 @@
 #include "gl_getline.h"
 #include "newts/uiuc.h"
 #include "newts/uiuc-compatibility.h"
-#include "strcase.h"
 
 #if HAVE_NCURSES_H
 # include <ncurses.h>

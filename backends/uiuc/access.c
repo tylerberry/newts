@@ -29,8 +29,6 @@
 
 #include "uiuc-backend.h"
 
-#include "strcase.h"
-
 #if HAVE_FCNTL_H
 # include <fcntl.h>
 #endif
